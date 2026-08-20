@@ -7,6 +7,7 @@
     "start": "ng serve",
     "develop": "ng serve --port 3035",
     "build": "ng build",
+    "build:gh": "ng build --base-href /life-leaf/",
     "watch": "ng build --watch --configuration development",
     "copy-error-page": "cp dist/life-leaf/browser/index.html dist/life-leaf/browser/404.html",
     "test": "ng test",
