@@ -6,8 +6,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "develop": "ng serve --port 3035"
-,    "build": "ng build",
+    "develop": "ng serve --port 3035",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
@@ -40,6 +40,7 @@
     "angular-eslint": "22.0.0",
     "eslint": "^9.16.0",
     "jsdom": "^26.0.0",
+    "prettier": "^3.9.6",
     "typescript": "~6.0.0",
     "typescript-eslint": "^8.61.0",
     "vitest": "^4.0.8"
