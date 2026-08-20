@@ -40,5 +40,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           base_href: /${{ steps.package.outputs.name }}/ # make sure this corresponds to https://<your_username>.github.io/<base_href>/
           deploy_branch: gh-pages
-          publish_dir: dist/${{ steps.package.outputs.name }}/browser
+          publish_dir: www
           enable_jekyll: true
