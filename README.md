@@ -1,6 +1,61 @@
 # Life Leaf
 
-Life Leaf is a starter Ionic Angular (v9.0.0) project created using the latest modern Ionic + Angular (v22.0.1) stack.
+This project was generated using Ionic CLI version 7.2.1 for Angular version 22.0.1 with Ionic Angular version 9.0.0.
+
+## Development server
+
+To start a local development server, run:
+
+```bash
+npm run develop
+```
+
+Once the server is running, open your browser and navigate to `http://localhost:3035/`. The application will automatically reload whenever you modify any of the source files.
+
+## Cloning Guide
+
+1.  Clone only the remote primary HEAD (default: origin/main)
+
+```bash
+git clone <url> --single-branch
+```
+
+2. Only specific branch
+
+```bash
+git clone <url> --branch <branch> --single-branch [<folder>]
+```
+
+```bash
+git clone <url> --branch <branch>
+```
+
+3. Cloning repositories using degit
+   - main branch is default.
+
+```bash
+npx degit github:user/repo#branch-name <folder-name>
+```
+
+4. Cloning repositories using **gitpick**
+
+```bash
+npx gitpick github_proj_url -b branch-name
+```
+
+5. Cloning this project with skeleton
+
+```bash
+git clone https://github.com/actionanand/life-leaf.git --branch 1-skeleton new-proj-name
+```
+
+```bash
+npx degit github:actionanand/life-leaf#1-skeleton new-proj-name
+```
+
+```bash
+npx gitpick https://github.com/actionanand/life-leaf -b 1-skeleton
+```
 
 ## Tech Stack
 
@@ -103,34 +158,6 @@ ionic start life-leaf blank --type=angular
 ```
 
 This project was created using Ionic CLI with Angular standalone components.
-
-## Clone the Repository
-
-```bash
-git clone https://github.com/actionanand/life-leaf.git
-cd life-leaf
-npm install
-```
-
-## Development
-
-Start with Ionic:
-
-```bash
-ionic serve
-```
-
-Or:
-
-```bash
-npm start
-```
-
-The development server normally runs at:
-
-```text
-http://localhost:8100
-```
 
 ## Available Scripts
 
@@ -669,10 +696,3 @@ cd android
 ./gradlew bundleRelease
 ```
 
-## Repository
-
-https://github.com/actionanand/life-leaf
-
-## License
-
-Add the appropriate license before public distribution.
