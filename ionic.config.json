@@ -1,0 +1,7 @@
+{
+  "name": "life-leaf",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
