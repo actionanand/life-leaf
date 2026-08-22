@@ -1,0 +1,66 @@
+<ion-header class="ion-no-border"
+  ><ion-toolbar
+    ><ion-buttons slot="start"><ion-back-button defaultHref="/settings" text=""></ion-back-button></ion-buttons
+    ><ion-title>App lock</ion-title></ion-toolbar
+  ></ion-header
+>
+<ion-content [fullscreen]="true"
+  ><main class="page-shell security-page">
+    <header>
+      <div class="security-mark"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
+      <p class="eyebrow">Private access</p>
+      <h1>{{ security.configured() ? 'Change your PIN' : 'Protect Life Leaf' }}</h1>
+      <p>Your PIN is transformed with PBKDF2 and only a salted verifier is stored. The raw PIN is never saved.</p>
+    </header>
+    <form [formGroup]="form" (ngSubmit)="save()">
+      @if (security.configured()) {
+      <ion-item lines="none"
+        ><ion-input
+          formControlName="current"
+          type="password"
+          inputmode="numeric"
+          maxlength="8"
+          label="Current PIN"
+          labelPlacement="floating"></ion-input
+      ></ion-item>
+      }
+      <ion-item lines="none"
+        ><ion-input
+          formControlName="pin"
+          type="password"
+          inputmode="numeric"
+          maxlength="8"
+          label="New PIN"
+          labelPlacement="floating"
+          helperText="4 to 8 digits"></ion-input
+      ></ion-item>
+      <ion-item lines="none"
+        ><ion-input
+          formControlName="confirm"
+          type="password"
+          inputmode="numeric"
+          maxlength="8"
+          label="Confirm PIN"
+          labelPlacement="floating"></ion-input
+      ></ion-item>
+      <ion-button expand="block" type="submit" [disabled]="busy()"
+        >{{ security.configured() ? 'Change PIN' : 'Enable app lock' }}</ion-button
+      >
+    </form>
+    <button class="biometric-card" type="button" (click)="biometric()" [disabled]="!security.configured()">
+      <ion-icon name="finger-print-outline"></ion-icon
+      ><span
+        ><strong>Biometric unlock</strong
+        ><small
+          >{{ security.biometricEnabled() ? 'Enabled on this Android device' : security.biometricAvailable() ? 'Use an
+          enrolled strong biometric' : 'Configure a PIN, then use the Android app' }}</small
+        ></span
+      >
+    </button>
+    @if (security.configured()) {
+    <ion-button class="disable-lock" fill="clear" color="danger" (click)="disable()"
+      ><ion-icon slot="start" name="trash-outline"></ion-icon>Disable app lock</ion-button
+    >
+    }
+  </main></ion-content
+>

@@ -1,0 +1,124 @@
+ion-toolbar {
+  --background: var(--ll-bg);
+}
+ion-title {
+  font-family: var(--ll-serif);
+}
+.segment-toolbar {
+  --min-height: 47px;
+}
+ion-segment {
+  margin: 0 14px 6px;
+}
+ion-segment-button {
+  min-height: 38px;
+  --indicator-color: var(--ll-primary);
+  --color: var(--ll-text-soft);
+  --color-checked: var(--ll-primary-dark);
+}
+.data-page {
+  padding-top: 25px;
+  padding-bottom: 80px;
+}
+header h1 {
+  margin: 3px 0 8px;
+  font-size: 1.9rem;
+}
+header > p:last-child {
+  margin: 0 0 23px;
+  color: var(--ll-muted);
+  line-height: 1.5;
+}
+.privacy-card {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 13px;
+  padding: 17px;
+  border-radius: 18px;
+  color: #e8f5ec;
+  background: linear-gradient(135deg, #1c6945, #164d34);
+}
+.privacy-card > ion-icon {
+  font-size: 1.6rem;
+}
+.privacy-card strong {
+  font-family: var(--ll-serif);
+}
+.privacy-card p {
+  margin: 5px 0 0;
+  color: #cce4d4;
+  font-size: 0.76rem;
+  line-height: 1.45;
+}
+.action-grid {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+.action-grid button,
+.file-action {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 3px 10px;
+  min-height: 82px;
+  padding: 15px;
+  border: 1px solid var(--ll-border);
+  border-radius: 18px;
+  color: var(--ll-text);
+  background: var(--ll-surface);
+  text-align: left;
+}
+.action-grid ion-icon {
+  grid-row: 1 / 3;
+  align-self: center;
+  color: var(--ll-primary);
+  font-size: 1.4rem;
+}
+.action-grid strong {
+  align-self: end;
+  font-family: var(--ll-serif);
+  font-size: 0.95rem;
+}
+.action-grid span {
+  color: var(--ll-muted);
+  font-size: 0.72rem;
+}
+.file-action {
+  cursor: pointer;
+}
+.file-action input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.delete-all {
+  display: block;
+  margin: 28px auto;
+}
+.data-list {
+  display: grid;
+  gap: 7px;
+}
+.entry-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+.empty-data {
+  padding: 48px 20px;
+  border: 1px dashed var(--ll-border-strong);
+  border-radius: 22px;
+  background: var(--ll-surface);
+  text-align: center;
+}
+.empty-data > ion-icon {
+  color: var(--ll-primary);
+  font-size: 2.2rem;
+}
+.empty-data h2 {
+  margin: 12px 0 6px;
+}
+.empty-data p {
+  color: var(--ll-muted);
+}

@@ -1,0 +1,174 @@
+<ion-header class="ion-no-border editor-header">
+  <ion-toolbar>
+    <ion-buttons slot="start"
+      ><ion-button fill="clear" (click)="back()" aria-label="Close editor"
+        ><ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon></ion-button
+    ></ion-buttons>
+    <ion-title>{{ id() === 'new' ? 'New page' : 'Edit page' }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" (click)="togglePinned()" [class.selected]="entry()?.pinned" aria-label="Pin entry"
+        ><ion-icon slot="icon-only" name="bookmark-outline"></ion-icon
+      ></ion-button>
+      <ion-button
+        fill="clear"
+        (click)="toggleFavourite()"
+        [class.selected]="entry()?.favourite"
+        aria-label="Favourite entry"
+        ><ion-icon slot="icon-only" [name]="entry()?.favourite ? 'heart' : 'heart-outline'"></ion-icon
+      ></ion-button>
+      <ion-button strong (click)="save()">Save</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="save-strip" role="status" aria-live="polite">
+    <span>{{ wordCount() }} words</span>
+    <span
+      >@if (saving()) { <ion-spinner name="dots"></ion-spinner> Saving… } @else if (saved()) {
+      <ion-icon name="checkmark-circle-outline"></ion-icon> Saved } @else { Editing… }</span
+    >
+  </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @if (loaded() && entry(); as currentEntry) {
+  <main>
+    <div class="entry-meta" [formGroup]="form">
+      <div class="title-field">
+        <label id="entry-title-label">Entry title</label>
+        <ion-input
+          class="title-input"
+          formControlName="title"
+          aria-labelledby="entry-title-label"
+          placeholder="Give this moment a title"></ion-input>
+      </div>
+      <div class="date-row">
+        <div><span>Date</span><ion-datetime-button datetime="entry-date"></ion-datetime-button></div>
+        <ion-input formControlName="entryTime" type="time" label="Time" labelPlacement="stacked"></ion-input>
+      </div>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template
+          ><ion-datetime
+            id="entry-date"
+            formControlName="entryDate"
+            presentation="date"
+            [showDefaultButtons]="true"></ion-datetime
+        ></ng-template>
+      </ion-modal>
+    </div>
+
+    <section class="mood-section" aria-labelledby="mood-title">
+      <div class="section-label"><span id="mood-title">How did this moment feel?</span><small>Optional</small></div>
+      <div class="mood-scroll">
+        @for (mood of diary.moods(); track mood.id) {
+        <ion-chip
+          button
+          [class.selected]="selectedMood() === mood.id"
+          [style.--mood-color]="mood.color"
+          (click)="chooseMood(mood.id)"
+          [attr.aria-pressed]="selectedMood() === mood.id">
+          <span class="mood-dot" [style.background]="mood.color"></span>{{ mood.label }}
+        </ion-chip>
+        }
+      </div>
+    </section>
+
+    <section class="tag-section" aria-labelledby="tag-title">
+      <div class="section-label"><span id="tag-title">Tags</span><small>Choose any that fit</small></div>
+      <div class="mood-scroll">
+        @for (tag of diary.tags(); track tag.id) {
+        <ion-chip
+          button
+          [class.selected-tag]="currentEntry.tagIds.includes(tag.id)"
+          [style.--tag-color]="tag.color"
+          (click)="toggleTag(tag.id)"
+          [attr.aria-pressed]="currentEntry.tagIds.includes(tag.id)"
+          >{{ tag.name }}</ion-chip
+        >
+        }
+      </div>
+    </section>
+
+    <app-rich-editor
+      [initialContent]="currentEntry.contentJson"
+      (contentChanged)="editorChanged($event)"></app-rich-editor>
+
+    <section class="attachments" aria-labelledby="attachment-title">
+      <div class="section-label">
+        <span id="attachment-title">Photos & attachments</span><small>{{ attachments().length }} added</small>
+      </div>
+      <div class="attachment-actions">
+        <label
+          ><ion-icon name="camera-outline"></ion-icon><span>Add photos</span
+          ><input type="file" accept="image/*" capture="environment" multiple (change)="addFiles($event)"
+        /></label>
+        <label
+          ><ion-icon name="attach-outline"></ion-icon><span>Add files</span
+          ><input type="file" multiple (change)="addFiles($event)"
+        /></label>
+      </div>
+      @if (attachments().length) {
+      <div class="attachment-list">
+        @for (attachment of attachments(); track attachment.id) {
+        <button class="attachment-name" type="button" (click)="openAttachment(attachment)">
+          <ion-icon [name]="attachment.photo ? 'camera-outline' : 'attach-outline'"></ion-icon
+          ><span>{{ attachment.name }}</span><small>{{ attachment.size / 1024 | number: '1.0-0' }} KB</small>
+        </button>
+        <ion-button
+          fill="clear"
+          color="danger"
+          size="small"
+          (click)="removeAttachment(attachment)"
+          [attr.aria-label]="'Remove ' + attachment.name"
+          ><ion-icon slot="icon-only" name="close-circle-outline"></ion-icon
+        ></ion-button>
+        }
+      </div>
+      }
+    </section>
+
+    <section class="details" [formGroup]="form">
+      <ion-item lines="none"
+        ><ion-icon name="location-outline" slot="start"></ion-icon
+        ><ion-input
+          formControlName="locationText"
+          label="Location"
+          labelPlacement="floating"
+          placeholder="Optional"></ion-input
+      ></ion-item>
+      <ion-item lines="none"
+        ><ion-icon name="time-outline" slot="start"></ion-icon
+        ><ion-input
+          formControlName="weatherText"
+          label="Weather"
+          labelPlacement="floating"
+          placeholder="Sunny, cool, monsoon…"></ion-input
+      ></ion-item>
+    </section>
+
+    @if (id() === 'new' && diary.templates().length) {
+    <section class="templates" aria-labelledby="template-title">
+      <div class="section-label"><span id="template-title">Start from a template</span></div>
+      <div class="template-grid">
+        @for (template of diary.templates(); track template.id) {
+        <button type="button" (click)="useTemplate(template.contentJson)">
+          <strong>{{ template.name }}</strong><span>{{ template.description }}</span>
+        </button>
+        }
+      </div>
+    </section>
+    } @if (id() !== 'new') {
+    <div class="entry-maintenance">
+      <ion-button fill="outline" (click)="archive()"
+        ><ion-icon slot="start" name="archive-outline"></ion-icon>Archive</ion-button
+      ><ion-button fill="clear" color="danger" (click)="trash()"
+        ><ion-icon slot="start" name="trash-outline"></ion-icon>Move to Trash</ion-button
+      >
+    </div>
+    }
+  </main>
+  } @else {
+  <div class="loading-page">
+    <ion-spinner></ion-spinner>
+    <p>Opening your page…</p>
+  </div>
+  }
+</ion-content>

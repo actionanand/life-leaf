@@ -1,0 +1,117 @@
+ion-toolbar {
+  --background: var(--ll-bg);
+}
+ion-title {
+  font-family: var(--ll-serif);
+  font-size: 1.3rem;
+}
+.settings-page {
+  padding-top: 24px;
+  padding-bottom: 90px;
+}
+.settings-intro {
+  padding: 0 3px 16px;
+}
+.settings-intro h1 {
+  margin: 3px 0 7px;
+  font-size: 1.9rem;
+}
+.settings-intro > p:last-child {
+  margin: 0;
+  color: var(--ll-muted);
+}
+ion-list[inset] {
+  margin: 15px 0;
+  border: 1px solid var(--ll-border);
+  border-radius: 20px;
+  background: var(--ll-surface);
+  box-shadow: var(--ll-shadow-soft);
+}
+ion-list-header {
+  min-height: 38px;
+  color: var(--ll-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+ion-item {
+  --background: var(--ll-surface);
+  --min-height: 65px;
+  --border-color: var(--ll-border);
+}
+ion-item ion-icon[slot='start'] {
+  color: var(--ll-primary);
+  font-size: 1.25rem;
+}
+ion-item h2 {
+  font-size: 0.91rem;
+  font-weight: 680;
+}
+ion-item p {
+  margin-top: 3px;
+  color: var(--ll-muted);
+  font-size: 0.73rem;
+  white-space: normal;
+}
+.theme-item {
+  --min-height: 52px;
+}
+ion-segment {
+  margin: 0 12px 13px;
+  width: auto;
+}
+ion-segment-button {
+  min-height: 54px;
+  --indicator-color: var(--ll-primary);
+  --color: var(--ll-text-soft);
+  --color-checked: var(--ll-primary-dark);
+  font-size: 0.7rem;
+}
+ion-segment-button ion-icon {
+  font-size: 1rem;
+}
+.time-input {
+  min-width: 104px;
+  min-height: 44px;
+  border: 0;
+  color: var(--ll-primary);
+  background: transparent;
+  font: inherit;
+  text-align: right;
+}
+.weekday-picker {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+  padding: 0 13px 14px;
+}
+.reminder-days-help {
+  margin: 0;
+  padding: 0 16px 9px;
+  color: var(--ll-muted);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+.weekday-picker button {
+  min-width: 40px;
+  min-height: 42px;
+  border: 1px solid var(--ll-border);
+  border-radius: 12px;
+  color: var(--ll-muted);
+  background: var(--ll-bg);
+  font: inherit;
+  font-size: 0.73rem;
+}
+.weekday-picker button.selected {
+  border-color: var(--ll-primary);
+  color: var(--ll-on-primary);
+  background: var(--ll-primary);
+}
+.weekday-picker.disabled {
+  opacity: 0.5;
+}
+.danger-item ion-icon,
+.danger-item h2 {
+  color: var(--ion-color-danger);
+}

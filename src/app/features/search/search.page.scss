@@ -1,0 +1,104 @@
+ion-toolbar {
+  --background: var(--ll-bg);
+}
+ion-title {
+  font-family: var(--ll-serif);
+}
+ion-searchbar {
+  --background: var(--ll-surface);
+  --border-radius: 15px;
+  --box-shadow: 0 0 0 1px var(--ll-border);
+  --clear-button-color: var(--ll-text-soft);
+  --color: var(--ll-text);
+  --icon-color: var(--ll-muted);
+  --placeholder-color: var(--ll-muted);
+  --placeholder-opacity: 1;
+  padding: 5px 14px 10px;
+}
+.search-page {
+  padding-top: 16px;
+  padding-bottom: 70px;
+}
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.filter-row {
+  display: flex;
+  flex: 1 1 100%;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.filter-row::-webkit-scrollbar {
+  display: none;
+}
+.filter-row ion-chip {
+  --background: transparent;
+  --color: var(--ll-text-soft);
+  flex: 0 0 auto;
+  border: 1px solid var(--ll-border);
+}
+.filter-row ion-chip.selected {
+  --background: var(--ll-primary);
+  --color: var(--ll-on-primary);
+  border-color: var(--ll-primary);
+}
+.sort-row {
+  display: flex;
+  flex: 1 1 100%;
+  justify-content: flex-end;
+}
+.sort-row ion-select {
+  --placeholder-color: var(--ll-muted);
+  min-height: 40px;
+  padding: 0 13px;
+  border: 1px solid var(--ll-border);
+  border-radius: 20px;
+  color: var(--ll-text-soft);
+  background: var(--ll-surface);
+  font-size: 0.8rem;
+}
+.result-count {
+  margin: 18px 2px 12px;
+  color: var(--ll-muted);
+  font-size: 0.78rem;
+}
+.result-count span {
+  color: var(--ll-primary);
+}
+.entry-list {
+  display: grid;
+  gap: 12px;
+}
+.empty-search {
+  padding: 60px 20px;
+  text-align: center;
+}
+.empty-search ion-icon {
+  color: var(--ll-primary);
+  font-size: 2.4rem;
+}
+.empty-search h1 {
+  margin: 15px 0 8px;
+  font-size: 1.35rem;
+}
+.empty-search p {
+  color: var(--ll-muted);
+}
+
+@media (min-width: 700px) {
+  .filter-controls {
+    flex-wrap: nowrap;
+  }
+  .filter-row {
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    overflow-x: visible;
+  }
+  .sort-row {
+    flex: 0 0 auto;
+  }
+}

@@ -1,0 +1,71 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start"><ion-back-button defaultHref="/home" text=""></ion-back-button></ion-buttons>
+    <ion-title>Diary entry</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleFavourite()" [attr.aria-label]="entry()?.favourite ? 'Remove favourite' : 'Favourite'">
+        <ion-icon slot="icon-only" [name]="entry()?.favourite ? 'heart' : 'heart-outline'"></ion-icon>
+      </ion-button>
+      <ion-button strong (click)="edit()"><ion-icon slot="start" name="create-outline"></ion-icon>Edit</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  @if (entry(); as current) {
+  <main class="entry-view page-shell">
+    <article>
+      <header class="entry-heading">
+        <p class="eyebrow">{{ current.entryDate | date: 'EEEE, d MMMM yyyy' }}</p>
+        <h1>{{ current.title || 'A quiet moment' }}</h1>
+        <div class="entry-meta" aria-label="Entry details">
+          @if (current.entryTime) { <span><ion-icon name="time-outline"></ion-icon>{{ current.entryTime }}</span> } @if
+          (mood(); as currentMood) {
+          <span><i [style.background]="currentMood.color"></i>{{ currentMood.label }}</span>
+          } @if (current.status !== 'active') { <span class="status">{{ current.status }}</span> }
+        </div>
+        @if (tags().length) {
+        <div class="entry-tags" aria-label="Tags">
+          @for (tag of tags(); track tag.id) { <ion-chip>{{ tag.name }}</ion-chip> }
+        </div>
+        }
+      </header>
+
+      <div #contentHost class="readonly-content"></div>
+
+      @if (current.locationText || current.weatherText) {
+      <dl class="entry-details">
+        @if (current.locationText) {
+        <div>
+          <dt><ion-icon name="location-outline"></ion-icon>Location</dt>
+          <dd>{{ current.locationText }}</dd>
+        </div>
+        } @if (current.weatherText) {
+        <div>
+          <dt>Weather</dt>
+          <dd>{{ current.weatherText }}</dd>
+        </div>
+        }
+      </dl>
+      } @if (attachments().length) {
+      <section class="entry-attachments" aria-labelledby="view-attachments-title">
+        <h2 id="view-attachments-title">Attachments</h2>
+        <div>
+          @for (attachment of attachments(); track attachment.id) {
+          <button type="button" (click)="openAttachment(attachment)">
+            <ion-icon [name]="attachment.photo ? 'camera-outline' : 'attach-outline'"></ion-icon>
+            <span>{{ attachment.name }}</span><small>{{ attachment.size / 1024 | number: '1.0-0' }} KB</small>
+          </button>
+          }
+        </div>
+      </section>
+      }
+    </article>
+  </main>
+  } @else {
+  <div class="entry-loading">
+    <ion-spinner></ion-spinner>
+    <p>Opening your entry…</p>
+  </div>
+  }
+</ion-content>

@@ -10,20 +10,20 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "@ionic/angular/css/core.css";
+@import '@ionic/angular/css/core.css';
 
 /* Basic CSS for apps built with Ionic */
-@import "@ionic/angular/css/normalize.css";
-@import "@ionic/angular/css/structure.css";
-@import "@ionic/angular/css/typography.css";
-@import "@ionic/angular/css/display.css";
+@import '@ionic/angular/css/normalize.css';
+@import '@ionic/angular/css/structure.css';
+@import '@ionic/angular/css/typography.css';
+@import '@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "@ionic/angular/css/padding.css";
-@import "@ionic/angular/css/float-elements.css";
-@import "@ionic/angular/css/text-alignment.css";
-@import "@ionic/angular/css/text-transformation.css";
-@import "@ionic/angular/css/flex-utils.css";
+@import '@ionic/angular/css/padding.css';
+@import '@ionic/angular/css/float-elements.css';
+@import '@ionic/angular/css/text-alignment.css';
+@import '@ionic/angular/css/text-transformation.css';
+@import '@ionic/angular/css/flex-utils.css';
 
 /**
  * Ionic Dark Mode
@@ -34,4 +34,186 @@
 
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
-@import '@ionic/angular/css/palettes/dark.system.css';
+@import '@ionic/angular/css/palettes/dark.class.css';
+
+:root {
+  --ll-serif: Georgia, 'Times New Roman', serif;
+  --ll-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ll-primary: #28734d;
+  --ll-primary-dark: #164d34;
+  --ll-primary-soft: #dcecdf;
+  --ll-on-primary: #ffffff;
+  --ll-accent: #bd6d4b;
+  --ll-bg: #f4f6f0;
+  --ll-bg-deep: #e9eee6;
+  --ll-surface: #fffefa;
+  --ll-cream: #f5eddf;
+  --ll-text: #193226;
+  --ll-text-soft: #4c6256;
+  --ll-muted: #708077;
+  --ll-border: #dce4dc;
+  --ll-border-strong: #b8c8bd;
+  --ll-shadow-soft: 0 8px 24px rgba(31, 61, 44, 0.06);
+  --ion-font-family: var(--ll-sans);
+  --ion-color-primary: #28734d;
+  --ion-color-primary-rgb: 40, 115, 77;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-shade: #236544;
+  --ion-color-primary-tint: #3e815f;
+  color-scheme: light;
+}
+
+html.dark {
+  --ll-primary: #68b68b;
+  --ll-primary-dark: #8dceb0;
+  --ll-primary-soft: #1f4734;
+  --ll-on-primary: #0a1510;
+  --ll-accent: #e49b78;
+  --ll-bg: #0f1c16;
+  --ll-bg-deep: #0a1510;
+  --ll-surface: #17271f;
+  --ll-cream: #2b2a20;
+  --ll-text: #edf7f0;
+  --ll-text-soft: #b9cbbf;
+  --ll-muted: #91a69a;
+  --ll-border: #2b4035;
+  --ll-border-strong: #456052;
+  --ll-shadow-soft: none;
+  --ion-background-color: #0f1c16;
+  --ion-background-color-rgb: 15, 28, 22;
+  --ion-text-color: #edf7f0;
+  --ion-text-color-rgb: 237, 247, 240;
+  --ion-background-color-step-300: #2b4035;
+  --ion-text-color-step-400: #91a69a;
+  --ion-item-background: #17271f;
+  --ion-toolbar-background: #0f1c16;
+  --ion-tab-bar-background: #17271f;
+  --ion-card-background: #17271f;
+  --ion-color-primary: #68b68b;
+  --ion-color-primary-rgb: 104, 182, 139;
+  --ion-color-primary-contrast: #0a1510;
+  --ion-color-primary-contrast-rgb: 10, 21, 16;
+  --ion-color-primary-shade: #5ca07a;
+  --ion-color-primary-tint: #77bd97;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light) {
+    --ll-primary: #68b68b;
+    --ll-primary-dark: #8dceb0;
+    --ll-primary-soft: #1f4734;
+    --ll-on-primary: #0a1510;
+    --ll-accent: #e49b78;
+    --ll-bg: #0f1c16;
+    --ll-bg-deep: #0a1510;
+    --ll-surface: #17271f;
+    --ll-cream: #2b2a20;
+    --ll-text: #edf7f0;
+    --ll-text-soft: #b9cbbf;
+    --ll-muted: #91a69a;
+    --ll-border: #2b4035;
+    --ll-border-strong: #456052;
+    --ll-shadow-soft: none;
+    color-scheme: dark;
+  }
+}
+
+html,
+body,
+ion-app,
+ion-content {
+  background: var(--ll-bg);
+  color: var(--ll-text);
+}
+ion-content {
+  --background: var(--ll-bg);
+}
+ion-segment-button {
+  --color: var(--ll-text-soft);
+  --color-checked: var(--ll-primary-dark);
+}
+ion-toggle {
+  --handle-background: var(--ll-surface);
+  --handle-background-checked: var(--ll-on-primary);
+  --track-background: var(--ll-border-strong);
+  --track-background-checked: var(--ll-primary);
+}
+h1,
+h2,
+h3 {
+  color: var(--ll-text);
+  font-family: var(--ll-serif);
+}
+button,
+a,
+ion-button,
+ion-item,
+ion-tab-button {
+  -webkit-tap-highlight-color: transparent;
+}
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--ll-primary) 72%, white);
+  outline-offset: 2px;
+}
+.page-shell {
+  width: min(100% - 28px, 760px);
+  margin-inline: auto;
+}
+.eyebrow {
+  margin: 0;
+  color: var(--ll-primary);
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+ion-toast.life-leaf-snackbar {
+  --background: var(--ll-text);
+  --color: var(--ll-surface);
+  --border-radius: 14px;
+  --box-shadow: 0 12px 30px rgba(13, 37, 24, 0.25);
+  --button-color: var(--ll-primary-soft);
+  --max-width: min(92vw, 520px);
+}
+
+ion-alert.life-leaf-confirmation .alert-wrapper {
+  border: 1px solid var(--ll-border);
+  border-radius: 24px;
+  background: var(--ll-surface);
+  box-shadow: 0 22px 60px rgba(13, 37, 24, 0.2);
+}
+ion-alert.life-leaf-confirmation .alert-title,
+ion-alert.life-leaf-confirmation .alert-message {
+  color: var(--ll-text);
+}
+ion-alert.life-leaf-confirmation .life-leaf-confirm-action {
+  color: var(--ll-primary);
+  font-weight: 750;
+}
+ion-alert.life-leaf-confirmation .life-leaf-destructive-action {
+  color: var(--ion-color-danger);
+  font-weight: 750;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
