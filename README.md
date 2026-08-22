@@ -1,131 +1,864 @@
 # Life Leaf
 
-Life Leaf is a private, offline-first diary built for Android and the browser with Ionic Angular. It is designed around calm daily writing: rich pages, moods, calendar browsing, search, memories and gentle statistics, without an account, advertising, analytics or remote diary processing.
+This project was generated using Ionic CLI version 7.2.1 for Angular version 22.0.1 with Ionic Angular version 9.0.0.
 
-The canonical brand and Android artwork is [`src/assets/life-leaf.png`](src/assets/life-leaf.png).
+## Development server
 
-## What is included
-
-- Five-tab mobile navigation: Home, Calendar, Write, Memories and Settings
-- Multiple diary entries on any date, with title, time, mood, location, weather, favourite and pin state
-- Tiptap JSON rich text with bold, italic, underline, strike, highlight, headings, lists, checklist, quote, link, divider, alignment, undo and redo
-- Debounced local draft autosave and recovery
-- Monthly calendar, timeline, “On this day,” year chapters and favourites
-- Debounced local search, sorting and indexed entry fields
-- Built-in moods, writing prompts and editable rich-text templates
-- Light, dark and automatic themes with reduced-motion and accessible focus behavior
-- Optional PIN lock plus Android Keystore-backed strong-biometric unlock
-- Android local reminder and optional screenshot protection hooks
-- Photos/files in private app storage and encrypted, versioned backups that include attachments
-- Android share target for text and images; shared content opens as an unsaved draft
-- GitHub Actions debug APK, signed/unsigned release APK, AAB and GitHub Release automation
-
-## Technology and local data
-
-| Runtime | Diary storage                                |
-| ------- | -------------------------------------------- |
-| Android | SQLite through `@capacitor-community/sqlite` |
-| Browser | Native IndexedDB                             |
-
-Both implementations satisfy the same repository interface under `src/app/core/repositories`. Tiptap JSON is canonical rich content, while plain text is stored alongside it for fast local search. Indexed fields include entry date, update time, status, favourite and pinned state. Diary content is never stored in `localStorage` or `sessionStorage`.
-
-The application currently targets Angular 22, Ionic Angular 9, Capacitor 8, TypeScript 6 and Node 24.16 or another version allowed by `package.json`.
-
-## Setup (WSL2)
-
-Install all declared dependencies and update the lock file:
-
-```bash
-npm install
-```
-
-Start the browser application:
+To start a local development server, run:
 
 ```bash
 npm run develop
 ```
 
-The development server listens on `http://localhost:3035/`.
+Once the server is running, open your browser and navigate to `http://localhost:3035/`. The application will automatically reload whenever you modify any of the source files.
 
-Useful checks:
+## Cloning Guide
+
+1.  Clone only the remote primary HEAD (default: origin/main)
 
 ```bash
-npm run lint
-npm test -- --configuration=ci
+git clone <url> --single-branch
+```
+
+2. Only specific branch
+
+```bash
+git clone <url> --branch <branch> --single-branch [<folder>]
+```
+
+```bash
+git clone <url> --branch <branch>
+```
+
+3. Cloning repositories using degit
+   - main branch is default.
+
+```bash
+npx degit github:user/repo#branch-name <folder-name>
+```
+
+4. Cloning repositories using **gitpick**
+
+```bash
+npx gitpick github_proj_url -b branch-name
+```
+
+5. Cloning this project with skeleton
+
+```bash
+git clone https://github.com/actionanand/life-leaf.git --branch 1-skeleton new-proj-name
+```
+
+```bash
+npx degit github:actionanand/life-leaf#1-skeleton new-proj-name
+```
+
+```bash
+npx gitpick https://github.com/actionanand/life-leaf -b 1-skeleton
+```
+
+## Automate using `Prettier`, `Es Lint` and `Husky`
+
+1. Install the compatible node version
+
+```bash
+  nvm install v24.16.0
+```
+
+2. Install and Configure Prettier
+   - Install prettier as below:
+
+   ```bash
+     npm install prettier -D
+   ```
+
+   - Create a `.prettierrc.yml` file and write down the format as below: - [online ref](https://prettier.io/docs/en/options.html)
+
+   ```yml
+   trailingComma: 'all'
+   tabWidth: 2
+   useTabs: false
+   semi: true
+   singleQuote: true
+   bracketSpacing: true
+   bracketSameLine: true
+   arrowParens: 'avoid'
+   printWidth: 120
+   overrides:
+     - files:
+         - '*.js'
+         - '*.jsx'
+       options:
+         bracketSpacing: true
+         jsxSingleQuote: true
+         semi: true
+         singleQuote: true
+         tabWidth: 2
+         useTabs: false
+     - files:
+         - '*.ts'
+       options:
+         tabWidth: 2
+   ```
+
+   - Create a `.prettierignore` file and write as below(sample)
+
+   ```gitignore
+   # Ignore artifacts:
+   build
+   coverage
+   e2e
+   node_modules
+   dist
+   dest
+   reports
+
+   # Ignore files
+   *.lock
+   package-lock.json
+   yarn.lock
+   ```
+
+3. Install `Es Lint`, if not installed
+
+```bash
+ng add @angular-eslint/schematics
+```
+
+if error comes, use the below command
+
+```shell
+ng add @angular-eslint/schematics@22.1.0
+# or
+ng add @angular-eslint/schematics@next
+```
+
+4. Configure pre-commit hooks
+
+Pre-commit hooks are a nice way to run certain checks to ensure clean code. This can be used to format staged files if for some reason they weren’t automatically formatted during editing. [husky](https://github.com/typicode/husky) can be used to easily configure git hooks to prevent bad commits. We will use this along with [pretty-quick](https://github.com/azz/pretty-quick) to run Prettier on our changed files. Install these packages, along with [npm-run-all](https://github.com/mysticatea/npm-run-all), which will make it easier for us to run npm scripts:
+
+```bash
+npm install -D husky pretty-quick npm-run-all
+```
+
+To configure the pre-commit hook, simply add a `precommit` npm script. We want to first run Prettier, then run TSLint on the formatted files. To make our scripts cleaner, I am using the npm-run-all package, which gives you two commands, `run-s` to run scripts in sequence, and `run-p` to run scripts in parallel:
+
+```json
+  "precommit": "run-s format:fix lint",
+  "format:fix": "pretty-quick --staged",
+  "format:check": "prettier --config ./.prettierrc --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
+  "format:all": "prettier --config ./.prettierrc --write \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\"",
+  "lint": "ng lint",
+```
+
+5. Initialize husky
+   - Run it once
+
+   ```bash
+     npx husky init
+   ```
+
+   - Add a hook
+
+   ```bash
+     echo "npm run precommit" > .husky/pre-commit
+   ```
+
+   - Install needed packages
+
+   ```bash
+    npm install -D husky npm-run-all pretty-quick
+   ```
+
+   - Make a commit
+
+   ```bash
+     git commit -m "Keep calm and commit"
+     # `npm run precommit and npm test` will run every time you commit
+   ```
+
+6. How to skip prettier format only in particular file
+   1. JS
+
+   ```js
+   matrix(1, 0, 0, 0, 1, 0, 0, 0, 1);
+
+   // prettier-ignore
+   matrix(
+       1, 0, 0,
+       0, 1, 0,
+       0, 0, 1
+     )
+   ```
+
+   2. JSX
+
+   ```jsx
+   <div>
+     {/* prettier-ignore */}
+     <span     ugly  format=''   />
+   </div>
+   ```
+
+   3. HTML
+
+   ```html
+   <!-- prettier-ignore -->
+   <div         class="x"       >hello world</div            >
+
+   <!-- prettier-ignore-attribute -->
+   <div (mousedown)="       onStart    (    )         " (mouseup)="         onEnd      (    )         "></div>
+
+   <!-- prettier-ignore-attribute (mouseup) -->
+   <div (mousedown)="onStart()" (mouseup)="         onEnd      (    )         "></div>
+   ```
+
+   4. CSS
+
+   ```css
+   /* prettier-ignore */
+   .my    ugly rule
+     {
+   
+     }
+   ```
+
+   5. Markdown
+
+   ```md
+     <!-- prettier-ignore -->
+
+   Do not format this
+   ```
+
+   6. YAML
+
+   ```yml
+   # prettier-ignore
+   key  : value
+     hello: world
+   ```
+
+   7. For more, please [check](https://prettier.io/docs/en/ignore.html)
+
+## Generate environment files
+
+```bash
+ng generate environments
+```
+
+## Tech Stack
+
+- **Angular:** 22.0.1
+- **Ionic Angular:** ^9.0.0
+- **Ionic CLI:** 7.2.1
+- **Capacitor Core / CLI:** 8.5.0
+- **TypeScript:** ~6.0.0
+- **RxJS:** ~7.8.0
+- **Ionicons:** ^8.1.0
+- **ESLint:** 9.x
+- **Vitest:** 4.x
+- **Architecture:** Angular Standalone Components
+
+## Prerequisites
+
+Install a supported Node.js version and npm.
+
+Check the installed versions:
+
+```bash
+node -v
+npm -v
+```
+
+Install Angular CLI:
+
+```bash
+npm install -g @angular/cli
+```
+
+Install Ionic CLI:
+
+```bash
+npm install -g @ionic/cli
+```
+
+If the old deprecated `ionic` package is installed globally, remove it first:
+
+```bash
+npm uninstall -g ionic
+npm install -g @ionic/cli
+```
+
+Verify:
+
+```bash
+ng version
+ionic -v
+```
+
+> Ionic CLI and Ionic Framework use independent version numbers. `ionic -v` can show `7.2.1` while the project uses `@ionic/angular` `9.x`.
+
+## Create a New Ionic Angular Project
+
+Create a new Ionic Angular starter project:
+
+```bash
+ionic start life-leaf blank --type=angular
+```
+
+When prompted for the Angular architecture, choose:
+
+```text
+Standalone
+```
+
+Then move into the project:
+
+```bash
+cd life-leaf
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+ionic serve
+```
+
+Other available Ionic starters include:
+
+```bash
+ionic start life-leaf tabs --type=angular
+```
+
+```bash
+ionic start life-leaf sidemenu --type=angular
+```
+
+For this project, the recommended starter is:
+
+```bash
+ionic start life-leaf blank --type=angular
+```
+
+This project was created using Ionic CLI with Angular standalone components.
+
+## Available Scripts
+
+```bash
+npm start
 npm run build
+npm run watch
+npm test
+npm run lint
+```
+
+## Production Build
+
+```bash
+ionic build --configuration production
+```
+
+Or:
+
+```bash
+npm run build
+```
+
+## Architecture
+
+Life Leaf uses Angular standalone architecture.
+
+Typical structure:
+
+```text
+src/
+├── app/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── models/
+│   ├── guards/
+│   ├── app.component.ts
+│   ├── app.config.ts
+│   └── app.routes.ts
+├── assets/
+├── theme/
+├── global.scss
+├── index.html
+└── main.ts
+```
+
+## Ionic Standalone Components
+
+Use Ionic standalone imports:
+
+```typescript
+import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+```
+
+Example:
+
+```typescript
+import { Component } from '@angular/core';
+import { IonButton, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+
+@Component({
+  selector: 'app-home',
+  standalone: true,
+  imports: [IonButton, IonContent, IonHeader, IonTitle, IonToolbar],
+  templateUrl: './home.page.html',
+  styleUrl: './home.page.scss',
+})
+export class HomePage {}
+```
+
+## Generate Files
+
+Page:
+
+```bash
+ionic g page pages/home
+```
+
+Component:
+
+```bash
+ionic g component components/example
+```
+
+Service:
+
+```bash
+ionic g service services/example
+```
+
+Guard:
+
+```bash
+ng g guard guards/example
+```
+
+Interface:
+
+```bash
+ng g interface models/example
+```
+
+## Capacitor
+
+Check Capacitor:
+
+```bash
+npx cap doctor
+```
+
+Sync native projects:
+
+```bash
+npx cap sync
+```
+
+Copy web assets:
+
+```bash
+npx cap copy
 ```
 
 ## Android
 
-Generate and synchronize the native project:
+Install Android support:
 
 ```bash
-npm run android:add
-npm run android:sync
-npm run android:open
+npm install @capacitor/android
 ```
 
-Android version commands:
+Add Android:
 
 ```bash
-npm run android:version
-npm run android:version:patch
-npm run android:version:minor
-npm run android:version:major
+npx cap add android
 ```
 
-See [`documentation/ANDROID.md`](documentation/ANDROID.md) for splash sizing, WSL2 commands, version bump behavior, CI triggers, signing, privacy details and troubleshooting.
+Build and sync:
 
-## GitHub Actions and signing
+```bash
+ionic build
+npx cap sync android
+```
 
-`.github/workflows/android-build.yml` runs lint, tests and a production web build before generating the Android project.
+Open Android Studio:
 
-- Pull requests and `main` produce `LifeLeaf-debug.apk`.
-- `main-android`, manual release runs and `v*.*.*` tags build both APK and AAB.
-- `main-android` auto-bumps `versionCode` and commits generated files to `releases/`.
-- Tags create a GitHub Release.
-- Release output also includes the exact R8 deobfuscation mapping used by that build.
+```bash
+npx cap open android
+```
 
-Signed builds require these repository secrets:
+### Normal Android Workflow
+
+```bash
+ionic build
+npx cap sync android
+```
+
+If only web content changed:
+
+```bash
+ionic build
+npx cap copy android
+```
+
+### Run on Android
+
+```bash
+ionic cap run android
+```
+
+Live reload:
+
+```bash
+ionic cap run android -l --external
+```
+
+## Debug APK
+
+```bash
+ionic build
+npx cap sync android
+cd android
+./gradlew assembleDebug
+```
+
+Windows:
+
+```powershell
+gradlew.bat assembleDebug
+```
+
+Output:
 
 ```text
-ANDROID_KEYSTORE_BASE64
-ANDROID_KEYSTORE_PASSWORD
-ANDROID_KEY_ALIAS
-ANDROID_KEY_PASSWORD
+android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-Never commit signing files or secret values. Use `npm run generate-keystore` once on a trusted machine and retain a secure offline copy.
+## Release APK
 
-## Architecture
+```bash
+ionic build --configuration production
+npx cap sync android
+cd android
+./gradlew assembleRelease
+```
+
+Output:
 
 ```text
-Ionic pages and shared components
-            ↓
-       DiaryService
-            ↓
-    DiaryRepository API
-       ↙           ↘
- IndexedDB       SQLite
- (browser)      (Android)
+android/app/build/outputs/apk/release/
 ```
 
-- `src/app/core/models` contains strict domain models.
-- `src/app/core/repositories` contains the platform persistence implementations and schema migration.
-- `src/app/core/services` coordinates signals, reminders and UI-facing state.
-- `src/app/features` contains lazy-loaded calendar, editor, memories, search and settings pages.
-- `scripts/patch-android.mjs` applies generated native behavior idempotently after each Capacitor sync.
+## Android App Bundle
 
-## Backup and privacy
+For Google Play:
 
-Life Leaf has no automatic cloud upload. Android Auto Backup is disabled by the native patch. The intended migration path is a user-initiated, versioned `.lifeleaf` export through the Android document picker, with optional authenticated encryption. An unencrypted export must be treated as private diary material.
+```bash
+ionic build --configuration production
+npx cap sync android
+cd android
+./gradlew bundleRelease
+```
 
-Notifications use generic wording and contain no entry content. The share target consumes only content the user selected through Android’s share sheet. Screenshot blocking is opt-in and Android-only.
+Output:
 
-## Brand and accessibility
+```text
+android/app/build/outputs/bundle/release/app-release.aab
+```
 
-The interface uses the supplied Life Leaf artwork, a quiet green/cream visual system and large mobile touch targets. Ionic controls retain screen-reader names, focus is visible, mood state is expressed with text as well as colour, and reduced-motion preferences are respected.
+> Release builds must be configured with the appropriate Android signing credentials.
 
-## License
+## iOS
 
-Private project. Add a project license before public distribution.
+```bash
+npm install @capacitor/ios
+npx cap add ios
+ionic build
+npx cap sync ios
+npx cap open ios
+```
+
+> iOS builds require macOS and Xcode.
+
+## Common Capacitor Plugins
+
+### App
+
+```bash
+npm install @capacitor/app
+npx cap sync
+```
+
+### Haptics
+
+```bash
+npm install @capacitor/haptics
+npx cap sync
+```
+
+### Keyboard
+
+```bash
+npm install @capacitor/keyboard
+npx cap sync
+```
+
+### Status Bar
+
+```bash
+npm install @capacitor/status-bar
+npx cap sync
+```
+
+### Preferences
+
+```bash
+npm install @capacitor/preferences
+npx cap sync
+```
+
+### Filesystem
+
+```bash
+npm install @capacitor/filesystem
+npx cap sync
+```
+
+### Share
+
+```bash
+npm install @capacitor/share
+npx cap sync
+```
+
+### Browser
+
+```bash
+npm install @capacitor/browser
+npx cap sync
+```
+
+After adding or updating native plugins:
+
+```bash
+npx cap sync
+```
+
+## Ionicons
+
+```typescript
+import { addIcons } from 'ionicons';
+
+import { addOutline, createOutline, settingsOutline, trashOutline } from 'ionicons/icons';
+
+addIcons({
+  addOutline,
+  createOutline,
+  settingsOutline,
+  trashOutline,
+});
+```
+
+Template:
+
+```html
+<ion-icon name="settings-outline"></ion-icon>
+```
+
+## Check Versions
+
+```bash
+ionic info
+ng version
+npm list @ionic/angular
+npm list @capacitor/core @capacitor/cli
+```
+
+Check everything important together:
+
+```bash
+npm list @angular/core @angular/cli @ionic/angular @capacitor/core @capacitor/cli
+```
+
+## Updating Dependencies
+
+Check outdated packages:
+
+```bash
+npm outdated
+```
+
+### Angular
+
+```bash
+ng update
+ng update @angular/core @angular/cli
+```
+
+### Ionic
+
+```bash
+npm list @ionic/angular
+npm install @ionic/angular@latest
+```
+
+### Capacitor
+
+Keep these packages on matching major versions:
+
+```text
+@capacitor/core
+@capacitor/cli
+@capacitor/android
+@capacitor/ios
+```
+
+Example:
+
+```bash
+npm install @capacitor/core@latest
+npm install -D @capacitor/cli@latest
+npm install @capacitor/android@latest
+npx cap sync
+```
+
+Review official migration guidance before major-version upgrades.
+
+## Clean Installation
+
+Linux/macOS/WSL:
+
+```bash
+rm -rf node_modules
+rm -f package-lock.json
+npm install
+```
+
+Windows PowerShell:
+
+```powershell
+Remove-Item -Recurse -Force node_modules
+Remove-Item package-lock.json
+npm install
+```
+
+Then:
+
+```bash
+ionic build
+npx cap sync
+```
+
+## Troubleshooting
+
+If changes are not appearing in Android:
+
+```bash
+ionic build
+npx cap sync android
+```
+
+Check Capacitor:
+
+```bash
+npx cap doctor
+```
+
+Check Ionic environment:
+
+```bash
+ionic info
+```
+
+Check dependencies:
+
+```bash
+npm outdated
+```
+
+Check exact framework versions:
+
+```bash
+npm list @angular/core @ionic/angular @capacitor/core
+```
+
+## Security
+
+Do not commit:
+
+- Passwords
+- API secrets
+- Private tokens
+- Private keys
+- Android signing passwords
+- Keystore passwords
+- Service-account credentials
+- Production secrets
+
+Store CI/CD secrets in GitHub Actions Secrets or another secure secret manager.
+
+Values included in Angular frontend environment files should not be considered secret because frontend application bundles can be inspected.
+
+## Recommended Practices
+
+- Use Angular standalone components.
+- Use Angular Signals where appropriate.
+- Prefer lazy-loaded routes.
+- Use strict TypeScript.
+- Separate business logic from UI components.
+- Keep data-access logic in dedicated services.
+- Use Capacitor for supported native functionality.
+- Keep platform-specific code isolated.
+- Import only required Ionic standalone components.
+- Run tests, linting, and production builds before release.
+- Upgrade Angular, Ionic, and Capacitor deliberately rather than blindly upgrading major versions.
+
+## Quick Reference
+
+```bash
+# Create project
+ionic start life-leaf blank --type=angular
+
+# Install
+npm install
+
+# Development
+ionic serve
+
+# Environment
+ionic info
+ng version
+
+# Build
+ionic build --configuration production
+
+# Android sync
+npx cap sync android
+
+# Android Studio
+npx cap open android
+
+# Run Android
+ionic cap run android
+
+# Capacitor diagnostics
+npx cap doctor
+
+# Package updates
+npm outdated
+
+# Google Play AAB
+cd android
+./gradlew bundleRelease
+```
