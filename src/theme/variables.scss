@@ -1,2 +1,9 @@
-// For information on how to create your own theme, please refer to:
-// https://ionicframework.com/docs/theming/
+:root {
+  --ion-safe-area-top: env(safe-area-inset-top);
+  --ion-safe-area-bottom: env(safe-area-inset-bottom);
+  --ion-background-color: var(--ll-bg);
+  --ion-text-color: var(--ll-text);
+  --ion-toolbar-background: var(--ll-bg);
+  --ion-item-background: var(--ll-surface);
+  --ion-card-background: var(--ll-surface);
+}

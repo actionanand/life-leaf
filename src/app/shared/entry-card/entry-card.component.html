@@ -1,0 +1,44 @@
+<article class="entry-card">
+  <a
+    class="entry-main"
+    [routerLink]="['/entry', entry().id]"
+    [attr.aria-label]="'Open ' + (entry().title || 'untitled entry')">
+    <div class="entry-date">
+      <strong>{{ entry().entryDate | date: 'dd' }}</strong>
+      <span>{{ entry().entryDate | date: 'MMM' }}</span>
+    </div>
+    <div class="entry-copy">
+      <div class="meta-row">
+        <time>{{ entry().entryTime }}</time>
+        @if (mood(); as currentMood) {
+          <span class="mood"
+            ><span class="mood-dot" [style.background]="currentMood.color"></span>{{ currentMood.label }}</span
+          >
+        }
+        @if (entry().pinned) {
+          <ion-icon name="pin-outline" aria-label="Pinned"></ion-icon>
+        }
+        @if (entry().attachmentCount) {
+          <ion-icon name="attach-outline" aria-label="Has attachments"></ion-icon>
+        }
+      </div>
+      <h3>{{ entry().title || 'A quiet moment' }}</h3>
+      <p>{{ entry().plainTextContent || 'No words yet — open this entry to continue writing.' }}</p>
+      @if (visibleTags().length) {
+        <div class="tags" aria-label="Entry tags">
+          @for (tag of visibleTags(); track tag!.id) {
+            <ion-chip>{{ tag!.name }}</ion-chip>
+          }
+        </div>
+      }
+    </div>
+  </a>
+  <ion-button
+    fill="clear"
+    shape="round"
+    class="favourite"
+    (click)="favourite.emit(entry())"
+    [attr.aria-label]="entry().favourite ? 'Remove from favourites' : 'Add to favourites'">
+    <ion-icon slot="icon-only" [name]="entry().favourite ? 'heart' : 'heart-outline'"></ion-icon>
+  </ion-button>
+</article>

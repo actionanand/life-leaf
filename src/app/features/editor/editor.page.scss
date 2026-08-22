@@ -1,0 +1,242 @@
+.editor-header ion-toolbar {
+  --background: var(--ll-bg);
+}
+.editor-header ion-title {
+  font-family: var(--ll-serif);
+  font-size: 1rem;
+}
+.selected {
+  --color: var(--ll-accent);
+}
+.save-strip {
+  display: flex;
+  justify-content: space-between;
+  min-height: 30px;
+  padding: 4px 18px 7px;
+  color: var(--ll-muted);
+  background: var(--ll-bg);
+  font-size: 0.72rem;
+}
+.save-strip span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.save-strip ion-spinner {
+  width: 15px;
+  height: 15px;
+}
+.entry-meta {
+  padding: 10px 18px 0;
+}
+.title-field {
+  display: grid;
+  gap: 4px;
+  padding-top: 14px;
+}
+.title-field label {
+  color: var(--ll-text-soft);
+  font-size: 0.76rem;
+  font-weight: 650;
+  line-height: 1.2;
+}
+.title-input {
+  --padding-top: 0;
+  --padding-bottom: 12px;
+  font-family: var(--ll-serif);
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+.date-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 7px 0 12px;
+  border-top: 1px solid var(--ll-border);
+}
+.date-row > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3px;
+  color: var(--ll-muted);
+  font-size: 0.75rem;
+}
+.date-row ion-input {
+  --padding-top: 0;
+}
+.date-row ion-datetime-button {
+  --ion-background-color-step-300: var(--ll-bg-deep);
+  --ion-text-color: var(--ll-text);
+}
+.mood-section {
+  padding: 14px 0 10px;
+}
+.section-label {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 18px 8px;
+  color: var(--ll-text);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.section-label small {
+  color: var(--ll-muted);
+  font-weight: 400;
+}
+.mood-scroll {
+  display: flex;
+  gap: 2px;
+  padding: 0 14px 4px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.mood-scroll ion-chip {
+  --background: var(--ll-surface);
+  --color: var(--ll-text-soft);
+  flex: 0 0 auto;
+  min-height: 38px;
+  border: 1px solid var(--ll-border);
+}
+.mood-scroll ion-chip.selected {
+  border-color: var(--mood-color);
+  box-shadow: inset 0 0 0 1px var(--mood-color);
+}
+.tag-section {
+  padding: 2px 0 10px;
+}
+.mood-scroll ion-chip.selected-tag {
+  border-color: var(--tag-color);
+  box-shadow: inset 0 0 0 1px var(--tag-color);
+}
+.mood-dot {
+  width: 9px;
+  height: 9px;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+.details {
+  display: grid;
+  gap: 8px;
+  padding: 14px 16px;
+  border-top: 1px solid var(--ll-border);
+}
+.attachments {
+  padding: 16px 0;
+  border-top: 1px solid var(--ll-border);
+}
+.attachment-actions {
+  display: flex;
+  gap: 9px;
+  padding: 0 18px;
+}
+.attachment-actions label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 8px 13px;
+  border: 1px solid var(--ll-border);
+  border-radius: 14px;
+  color: var(--ll-primary);
+  background: var(--ll-surface);
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.attachment-actions input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.attachment-list {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 4px;
+  margin: 10px 18px 0;
+}
+.attachment-name {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 11px;
+  color: var(--ll-text);
+  background: var(--ll-bg-deep);
+  text-align: left;
+}
+.attachment-name span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.attachment-name small {
+  color: var(--ll-muted);
+}
+.details ion-item {
+  --background: var(--ll-surface);
+  --border-radius: 14px;
+  --min-height: 62px;
+}
+.details ion-icon {
+  color: var(--ll-primary);
+}
+.templates {
+  padding: 18px;
+}
+.template-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+.template-grid button {
+  min-height: 92px;
+  padding: 13px;
+  border: 1px solid var(--ll-border);
+  border-radius: 15px;
+  color: var(--ll-text);
+  background: var(--ll-surface);
+  text-align: left;
+}
+.template-grid strong,
+.template-grid span {
+  display: block;
+}
+.template-grid strong {
+  margin-bottom: 5px;
+  font-family: var(--ll-serif);
+}
+.template-grid span {
+  color: var(--ll-muted);
+  font-size: 0.72rem;
+  line-height: 1.35;
+}
+.entry-maintenance {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 18px auto 80px;
+}
+.loading-page {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  height: 70vh;
+  color: var(--ll-muted);
+}
+@media (min-width: 760px) {
+  main {
+    max-width: 760px;
+    margin: auto;
+  }
+  .mood-scroll {
+    flex-wrap: wrap;
+    gap: 8px;
+    overflow-x: visible;
+  }
+}

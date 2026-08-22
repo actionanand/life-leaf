@@ -1,0 +1,149 @@
+ion-toolbar {
+  --background: var(--ll-bg);
+}
+ion-title {
+  font-family: var(--ll-serif);
+  font-size: 1.3rem;
+}
+.calendar-page {
+  padding-top: 18px;
+}
+.calendar-card {
+  padding: 12px 10px 14px;
+  border: 1px solid var(--ll-border);
+  border-radius: 24px;
+  background: var(--ll-surface);
+  box-shadow: var(--ll-shadow-soft);
+}
+.month-nav {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+}
+.month-nav h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  text-align: center;
+}
+.weekday-row,
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.weekday-row {
+  padding: 8px 3px 5px;
+  color: var(--ll-muted);
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+.calendar-grid button {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 3px;
+  aspect-ratio: 1;
+  min-width: 42px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--ll-text);
+  background: transparent;
+  font: inherit;
+}
+.calendar-grid button.outside {
+  color: var(--ll-border-strong);
+}
+.calendar-grid button.today {
+  box-shadow: inset 0 0 0 1px var(--ll-primary);
+  color: var(--ll-primary);
+  font-weight: 800;
+}
+.calendar-grid button.selected {
+  color: var(--ll-on-primary);
+  background: var(--ll-primary);
+  box-shadow: 0 6px 14px rgba(29, 105, 66, 0.25);
+}
+.entry-mark {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-height: 8px;
+  font-size: 0.55rem;
+}
+.entry-mark i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--ll-accent);
+}
+.calendar-grid button.selected .entry-mark i {
+  background: var(--ll-on-primary);
+}
+.entry-mark b {
+  font-weight: 700;
+}
+.calendar-legend {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 8px 0;
+  padding-top: 11px;
+  border-top: 1px solid var(--ll-border);
+  color: var(--ll-muted);
+  font-size: 0.67rem;
+}
+.calendar-legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.calendar-legend i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ll-accent);
+}
+.day-section {
+  padding: 30px 0 80px;
+}
+.day-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.day-heading h2 {
+  margin: 2px 0 0;
+  font-size: 1.25rem;
+}
+.entry-list {
+  display: grid;
+  gap: 12px;
+}
+.empty-day {
+  padding: 34px 20px;
+  border: 1px dashed var(--ll-border-strong);
+  border-radius: 22px;
+  background: var(--ll-surface);
+  text-align: center;
+}
+.empty-day > ion-icon {
+  color: var(--ll-primary);
+  font-size: 2rem;
+}
+.empty-day h3 {
+  margin: 10px 0 5px;
+  font-family: var(--ll-serif);
+}
+.empty-day p {
+  margin: 0 0 16px;
+  color: var(--ll-muted);
+}
+@media (max-width: 360px) {
+  .calendar-grid button {
+    min-width: 38px;
+    min-height: 40px;
+  }
+}

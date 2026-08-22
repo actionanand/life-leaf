@@ -1,20 +1,115 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <div class="brand" slot="start">
+      <img ngSrc="assets/life-leaf.png" width="1240" height="1240" priority alt="" />
+      <span>Life Leaf</span>
+    </div>
+    <ion-title class="sr-only">Home</ion-title>
+    <ion-button slot="end" fill="clear" shape="round" routerLink="/search" aria-label="Search diary">
+      <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content pullingText="Refresh your diary"></ion-refresher-content>
+  </ion-refresher>
+  <main class="page-shell">
+    <section class="welcome" aria-labelledby="greeting-title">
+      <p class="eyebrow">{{ today | date: 'EEEE, d MMMM' }}</p>
+      <h1 id="greeting-title">{{ greeting() }}</h1>
+      @if (diary.settings().writingPrompts) {
+      <p class="prompt">{{ prompt }}</p>
+      }
+    </section>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <a class="write-card" [routerLink]="['/write', 'new']" [queryParams]="{ date: today }">
+      <span class="write-mark"><ion-icon name="leaf-outline" aria-hidden="true"></ion-icon></span>
+      <span class="write-copy">
+        <small>{{ todayEntries().length ? 'Your page is waiting' : 'A page for today' }}</small>
+        <strong>{{ todayEntries().length ? "Continue today's story" : 'Write about today' }}</strong>
+        <span
+          >{{ todayEntries().length ? todayEntries().length + ' entries so far' : 'What would you like to remember?'
+          }}</span
+        >
+      </span>
+      <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
+    </a>
+
+    @if (todayEntries().length) {
+    <section class="today-summary" aria-label="Today's summary">
+      <div><span class="summary-number">{{ todayEntries().length }}</span><span>entries today</span></div>
+      <div><span class="summary-number">{{ diary.stats().words }}</span><span>words kept</span></div>
+      <div><span class="summary-number">{{ diary.stats().favourites }}</span><span>favourites</span></div>
+    </section>
+    }
+
+    <section class="quick-section" aria-labelledby="quick-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Find your way back</p>
+          <h2 id="quick-title">Your keepsakes</h2>
+        </div>
+      </div>
+      <div class="quick-grid">
+        <a routerLink="/memories" [queryParams]="{ view: 'favourites' }"
+          ><ion-icon name="heart-outline"></ion-icon><span>Favourites</span
+          ><ion-badge>{{ diary.stats().favourites }}</ion-badge></a
+        >
+        <a routerLink="/memories" [queryParams]="{ view: 'photos' }"
+          ><ion-icon name="images-outline"></ion-icon><span>Photos</span></a
+        >
+        <a routerLink="/search"><ion-icon name="pricetags-outline"></ion-icon><span>Tags</span></a>
+        <a routerLink="/memories" [queryParams]="{ view: 'recent' }"
+          ><ion-icon name="time-outline"></ion-icon><span>Recently edited</span></a
+        >
+      </div>
+    </section>
+
+    @if (memory(); as oldEntry) {
+    <section class="memory-card" aria-labelledby="memory-title">
+      <div class="memory-leaf"><ion-icon name="leaf-outline"></ion-icon></div>
+      <div>
+        <p class="eyebrow">On this day</p>
+        <h2 id="memory-title">{{ oldEntry.entryDate | date: 'yyyy' }}</h2>
+        <p>{{ oldEntry.title || oldEntry.plainTextContent }}</p>
+        <a [routerLink]="['/entry', oldEntry.id]"
+          >Open this memory <ion-icon name="chevron-forward-outline"></ion-icon
+        ></a>
+      </div>
+    </section>
+    }
+
+    <section class="recent-section" aria-labelledby="recent-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Pages from your life</p>
+          <h2 id="recent-title">Recent entries</h2>
+        </div>
+        @if (recentEntries().length) { <a routerLink="/memories">View all</a> }
+      </div>
+      @if (diary.loading() && !recentEntries().length) { @for (item of [1, 2, 3]; track item) {
+      <ion-skeleton-text class="entry-skeleton" [animated]="true"></ion-skeleton-text> } } @else if
+      (recentEntries().length) {
+      <div class="entry-list">
+        @for (entry of recentEntries(); track entry.id) {
+        <app-entry-card [entry]="entry" (favourite)="diary.toggleFavourite($event)"></app-entry-card>
+        }
+      </div>
+      } @else {
+      <div class="empty-state">
+        <div class="empty-icon"><ion-icon name="leaf-outline"></ion-icon></div>
+        <h2>Your Life Leaf is ready.</h2>
+        <p>The first page is yours. Begin with a moment, a feeling, or one small thing from today.</p>
+        <ion-button routerLink="/write/new">Write your first memory</ion-button>
+      </div>
+      }
+    </section>
+  </main>
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button routerLink="/write/new" aria-label="Write a new diary entry"
+      ><ion-icon name="add-outline"></ion-icon
+    ></ion-fab-button>
+  </ion-fab>
 </ion-content>

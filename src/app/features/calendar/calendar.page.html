@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border"
+  ><ion-toolbar
+    ><ion-title>Calendar</ion-title
+    ><ion-button slot="end" fill="clear" (click)="goToday()">Today</ion-button></ion-toolbar
+  ></ion-header
+>
+<ion-content [fullscreen]="true">
+  <main class="page-shell calendar-page">
+    <section class="calendar-card" aria-labelledby="month-title">
+      <div class="month-nav">
+        <ion-button fill="clear" shape="round" (click)="previous()" aria-label="Previous month"
+          ><ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon
+        ></ion-button>
+        <h1 id="month-title" aria-live="polite">{{ monthLabel() }}</h1>
+        <ion-button fill="clear" shape="round" (click)="next()" aria-label="Next month"
+          ><ion-icon slot="icon-only" name="chevron-forward-outline"></ion-icon
+        ></ion-button>
+      </div>
+      <div class="weekday-row" aria-hidden="true">@for (day of weekdays; track day) { <span>{{ day }}</span> }</div>
+      <div class="calendar-grid">
+        @for (item of days(); track item.date) {
+        <button
+          type="button"
+          [class.outside]="!item.currentMonth"
+          [class.today]="item.today"
+          [class.selected]="selectedDate() === item.date"
+          (click)="selectedDate.set(item.date)"
+          [attr.aria-label]="(item.date | date: 'fullDate') + (item.count ? ', ' + item.count + ' entries' : ', no entries')"
+          [attr.aria-pressed]="selectedDate() === item.date">
+          <span>{{ item.day }}</span>
+          @if (item.count) { <span class="entry-mark"><i></i>@if (item.count > 1) { <b>{{ item.count }}</b> }</span> }
+        </button>
+        }
+      </div>
+      <div class="calendar-legend">
+        <span><i></i> Entry written</span><span>{{ diary.total() }} pages in your diary</span>
+      </div>
+    </section>
+
+    <section class="day-section" aria-labelledby="selected-title">
+      <div class="day-heading">
+        <div>
+          <p class="eyebrow">Selected day</p>
+          <h2 id="selected-title">{{ selectedDate() | date: 'EEEE, d MMMM' }}</h2>
+        </div>
+        <ion-button size="small" [routerLink]="['/write', 'new']" [queryParams]="{ date: selectedDate() }"
+          ><ion-icon slot="start" name="add-outline"></ion-icon>Write</ion-button
+        >
+      </div>
+      @if (selectedEntries().length) {
+      <div class="entry-list">
+        @for (entry of selectedEntries(); track entry.id) {
+        <app-entry-card [entry]="entry" (favourite)="diary.toggleFavourite($event)"></app-entry-card> }
+      </div>
+      } @else {
+      <div class="empty-day">
+        <ion-icon name="leaf-outline"></ion-icon>
+        <h3>Nothing written on this day.</h3>
+        <p>There is still room for a memory here.</p>
+        <ion-button fill="outline" [routerLink]="['/write', 'new']" [queryParams]="{ date: selectedDate() }"
+          >Add an entry</ion-button
+        >
+      </div>
+      }
+    </section>
+  </main>
+</ion-content>

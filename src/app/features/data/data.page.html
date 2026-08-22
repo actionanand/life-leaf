@@ -1,0 +1,76 @@
+<ion-header class="ion-no-border"
+  ><ion-toolbar
+    ><ion-buttons slot="start"><ion-back-button defaultHref="/settings" text=""></ion-back-button></ion-buttons
+    ><ion-title>Diary data</ion-title></ion-toolbar
+  ><ion-toolbar class="segment-toolbar"
+    ><ion-segment [value]="view()" (ionChange)="changed($event)" aria-label="Diary data view"
+      ><ion-segment-button value="backup">Backup</ion-segment-button
+      ><ion-segment-button value="archive">Archive</ion-segment-button
+      ><ion-segment-button value="trash">Trash</ion-segment-button></ion-segment
+    ></ion-toolbar
+  ></ion-header
+>
+<ion-content [fullscreen]="true"
+  ><main class="page-shell data-page">
+    @if (view() === 'backup') {
+    <header>
+      <p class="eyebrow">You stay in control</p>
+      <h1>Backup & restore</h1>
+      <p>Create a portable copy of your diary or restore one you made earlier.</p>
+    </header>
+    <div class="privacy-card">
+      <ion-icon name="shield-checkmark-outline"></ion-icon>
+      <div>
+        <strong>Private, local and versioned</strong>
+        <p>Backups are created on this device. Add a password for AES-GCM authenticated encryption.</p>
+      </div>
+    </div>
+    <section class="action-grid" aria-label="Backup actions">
+      <button type="button" (click)="exportEncrypted()" [disabled]="busy()">
+        <ion-icon name="key-outline"></ion-icon><strong>Encrypted backup</strong
+        ><span>Recommended for private diary data</span>
+      </button>
+      <button type="button" (click)="exportPlain()" [disabled]="busy()">
+        <ion-icon name="cloud-download-outline"></ion-icon><strong>Unencrypted backup</strong
+        ><span>Readable JSON; store it carefully</span>
+      </button>
+      <label class="file-action"
+        ><ion-icon name="refresh-outline"></ion-icon><strong>Restore backup</strong
+        ><span>Merge or replace after validation</span
+        ><input type="file" accept=".lifeleaf,application/json" (change)="restoreFile($event)"
+      /></label>
+    </section>
+    <ion-button class="delete-all" fill="clear" color="danger" (click)="deleteAll()"
+      ><ion-icon slot="start" name="trash-outline"></ion-icon>Delete all diary data</ion-button
+    >
+    } @else {
+    <header>
+      <p class="eyebrow">{{ view() === 'archive' ? 'Kept out of view' : 'Not gone yet' }}</p>
+      <h1>{{ view() === 'archive' ? 'Archive' : 'Trash' }}</h1>
+      <p>
+        {{ view() === 'archive' ? 'Archived pages remain safe and searchable here.' : 'Restore a page or remove it
+        permanently.' }}
+      </p>
+    </header>
+    @if (activeViewEntries().length) {
+    <div class="data-list">
+      @for (entry of activeViewEntries(); track entry.id) { <app-entry-card [entry]="entry"></app-entry-card>
+      <div class="entry-actions">
+        <ion-button fill="outline" size="small" (click)="restoreEntry(entry)">Restore</ion-button>@if (view() ===
+        'trash') {
+        <ion-button fill="clear" color="danger" size="small" (click)="permanentDelete(entry)"
+          >Delete permanently</ion-button
+        >
+        }
+      </div>
+      }
+    </div>
+    } @else {
+    <div class="empty-data">
+      <ion-icon [name]="view() === 'archive' ? 'archive-outline' : 'trash-outline'"></ion-icon>
+      <h2>{{ view() === 'archive' ? 'No archived pages' : 'Trash is empty' }}</h2>
+      <p>Your active diary remains untouched.</p>
+    </div>
+    } }
+  </main></ion-content
+>

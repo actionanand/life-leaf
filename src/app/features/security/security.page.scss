@@ -1,0 +1,82 @@
+ion-toolbar {
+  --background: var(--ll-bg);
+}
+ion-title {
+  font-family: var(--ll-serif);
+}
+.security-page {
+  padding-top: 28px;
+  padding-bottom: 70px;
+}
+header {
+  text-align: center;
+}
+.security-mark {
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 14px;
+  border-radius: 22px;
+  color: #fff;
+  background: linear-gradient(145deg, var(--ll-primary), var(--ll-primary-dark));
+  font-size: 1.8rem;
+}
+header h1 {
+  margin: 5px 0 9px;
+  font-size: 1.8rem;
+}
+header > p:last-child {
+  max-width: 30rem;
+  margin: 0 auto 24px;
+  color: var(--ll-muted);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+form {
+  display: grid;
+  gap: 10px;
+}
+form ion-item {
+  --background: var(--ll-surface);
+  --border-radius: 14px;
+  --min-height: 62px;
+  border: 1px solid var(--ll-border);
+  border-radius: 14px;
+}
+form ion-button {
+  margin-top: 6px;
+  min-height: 48px;
+}
+.biometric-card {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 74px;
+  margin-top: 18px;
+  padding: 13px;
+  border: 1px solid var(--ll-border);
+  border-radius: 17px;
+  color: var(--ll-text);
+  background: var(--ll-surface);
+  text-align: left;
+}
+.biometric-card ion-icon {
+  justify-self: center;
+  color: var(--ll-primary);
+  font-size: 1.5rem;
+}
+.biometric-card strong,
+.biometric-card small {
+  display: block;
+}
+.biometric-card small {
+  margin-top: 4px;
+  color: var(--ll-muted);
+}
+.disable-lock {
+  display: block;
+  margin: 22px auto;
+}

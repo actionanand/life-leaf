@@ -1,0 +1,120 @@
+<div class="format-toolbar" role="toolbar" aria-label="Text formatting">
+  <ion-button fill="clear" size="small" [class.active]="active('bold')" (click)="toggle('bold')" aria-label="Bold"
+    ><strong>B</strong></ion-button
+  >
+  <ion-button fill="clear" size="small" [class.active]="active('italic')" (click)="toggle('italic')" aria-label="Italic"
+    ><em>I</em></ion-button
+  >
+  <ion-button
+    fill="clear"
+    size="small"
+    [class.active]="active('underline')"
+    (click)="toggle('underline')"
+    aria-label="Underline"
+    ><u>U</u></ion-button
+  >
+  <ion-button
+    fill="clear"
+    size="small"
+    [class.active]="active('strike')"
+    (click)="toggle('strike')"
+    aria-label="Strikethrough"
+    ><s>S</s></ion-button
+  >
+  <ion-button
+    fill="clear"
+    size="small"
+    [class.active]="active('highlight')"
+    (click)="toggle('highlight')"
+    aria-label="Highlight"
+    ><mark>A</mark></ion-button
+  >
+  <ion-button
+    fill="clear"
+    size="small"
+    [class.active]="active('heading', { level: 1 })"
+    (click)="heading(1)"
+    aria-label="Heading 1"
+    >H1</ion-button
+  >
+  <ion-button
+    fill="clear"
+    size="small"
+    [class.active]="active('heading', { level: 2 })"
+    (click)="heading(2)"
+    aria-label="Heading 2"
+    >H2</ion-button
+  >
+  <ion-button
+    fill="clear"
+    size="small"
+    [class.active]="active('bulletList')"
+    (click)="toggle('bulletList')"
+    aria-label="Bulleted list"
+    ><ion-icon name="list-outline" aria-hidden="true"></ion-icon
+  ></ion-button>
+  <ion-button
+    fill="clear"
+    size="small"
+    [class.active]="active('orderedList')"
+    (click)="toggle('orderedList')"
+    aria-label="Numbered list"
+    ><span class="ordered-list-symbol" aria-hidden="true"><i>1</i><b></b><i>2</i><b></b><i>3</i><b></b></span
+  ></ion-button>
+  <ion-button
+    fill="clear"
+    size="small"
+    [class.active]="active('taskList')"
+    (click)="toggle('taskList')"
+    aria-label="Checklist"
+    >☑</ion-button
+  >
+  <ion-button
+    fill="clear"
+    size="small"
+    (click)="indentList('in')"
+    [disabled]="!canIndentList('in')"
+    aria-label="Indent list item"
+    ><ion-icon name="return-down-forward-outline" aria-hidden="true"></ion-icon
+  ></ion-button>
+  <ion-button
+    fill="clear"
+    size="small"
+    (click)="indentList('out')"
+    [disabled]="!canIndentList('out')"
+    aria-label="Outdent list item"
+    ><ion-icon name="return-down-back-outline" aria-hidden="true"></ion-icon
+  ></ion-button>
+  <ion-button
+    fill="clear"
+    size="small"
+    [class.active]="active('blockquote')"
+    (click)="toggle('blockquote')"
+    aria-label="Block quote"
+    >❝</ion-button
+  >
+  <ion-button
+    fill="clear"
+    size="small"
+    [class.active]="active('code')"
+    (click)="toggle('code')"
+    aria-label="Inline code"
+    ><code>&lt;/&gt;</code></ion-button
+  >
+  <ion-button fill="clear" size="small" (click)="align('left')" aria-label="Align left">≡</ion-button>
+  <ion-button fill="clear" size="small" (click)="align('center')" aria-label="Align centre">≣</ion-button>
+  <ion-button fill="clear" size="small" (click)="align('right')" aria-label="Align right">≡</ion-button>
+  <ion-button fill="clear" size="small" (click)="link()" aria-label="Add link"
+    ><ion-icon name="link-outline"></ion-icon
+  ></ion-button>
+  <ion-button fill="clear" size="small" (click)="divider()" aria-label="Horizontal divider"
+    ><ion-icon name="remove-outline"></ion-icon
+  ></ion-button>
+  <ion-button fill="clear" size="small" (click)="undo()" aria-label="Undo"
+    ><ion-icon name="arrow-undo-outline"></ion-icon
+  ></ion-button>
+  <ion-button fill="clear" size="small" (click)="redo()" aria-label="Redo"
+    ><ion-icon name="arrow-redo-outline"></ion-icon
+  ></ion-button>
+</div>
+<div #editorHost class="editor-host"></div>

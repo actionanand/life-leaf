@@ -1,0 +1,89 @@
+<ion-header class="ion-no-border"
+  ><ion-toolbar><ion-title>Memories</ion-title></ion-toolbar
+  ><ion-toolbar class="segment-toolbar"
+    ><ion-segment [value]="view()" (ionChange)="changeView($event)" aria-label="Memory view"
+      ><ion-segment-button value="timeline">Timeline</ion-segment-button
+      ><ion-segment-button value="on-this-day">On this day</ion-segment-button
+      ><ion-segment-button value="years">Years</ion-segment-button
+      ><ion-segment-button value="favourites">Favourites</ion-segment-button></ion-segment
+    ></ion-toolbar
+  ></ion-header
+>
+<ion-content [fullscreen]="true">
+  <main class="page-shell memories-page">
+    @switch (view()) { @case ('timeline') {
+    <header class="page-intro">
+      <p class="eyebrow">The story so far</p>
+      <h1>Your timeline</h1>
+      <p>{{ diary.total() }} moments, held privately on this device.</p>
+    </header>
+    @if (diary.entries().length) {
+    <div class="timeline">
+      <span class="timeline-line"></span>@for (entry of diary.entries(); track entry.id) {
+      <app-entry-card [entry]="entry" (favourite)="diary.toggleFavourite($event)"></app-entry-card> }
+    </div>
+    } @else {
+    <div class="empty-memory">
+      <ion-icon name="leaf-outline"></ion-icon>
+      <h2>Your timeline begins here</h2>
+      <p>Each page you write will appear in this quiet history.</p>
+      <ion-button routerLink="/write/new">Write a memory</ion-button>
+    </div>
+    } } @case ('on-this-day') {
+    <header class="page-intro">
+      <p class="eyebrow">Across the years</p>
+      <h1>On this day</h1>
+      <p>Small windows into earlier versions of your life.</p>
+    </header>
+    @if (onThisDay().length) {
+    <div class="year-memories">
+      @for (entry of onThisDay(); track entry.id) {
+      <div class="year-label">{{ entry.entryDate | date: 'yyyy' }}</div>
+      <app-entry-card [entry]="entry" (favourite)="diary.toggleFavourite($event)"></app-entry-card> }
+    </div>
+    } @else {
+    <div class="empty-memory">
+      <ion-icon name="leaf-outline"></ion-icon>
+      <h2>No earlier pages for today</h2>
+      <p>Write today, and this date becomes a memory for another year.</p>
+      <ion-button routerLink="/write/new">Write today's page</ion-button>
+    </div>
+    } } @case ('years') {
+    <header class="page-intro">
+      <p class="eyebrow">Your diary in chapters</p>
+      <h1>Years</h1>
+      <p>Every year gathers its own texture.</p>
+    </header>
+    <div class="year-list">
+      @for (item of years(); track item.year) {
+      <a routerLink="/search" [queryParams]="{ year: item.year }"
+        ><strong>{{ item.year }}</strong><span>{{ item.count }} {{ item.count === 1 ? 'entry' : 'entries' }}</span
+        ><em>Open chapter</em></a
+      >
+      } @empty {
+      <div class="empty-memory">
+        <ion-icon name="leaf-outline"></ion-icon>
+        <h2>Your first chapter is waiting</h2>
+      </div>
+      }
+    </div>
+    } @case ('favourites') {
+    <header class="page-intro">
+      <p class="eyebrow">Close to your heart</p>
+      <h1>Favourites</h1>
+      <p>The memories you chose to keep within easy reach.</p>
+    </header>
+    @if (favourites().length) {
+    <div class="entry-list">
+      @for (entry of favourites(); track entry.id) {
+      <app-entry-card [entry]="entry" (favourite)="diary.toggleFavourite($event)"></app-entry-card> }
+    </div>
+    } @else {
+    <div class="empty-memory">
+      <ion-icon name="heart-outline"></ion-icon>
+      <h2>No favourites yet</h2>
+      <p>Favourite the memories you want to find quickly.</p>
+    </div>
+    } } }
+  </main>
+</ion-content>

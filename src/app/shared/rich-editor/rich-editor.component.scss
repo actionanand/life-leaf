@@ -1,0 +1,104 @@
+.format-toolbar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 4px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-block: 1px solid var(--ll-border);
+  background: var(--ll-surface);
+  scrollbar-color: var(--ll-border-strong) transparent;
+  scrollbar-width: thin;
+  overscroll-behavior-inline: contain;
+  touch-action: pan-x pan-y;
+}
+.format-toolbar::-webkit-scrollbar {
+  height: 5px;
+}
+.format-toolbar::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: var(--ll-border-strong);
+}
+
+ion-button {
+  flex: 0 0 auto;
+  min-width: 42px;
+  min-height: 42px;
+  margin: 0;
+  --color: var(--ll-text-soft);
+  --border-radius: 10px;
+}
+ion-button.active {
+  --background: var(--ll-primary-soft);
+  --color: var(--ll-primary-dark);
+}
+.ordered-list-symbol {
+  display: grid;
+  grid-template-columns: 5px 10px;
+  align-items: center;
+  gap: 1px 2px;
+  width: 17px;
+  height: 16px;
+  color: currentColor;
+  line-height: 1;
+}
+.ordered-list-symbol i {
+  font-size: 0.36rem;
+  font-style: normal;
+  font-weight: 750;
+  text-align: right;
+}
+.ordered-list-symbol b {
+  height: 1px;
+  border-radius: 2px;
+  background: currentColor;
+}
+mark {
+  padding: 1px 3px;
+  background: #fde68a;
+}
+.editor-host {
+  min-height: 42vh;
+}
+:host ::ng-deep .life-leaf-editor {
+  min-height: 42vh;
+  padding: 22px 20px 120px;
+  color: var(--ll-text);
+  font-family: var(--ll-serif);
+  font-size: 1.08rem;
+  line-height: 1.8;
+  outline: none;
+
+  p {
+    margin: 0 0 1em;
+  }
+  h1,
+  h2 {
+    line-height: 1.25;
+  }
+  blockquote {
+    margin-inline: 0;
+    padding-left: 16px;
+    border-left: 3px solid var(--ll-primary);
+    color: var(--ll-text-soft);
+  }
+  a {
+    color: var(--ll-primary);
+    text-decoration: underline;
+  }
+  pre {
+    overflow-x: auto;
+    padding: 14px;
+    border-radius: 12px;
+    background: var(--ll-bg-deep);
+  }
+  ul[data-type='taskList'] {
+    padding-left: 0;
+    list-style: none;
+  }
+  ul[data-type='taskList'] li {
+    display: flex;
+    gap: 8px;
+  }
+}

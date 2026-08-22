@@ -1,0 +1,196 @@
+<ion-header class="ion-no-border"
+  ><ion-toolbar><ion-title>Settings</ion-title></ion-toolbar></ion-header
+>
+<ion-content [fullscreen]="true"
+  ><main class="page-shell settings-page">
+    <header class="settings-intro">
+      <p class="eyebrow">Make it yours</p>
+      <h1>A quiet space, your way</h1>
+      <p>Preferences stay with your diary on this device.</p>
+    </header>
+
+    <section aria-labelledby="appearance-heading">
+      <ion-list inset
+        ><ion-list-header><ion-label id="appearance-heading">Appearance</ion-label></ion-list-header
+        ><ion-item lines="none" class="theme-item"
+          ><ion-label
+            ><h2>Theme</h2>
+            <p>Choose how Life Leaf feels.</p></ion-label
+          ></ion-item
+        ><ion-segment [value]="diary.settings().theme" (ionChange)="themeChanged($event)" aria-label="Colour theme"
+          ><ion-segment-button value="light"
+            ><ion-icon name="sunny-outline"></ion-icon><ion-label>Light</ion-label></ion-segment-button
+          ><ion-segment-button value="dark"
+            ><ion-icon name="moon-outline"></ion-icon><ion-label>Dark</ion-label></ion-segment-button
+          ><ion-segment-button value="automatic"
+            ><ion-icon name="contrast-outline"></ion-icon><ion-label>Automatic</ion-label></ion-segment-button
+          ></ion-segment
+        ></ion-list
+      >
+    </section>
+
+    <section aria-labelledby="writing-heading">
+      <ion-list inset
+        ><ion-list-header><ion-label id="writing-heading">Writing</ion-label></ion-list-header>
+        <ion-item
+          ><ion-label
+            ><h2>Writing prompts</h2>
+            <p>Show a gentle journaling question on Home to help you begin.</p></ion-label
+          ><ion-toggle
+            slot="end"
+            [checked]="diary.settings().writingPrompts"
+            (ionChange)="toggle('writingPrompts', $event)"
+            aria-label="Writing prompts"></ion-toggle
+        ></ion-item>
+        <ion-item
+          ><ion-label
+            ><h2>On this day</h2>
+            <p>Show entries written on today's date in earlier years.</p></ion-label
+          ><ion-toggle
+            slot="end"
+            [checked]="diary.settings().onThisDay"
+            (ionChange)="toggle('onThisDay', $event)"
+            aria-label="On this day memories"></ion-toggle
+        ></ion-item>
+        <ion-item lines="none"
+          ><ion-label
+            ><h2>Gentle statistics</h2>
+            <p>Show diary totals and writing days without goals or pressure.</p></ion-label
+          ><ion-toggle
+            slot="end"
+            [checked]="diary.settings().showStreak"
+            (ionChange)="toggle('showStreak', $event)"
+            aria-label="Writing statistics"></ion-toggle
+        ></ion-item>
+      </ion-list>
+    </section>
+
+    <section aria-labelledby="reminder-heading">
+      <ion-list inset
+        ><ion-list-header><ion-label id="reminder-heading">Reminder</ion-label></ion-list-header>
+        <ion-item
+          ><ion-icon slot="start" name="notifications-outline"></ion-icon
+          ><ion-label
+            ><h2>Daily reminder</h2>
+            <p>Private wording, without diary content.</p></ion-label
+          ><ion-toggle
+            slot="end"
+            [checked]="diary.settings().reminderEnabled"
+            (ionChange)="reminderChanged($event)"
+            aria-label="Daily reminder"></ion-toggle
+        ></ion-item>
+        <ion-item lines="none" [disabled]="!diary.settings().reminderEnabled"
+          ><ion-label>Reminder time</ion-label
+          ><input
+            class="time-input"
+            type="time"
+            [value]="diary.settings().reminderTime"
+            (change)="onTimeInput($event)"
+            aria-label="Reminder time"
+        /></ion-item>
+        <p id="reminder-days-help" class="reminder-days-help">
+          Choose which days the reminder should appear at the time above.
+        </p>
+        <div
+          class="weekday-picker"
+          [class.disabled]="!diary.settings().reminderEnabled"
+          aria-label="Reminder days"
+          aria-describedby="reminder-days-help">
+          @for (day of weekdays; track day.value) {
+          <button
+            type="button"
+            [class.selected]="diary.settings().reminderDays.includes(day.value)"
+            (click)="toggleReminderDay(day.value)"
+            [disabled]="!diary.settings().reminderEnabled"
+            [attr.aria-pressed]="diary.settings().reminderDays.includes(day.value)"
+            [attr.aria-label]="'Remind on ' + day.name">
+            {{ day.label }}
+          </button>
+          }
+        </div>
+      </ion-list>
+    </section>
+
+    <section aria-labelledby="security-heading">
+      <ion-list inset
+        ><ion-list-header><ion-label id="security-heading">Security</ion-label></ion-list-header>
+        <ion-item button detail routerLink="/security"
+          ><ion-icon slot="start" name="lock-closed-outline"></ion-icon
+          ><ion-label
+            ><h2>PIN & biometric lock</h2>
+            <p>
+              {{ native ? 'Protect access on this Android device.' : 'Protect this diary in the current browser
+              profile.' }}
+            </p></ion-label
+          ></ion-item
+        >
+        <ion-item lines="none" [disabled]="!native"
+          ><ion-icon slot="start" name="shield-checkmark-outline"></ion-icon
+          ><ion-label
+            ><h2>Block screenshots</h2>
+            <p>
+              {{ native ? 'Use Android secure-window protection.' : 'Browsers cannot prevent screenshots.' }}
+            </p></ion-label
+          ><ion-toggle
+            slot="end"
+            [checked]="diary.settings().screenshotProtection"
+            (ionChange)="screenshotChanged($event)"
+            aria-label="Block screenshots"></ion-toggle
+        ></ion-item>
+      </ion-list>
+    </section>
+
+    <section aria-labelledby="data-heading">
+      <ion-list inset
+        ><ion-list-header><ion-label id="data-heading">Your data</ion-label></ion-list-header>
+        <ion-item button detail routerLink="/data" [queryParams]="{ view: 'backup' }"
+          ><ion-icon slot="start" name="cloud-download-outline"></ion-icon
+          ><ion-label
+            ><h2>Backup & restore</h2>
+            <p>Versioned local backup with optional encryption.</p></ion-label
+          ></ion-item
+        >
+        <ion-item button detail routerLink="/data" [queryParams]="{ view: 'export' }"
+          ><ion-icon slot="start" name="download-outline"></ion-icon
+          ><ion-label
+            ><h2>Export diary</h2>
+            <p>Local JSON backup for long-term access.</p></ion-label
+          ></ion-item
+        >
+        <ion-item button detail routerLink="/data" [queryParams]="{ view: 'archive' }"
+          ><ion-icon slot="start" name="archive-outline"></ion-icon
+          ><ion-label
+            ><h2>Archive & Trash</h2>
+            <p>Restore or permanently remove pages.</p></ion-label
+          ></ion-item
+        >
+        <ion-item button detail lines="none" class="danger-item" routerLink="/data" [queryParams]="{ view: 'delete' }"
+          ><ion-icon slot="start" name="trash-outline"></ion-icon
+          ><ion-label
+            ><h2>Delete all diary data</h2>
+            <p>Requires explicit confirmation.</p></ion-label
+          ></ion-item
+        >
+      </ion-list>
+    </section>
+
+    <section aria-labelledby="about-heading">
+      <ion-list inset
+        ><ion-list-header><ion-label id="about-heading">About</ion-label></ion-list-header>
+        <ion-item
+          ><ion-icon slot="start" name="information-circle-outline"></ion-icon
+          ><ion-label
+            ><h2>Life Leaf</h2>
+            <p>Version {{ version() }}</p></ion-label
+          ></ion-item
+        >
+        <ion-item button detail lines="none" (click)="privacyInfo()"
+          ><ion-label
+            ><h2>Privacy</h2>
+            <p>No account. No tracking. No cloud processing.</p></ion-label
+          ></ion-item
+        >
+      </ion-list>
+    </section>
+  </main></ion-content
+>

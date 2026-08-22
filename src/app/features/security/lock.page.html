@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true"
+  ><main class="lock-page">
+    <img ngSrc="assets/life-leaf.png" width="1240" height="1240" priority alt="" />
+    <p class="eyebrow">Life Leaf</p>
+    <h1>Your diary is locked</h1>
+    <p>Enter your PIN to return to your private pages.</p>
+    <form (ngSubmit)="unlock()">
+      <ion-input
+        [formControl]="pin"
+        type="password"
+        inputmode="numeric"
+        maxlength="8"
+        label="PIN"
+        labelPlacement="floating"
+        aria-label="Diary PIN"></ion-input
+      >@if (error()) {
+      <p class="error" role="alert">{{ error() }}</p>
+      }<ion-button expand="block" type="submit" [disabled]="busy() || pin.value.length < 4"
+        ><ion-icon slot="start" name="lock-closed-outline"></ion-icon>Unlock</ion-button
+      >@if (security.biometricEnabled()) {
+      <ion-button expand="block" fill="clear" type="button" (click)="biometric()">Unlock with biometrics</ion-button> }
+    </form>
+  </main></ion-content
+>

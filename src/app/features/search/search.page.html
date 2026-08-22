@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border"
+  ><ion-toolbar
+    ><ion-buttons slot="start"><ion-back-button defaultHref="/home" text=""></ion-back-button></ion-buttons
+    ><ion-title>Search</ion-title></ion-toolbar
+  ><ion-toolbar
+    ><ion-searchbar
+      [formControl]="search"
+      placeholder="Words, title, place or date"
+      [debounce]="0"
+      inputmode="search"
+      aria-label="Search diary"></ion-searchbar></ion-toolbar
+></ion-header>
+<ion-content [fullscreen]="true"
+  ><main class="page-shell search-page">
+    <div class="filter-controls">
+      <div class="filter-row">
+        <ion-chip
+          button
+          [class.selected]="favouriteOnly()"
+          (click)="toggleFavourites()"
+          [attr.aria-pressed]="favouriteOnly()"
+          >Favourites</ion-chip
+        >
+        @for (tag of diary.tags(); track tag.id) {
+        <ion-chip
+          button
+          [class.selected]="selectedTag() === tag.id"
+          (click)="toggleTag(tag.id)"
+          [attr.aria-pressed]="selectedTag() === tag.id"
+          >{{ tag.name }}</ion-chip
+        >
+        }
+      </div>
+      <div class="sort-row">
+        <ion-select interface="popover" label="Sort" [value]="sort()" (ionChange)="sort.set($event.detail.value); run()"
+          ><ion-select-option value="newest">Newest</ion-select-option
+          ><ion-select-option value="oldest">Oldest</ion-select-option
+          ><ion-select-option value="edited">Recently edited</ion-select-option
+          ><ion-select-option value="title">Title</ion-select-option></ion-select
+        >
+      </div>
+    </div>
+    <p class="result-count" role="status">{{ resultLabel() }} @if (year()) { <span>in {{ year() }}</span> }</p>
+    @if (results().length) {
+    <div class="entry-list">
+      @for (entry of results(); track entry.id) {
+      <app-entry-card [entry]="entry" (favourite)="diary.toggleFavourite($event); run()"></app-entry-card> }
+    </div>
+    } @else {
+    <div class="empty-search">
+      <ion-icon name="search-outline"></ion-icon>
+      <h1>No entries match your search.</h1>
+      <p>Try fewer words, another date, or remove a filter.</p>
+    </div>
+    }
+  </main></ion-content
+>
