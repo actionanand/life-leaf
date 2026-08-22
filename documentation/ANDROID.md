@@ -56,20 +56,22 @@ npm run android:version:major
 
 The plain command increments only `versionCode`. The other commands also update `versionName`. Google Play requires a greater `versionCode` for every uploaded release.
 
-The `main-android` workflow automatically increments `versionCode`, commits it with `[skip ci]`, and then builds. A tag such as `v1.2.0` uses `1.2.0` as the release version name while retaining the monotonic code from `android-version.json`.
+The `main-android` workflow automatically increments `versionCode`, commits it with `[skip ci]`, and then builds using the checked-in `versionName`.
 
 ## CI behavior and release files
 
-The workflow runs on pull requests and pushes to `main`/`main-android`, on manual dispatch, and for `v*.*.*` tags.
+The workflow builds Android only from the `main-android` branch:
 
-- Pull requests and `main` build `releases/LifeLeaf-debug.apk` after lint and tests.
-- `main-android`, version tags and manual runs build both an APK and the Google Play AAB.
-- Signed output is named `releases/LifeLeaf-release.apk` and `releases/LifeLeaf-release.aab`.
-- If signing secrets are absent, output is clearly named `LifeLeaf-release-unsigned.*`.
+- A push to `main-android` starts the workflow.
+- Manual dispatch is supported only when the selected workflow branch is `main-android`; the build job is explicitly guarded against every other ref.
+- Pull requests, other branches, and tags do not build Android artifacts.
+- Every build creates both a release APK and Google Play AAB.
+- Signed output is named `releases/LifeLeaf-<version>.apk` and `releases/LifeLeaf-<version>.aab`.
+- If signing secrets are absent or signing fails, output is clearly named `LifeLeaf-<version>-unsigned.*`.
 - `main-android` commits generated release files under `releases/`.
-- Version tags create a GitHub Release containing the APK, AAB and Play Store icon.
 - Every run uploads its `releases/` directory as a 30-day Actions artifact.
-- Release builds enable R8/resource shrinking and include `LifeLeaf-release-mapping.txt`; retain that exact file for Play Console deobfuscation.
+- Release builds enable R8/resource shrinking and include `LifeLeaf-<version>-mapping.txt`; retain that exact file for Play Console deobfuscation.
+- The Actions summary labels successful signed files with `✅ Signed APK` / `✅ Signed AAB` and fallbacks with `⚠️ Unsigned APK` / `⚠️ Unsigned AAB`.
 
 CI uses Node 24.16, Java 21, minimum SDK 24 and target SDK 36.
 
@@ -77,12 +79,12 @@ CI uses Node 24.16, Java 21, minimum SDK 24 and target SDK 36.
 
 Configure these in **Repository Settings → Secrets and variables → Actions**:
 
-| Secret                      | Purpose                                                     |
-| --------------------------- | ----------------------------------------------------------- |
-| `ANDROID_KEYSTORE_BASE64`   | Base64 text of the complete release keystore                |
-| `ANDROID_KEYSTORE_PASSWORD` | Keystore password                                           |
-| `ANDROID_KEY_ALIAS`         | Signing key alias; the included generator uses `lifeleaf`   |
-| `ANDROID_KEY_PASSWORD`      | Key password; it may equal the keystore password for PKCS12 |
+| Secret              | Purpose                                                    |
+| ------------------- | ---------------------------------------------------------- |
+| `KEYSTORE_BASE64`   | Base64 text of the complete release keystore               |
+| `KEYSTORE_PASSWORD` | Keystore password                                          |
+| `KEY_ALIAS`         | Signing-key alias; the included generator uses `lifeleaf`  |
+| `KEY_PASSWORD`      | Private-key password; for PKCS12 use the keystore password |
 
 Generate and encode the keystore once on a trusted WSL/Linux machine:
 
@@ -92,6 +94,14 @@ test -s release-keystore.jks
 base64 -w 0 release-keystore.jks > keystore.b64.txt
 npm run keystore:type
 ```
+
+To provide the password non-interactively from a trusted local shell:
+
+```bash
+npm run generate-keystore -- --password 'YOUR_STRONG_PASSWORD'
+```
+
+The generator also accepts `KEYSTORE_PASSWORD` from the environment. Avoid putting a real password on a shared terminal, in shell history, CI logs, or source-controlled files.
 
 Never commit `.jks`, `.keystore`, Base64 key text or passwords. Keep a secure offline backup of the release key; losing it can prevent future Play Store updates.
 
@@ -112,5 +122,5 @@ Daily reminders use local notifications with generic text and never reveal diary
 - **`npm ci` reports lock mismatch:** run `npm install` in WSL2 and commit the updated `package-lock.json`.
 - **Missing Android platform:** run `npm run android:add`, then `npm run android:sync`.
 - **Brand changes are absent:** rerun `npm run android:sync`; the patch copies the canonical icon into the generated drawable tree.
-- **Unsigned release:** verify all four `ANDROID_*` secrets and ensure the Base64 text has no truncation.
+- **Unsigned release:** verify `KEYSTORE_BASE64`, `KEYSTORE_PASSWORD`, and `KEY_ALIAS`; also verify `KEY_PASSWORD` for a non-PKCS12 keystore. Ensure the Base64 text has no truncation.
 - **AAB rejected for version code:** increment with `npm run android:version` before rebuilding locally.

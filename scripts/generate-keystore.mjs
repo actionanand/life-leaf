@@ -8,10 +8,25 @@ const keyFile = 'life-leaf-key.pem';
 const certFile = 'life-leaf-cert.pem';
 const alias = 'lifeleaf';
 
-const input = readline.createInterface({ input: process.stdin, output: process.stdout });
-const password = process.env.ANDROID_KEYSTORE_PASSWORD || (await input.question('Enter keystore password: '));
-input.close();
-if (!password) throw new Error('Password cannot be empty.');
+async function resolvePassword() {
+  const passwordIndex = process.argv.indexOf('--password');
+  if (passwordIndex >= 0) {
+    const password = process.argv[passwordIndex + 1];
+    if (!password || password.startsWith('--')) throw new Error('--password requires a non-empty value.');
+    return password;
+  }
+  const environmentPassword = process.env.KEYSTORE_PASSWORD || process.env.ANDROID_KEYSTORE_PASSWORD;
+  if (environmentPassword) return environmentPassword;
+  const input = readline.createInterface({ input: process.stdin, output: process.stdout });
+  input._writeToOutput = value => {
+    if (value.includes('Enter keystore password')) input.output.write(value);
+  };
+  const password = await input.question('Enter keystore password: ');
+  input.output.write('\n');
+  input.close();
+  if (!password) throw new Error('Password cannot be empty.');
+  return password;
+}
 
 const run = (command, args, environment = {}) =>
   execFileSync(command, args, { env: { ...process.env, ...environment }, stdio: 'pipe' });
@@ -21,6 +36,13 @@ const cleanup = () => {
 
 try {
   run('openssl', ['version']);
+} catch {
+  console.error('openssl was not found. Install openssl and try again.');
+  process.exit(1);
+}
+
+try {
+  const password = await resolvePassword();
   if (existsSync(outputFile)) rmSync(outputFile);
   run('openssl', ['genrsa', '-out', keyFile, '2048']);
   run('openssl', [
@@ -55,8 +77,10 @@ try {
     { OPENSSL_PASS: password },
   );
   cleanup();
-  console.log(`Created ${outputFile} (PKCS12), alias: ${alias}`);
-  console.log(`Encode with: base64 -w 0 ${outputFile} > keystore.b64.txt`);
+  console.log(`Created ${outputFile}`);
+  console.log(`Alias: ${alias}`);
+  console.log('Format: PKCS12');
+  console.log(`Encode: base64 -w 0 ${outputFile} > keystore.b64.txt`);
 } catch (error) {
   cleanup();
   console.error(error instanceof Error ? error.message : 'Keystore generation failed.');
