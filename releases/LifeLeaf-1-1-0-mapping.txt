@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.2"}
-# pg_map_id: 0d7339b5697a40e34edcd012de24ce74c01ca880fab65cea63ca3d7045d88e07
-# pg_map_hash: SHA-256 0d7339b5697a40e34edcd012de24ce74c01ca880fab65cea63ca3d7045d88e07
+# pg_map_id: 3bfe16b238c5e1e13cbac1e7a2c5d0559e858234807db8a2936ff237abf5e7da
+# pg_map_hash: SHA-256 3bfe16b238c5e1e13cbac1e7a2c5d0559e858234807db8a2936ff237abf5e7da
 _COROUTINE.ArtificialStackFrames -> R8$$REMOVED$$CLASS$$0:
 # {"id":"sourceFile","fileName":"CoroutineDebugging.kt"}
 _COROUTINE.CoroutineDebuggingKt -> R8$$REMOVED$$CLASS$$1:
@@ -1497,15 +1497,15 @@ androidx.activity.ComponentActivity$$ExternalSyntheticLambda9 -> androidx.activi
     165:172:void com.capacitorjs.plugins.filesystem.LegacyFilesystemImplementation.downloadFile$lambda$0$0(com.capacitorjs.plugins.filesystem.LegacyFilesystemImplementation$FilesystemDownloadCallback,com.getcapacitor.JSObject):35 -> run
     165:172:void run():0 -> run
     173:176:void run():0:0 -> run
-    177:186:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$3(java.lang.String):223:223 -> run
+    177:186:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$3(java.lang.String):258:258 -> run
     177:186:void run():0 -> run
-    187:192:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$3(java.lang.String):224:224 -> run
+    187:192:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$3(java.lang.String):259:259 -> run
     187:192:void run():0 -> run
-    193:200:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$3(java.lang.String):225:225 -> run
+    193:200:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$3(java.lang.String):260:260 -> run
     193:200:void run():0 -> run
-    201:213:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$3(java.lang.String):226:226 -> run
+    201:213:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$3(java.lang.String):261:261 -> run
     201:213:void run():0 -> run
-    214:225:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$3(java.lang.String):237:237 -> run
+    214:225:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$3(java.lang.String):272:272 -> run
     214:225:void run():0 -> run
     226:229:void run():0:0 -> run
     230:233:android.view.View androidx.core.splashscreen.SplashScreenViewProvider.getView():59:59 -> run
@@ -34081,14 +34081,18 @@ androidx.core.graphics.TypefaceCompat -> y.f:
     26:29:android.graphics.fonts.Font guessPrimaryFont(android.graphics.Typeface):169:169 -> d
     30:37:android.graphics.fonts.Font guessPrimaryFont(android.graphics.Typeface):176:176 -> d
     38:42:android.graphics.fonts.Font guessPrimaryFont(android.graphics.Typeface):179:179 -> d
-androidx.core.graphics.TypefaceCompat$$ExternalSyntheticApiModelOutline3 -> y.e:
+androidx.core.graphics.TypefaceCompat$$ExternalSyntheticApiModelOutline1 -> y.e:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
-    1:5:android.graphics.Typeface y.TypefaceCompat$$ExternalSyntheticApiModelOutline3.m(android.graphics.Typeface$CustomFallbackBuilder):0:0 -> a
+    1:5:android.graphics.Typeface y.TypefaceCompat$$ExternalSyntheticApiModelOutline1.m(android.graphics.Typeface$CustomFallbackBuilder):0:0 -> a
       # {"id":"com.android.tools.r8.synthesized"}
-    1:5:android.graphics.fonts.FontFamily y.TypefaceCompat$$ExternalSyntheticApiModelOutline3.m(android.graphics.fonts.FontFamily$Builder):0:0 -> b
+    1:5:android.graphics.fonts.Font$Builder y.TypefaceCompat$$ExternalSyntheticApiModelOutline1.m(android.graphics.fonts.Font$Builder,java.lang.String):0:0 -> b
       # {"id":"com.android.tools.r8.synthesized"}
-    1:4:void y.TypefaceCompat$$ExternalSyntheticApiModelOutline3.m(android.graphics.Typeface$CustomFallbackBuilder,android.graphics.fonts.FontFamily):0:0 -> c
+    1:5:android.graphics.fonts.Font y.TypefaceCompat$$ExternalSyntheticApiModelOutline1.m(android.graphics.fonts.Font$Builder):0:0 -> c
+      # {"id":"com.android.tools.r8.synthesized"}
+    1:5:android.graphics.fonts.FontFamily y.TypefaceCompat$$ExternalSyntheticApiModelOutline1.m(android.graphics.fonts.FontFamily$Builder):0:0 -> d
+      # {"id":"com.android.tools.r8.synthesized"}
+    1:4:void y.TypefaceCompat$$ExternalSyntheticApiModelOutline1.m(android.graphics.Typeface$CustomFallbackBuilder,android.graphics.fonts.FontFamily):0:0 -> e
       # {"id":"com.android.tools.r8.synthesized"}
 androidx.core.graphics.TypefaceCompatApi21Impl -> y.g:
 # {"id":"sourceFile","fileName":"TypefaceCompatApi21Impl.java"}
@@ -44922,32 +44926,32 @@ androidx.emoji2.text.EmojiCompatInitializer$BackgroundDefaultLoader$$ExternalSyn
     152:161:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showWithAndroid12API$2(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings):156:156 -> run
     152:161:void run():0 -> run
     162:173:void run():0:0 -> run
-    174:187:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$4(javax.crypto.Cipher,java.lang.String):256:256 -> run
+    174:187:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$4(javax.crypto.Cipher,java.lang.String):291:291 -> run
     174:187:void run():0 -> run
-    188:194:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$4(javax.crypto.Cipher,java.lang.String):257:257 -> run
+    188:194:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$4(javax.crypto.Cipher,java.lang.String):292:292 -> run
     188:194:void run():0 -> run
-    195:197:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$4(javax.crypto.Cipher,java.lang.String):258:258 -> run
+    195:197:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$4(javax.crypto.Cipher,java.lang.String):293:293 -> run
     195:197:void run():0 -> run
-    198:204:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$4(javax.crypto.Cipher,java.lang.String):259:259 -> run
+    198:204:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$4(javax.crypto.Cipher,java.lang.String):294:294 -> run
     198:204:void run():0 -> run
-    205:214:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$4(javax.crypto.Cipher,java.lang.String):260:260 -> run
+    205:214:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$4(javax.crypto.Cipher,java.lang.String):295:295 -> run
     205:214:void run():0 -> run
     215:226:void run():0:0 -> run
-    227:236:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):228:228 -> run
+    227:236:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):263:263 -> run
     227:236:void run():0 -> run
-    237:249:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):229:229 -> run
+    237:249:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):264:264 -> run
     237:249:void run():0 -> run
-    250:259:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):230:230 -> run
+    250:259:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):265:265 -> run
     250:259:void run():0 -> run
-    260:271:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):231:231 -> run
+    260:271:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):266:266 -> run
     260:271:void run():0 -> run
-    272:274:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):232:232 -> run
+    272:274:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):267:267 -> run
     272:274:void run():0 -> run
-    275:277:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):233:233 -> run
+    275:277:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):268:268 -> run
     275:277:void run():0 -> run
-    278:284:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):234:234 -> run
+    278:284:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):269:269 -> run
     278:284:void run():0 -> run
-    285:294:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):235:235 -> run
+    285:294:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$2(javax.crypto.Cipher,byte[]):270:270 -> run
     285:294:void run():0 -> run
     295:306:void run():0:0 -> run
     307:312:void com.getcapacitor.Bridge.lambda$eval$1(java.lang.String,android.webkit.ValueCallback):870:870 -> run
@@ -53952,42 +53956,42 @@ androidx.lifecycle.ReportFragment$LifecycleCallbacks$Companion$$ExternalSyntheti
       # {"id":"com.android.tools.r8.synthesized"}
     1:6:android.graphics.Typeface$CustomFallbackBuilder m(android.graphics.fonts.FontFamily):0:0 -> c
       # {"id":"com.android.tools.r8.synthesized"}
-    1:5:android.graphics.fonts.Font$Builder m(android.graphics.fonts.Font$Builder,java.lang.String):0:0 -> d
+    1:6:android.graphics.fonts.FontFamily$Builder m(android.graphics.fonts.Font):0:0 -> d
       # {"id":"com.android.tools.r8.synthesized"}
-    1:5:android.graphics.fonts.Font m(android.graphics.fonts.Font$Builder):0:0 -> e
+    1:5:android.text.TextDirectionHeuristic m(android.widget.TextView):0:0 -> e
       # {"id":"com.android.tools.r8.synthesized"}
-    1:6:android.graphics.fonts.FontFamily$Builder m(android.graphics.fonts.Font):0:0 -> f
+    1:6:android.view.WindowInsets$Builder m():0:0 -> f
       # {"id":"com.android.tools.r8.synthesized"}
-    1:5:android.text.TextDirectionHeuristic m(android.widget.TextView):0:0 -> g
+    1:6:android.view.WindowInsets$Builder m(android.view.WindowInsets):0:0 -> g
       # {"id":"com.android.tools.r8.synthesized"}
-    1:6:android.view.WindowInsets$Builder m():0:0 -> h
+    1:5:android.view.WindowInsets m(android.view.WindowInsets$Builder):0:0 -> h
       # {"id":"com.android.tools.r8.synthesized"}
-    1:6:android.view.WindowInsets$Builder m(android.view.WindowInsets):0:0 -> i
+    1:5:android.view.WindowInsets m(android.view.WindowInsets,int,int,int,int):0:0 -> i
       # {"id":"com.android.tools.r8.synthesized"}
-    1:5:android.view.WindowInsets m(android.view.WindowInsets$Builder):0:0 -> j
+    1:3:android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction m():0:0 -> j
       # {"id":"com.android.tools.r8.synthesized"}
-    1:5:android.view.WindowInsets m(android.view.WindowInsets,int,int,int,int):0:0 -> k
+    1:3:void m():0:0 -> k
       # {"id":"com.android.tools.r8.synthesized"}
-    1:3:android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction m():0:0 -> l
-      # {"id":"com.android.tools.r8.synthesized"}
-    1:3:void m():0:0 -> m
-      # {"id":"com.android.tools.r8.synthesized"}
-    1:4:void m(android.app.Activity,androidx.lifecycle.ReportFragment$LifecycleCallbacks):0:0 -> n
+    1:4:void m(android.app.Activity,androidx.lifecycle.ReportFragment$LifecycleCallbacks):0:0 -> l
       # {"id":"com.android.tools.r8.synthesized"}
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Landroid/app/Activity;Landroidx/lifecycle/h0$a;)V"}
-    1:4:void m(android.graphics.Typeface$CustomFallbackBuilder,java.lang.String):0:0 -> o
+    1:4:void m(android.graphics.Typeface$CustomFallbackBuilder,java.lang.String):0:0 -> m
       # {"id":"com.android.tools.r8.synthesized"}
-    1:4:void m(android.view.WindowInsets$Builder,android.graphics.Insets):0:0 -> p
+    1:5:void m(android.view.Window):0:0 -> n
       # {"id":"com.android.tools.r8.synthesized"}
-    1:5:boolean m(android.widget.TextView):0:0 -> q
+    1:4:void m(android.view.WindowInsets$Builder,android.graphics.Insets):0:0 -> o
       # {"id":"com.android.tools.r8.synthesized"}
-    1:3:int m$1(android.graphics.Insets):0:0 -> r
+    1:5:boolean m(android.widget.TextView):0:0 -> p
       # {"id":"com.android.tools.r8.synthesized"}
-    1:5:android.graphics.Insets m$1(android.view.WindowInsets):0:0 -> s
+    1:3:int m$1(android.graphics.Insets):0:0 -> q
       # {"id":"com.android.tools.r8.synthesized"}
-    1:3:android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction m$1():0:0 -> t
+    1:5:android.graphics.Insets m$1(android.view.WindowInsets):0:0 -> r
       # {"id":"com.android.tools.r8.synthesized"}
-    1:3:void m$1():0:0 -> u
+    1:3:android.view.accessibility.AccessibilityNodeInfo$AccessibilityAction m$1():0:0 -> s
+      # {"id":"com.android.tools.r8.synthesized"}
+    1:3:void m$1():0:0 -> t
+      # {"id":"com.android.tools.r8.synthesized"}
+    1:5:void m$1(android.view.Window):0:0 -> u
       # {"id":"com.android.tools.r8.synthesized"}
     1:4:void m$1(android.view.WindowInsets$Builder,android.graphics.Insets):0:0 -> v
       # {"id":"com.android.tools.r8.synthesized"}
@@ -59246,34 +59250,34 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
       # {"id":"com.android.tools.r8.synthesized"}
     1:3:void androidx.appcompat.app.AppCompatActivity.<init>():92:92 -> <init>
     1:3:void com.getcapacitor.BridgeActivity.<init>():11 -> <init>
-    1:3:void <init>():47 -> <init>
+    1:3:void <init>():49 -> <init>
     4:5:androidx.savedstate.SavedStateRegistry androidx.activity.ComponentActivity.getSavedStateRegistry():646:646 -> <init>
     4:5:void androidx.appcompat.app.AppCompatActivity.initDelegate():114 -> <init>
     4:5:void androidx.appcompat.app.AppCompatActivity.<init>():93 -> <init>
     4:5:void com.getcapacitor.BridgeActivity.<init>():11 -> <init>
-    4:5:void <init>():47 -> <init>
+    4:5:void <init>():49 -> <init>
     6:9:androidx.savedstate.SavedStateRegistry androidx.savedstate.SavedStateRegistryController.getSavedStateRegistry():33:33 -> <init>
     6:9:androidx.savedstate.SavedStateRegistry androidx.activity.ComponentActivity.getSavedStateRegistry():646 -> <init>
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     6:9:void androidx.appcompat.app.AppCompatActivity.initDelegate():114 -> <init>
     6:9:void androidx.appcompat.app.AppCompatActivity.<init>():93 -> <init>
     6:9:void com.getcapacitor.BridgeActivity.<init>():11 -> <init>
-    6:9:void <init>():47 -> <init>
+    6:9:void <init>():49 -> <init>
     10:19:void androidx.appcompat.app.AppCompatActivity.initDelegate():114:114 -> <init>
     10:19:void androidx.appcompat.app.AppCompatActivity.<init>():93 -> <init>
     10:19:void com.getcapacitor.BridgeActivity.<init>():11 -> <init>
-    10:19:void <init>():47 -> <init>
+    10:19:void <init>():49 -> <init>
     20:28:void androidx.appcompat.app.AppCompatActivity.initDelegate():124:124 -> <init>
     20:28:void androidx.appcompat.app.AppCompatActivity.<init>():93 -> <init>
     20:28:void com.getcapacitor.BridgeActivity.<init>():11 -> <init>
-    20:28:void <init>():47 -> <init>
+    20:28:void <init>():49 -> <init>
     29:30:void com.getcapacitor.BridgeActivity.<init>():17:17 -> <init>
-    29:30:void <init>():47 -> <init>
+    29:30:void <init>():49 -> <init>
     31:37:void com.getcapacitor.BridgeActivity.<init>():18:18 -> <init>
-    31:37:void <init>():47 -> <init>
+    31:37:void <init>():49 -> <init>
     38:44:void com.getcapacitor.BridgeActivity.<init>():19:19 -> <init>
-    38:44:void <init>():47 -> <init>
-    45:56:void <init>():53:53 -> <init>
+    38:44:void <init>():49 -> <init>
+    45:56:void <init>():55:55 -> <init>
     1:3:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):23:23 -> A
     4:9:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.setInstanceState(android.os.Bundle):1519:1519 -> A
     4:9:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):24 -> A
@@ -59450,14 +59454,14 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
     62:67:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1145:1145 -> C
     62:67:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> C
     68:71:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):166:166 -> C
-    1:8:void onActivityResult(int,int,android.content.Intent):80:80 -> onActivityResult
-    9:11:void onActivityResult(int,int,android.content.Intent):82:82 -> onActivityResult
-    12:18:void onActivityResult(int,int,android.content.Intent):83:83 -> onActivityResult
-    19:27:void onActivityResult(int,int,android.content.Intent):84:84 -> onActivityResult
-    28:41:void onActivityResult(int,int,android.content.Intent):85:85 -> onActivityResult
-    42:46:void onActivityResult(int,int,android.content.Intent):86:86 -> onActivityResult
-    47:57:void onActivityResult(int,int,android.content.Intent):85:85 -> onActivityResult
-    58:61:void onActivityResult(int,int,android.content.Intent):87:87 -> onActivityResult
+    1:8:void onActivityResult(int,int,android.content.Intent):82:82 -> onActivityResult
+    9:11:void onActivityResult(int,int,android.content.Intent):84:84 -> onActivityResult
+    12:18:void onActivityResult(int,int,android.content.Intent):85:85 -> onActivityResult
+    19:27:void onActivityResult(int,int,android.content.Intent):86:86 -> onActivityResult
+    28:41:void onActivityResult(int,int,android.content.Intent):87:87 -> onActivityResult
+    42:46:void onActivityResult(int,int,android.content.Intent):88:88 -> onActivityResult
+    47:57:void onActivityResult(int,int,android.content.Intent):87:87 -> onActivityResult
+    58:61:void onActivityResult(int,int,android.content.Intent):89:89 -> onActivityResult
     1:3:void com.getcapacitor.BridgeActivity.onConfigurationChanged(android.content.res.Configuration):210:210 -> onConfigurationChanged
     4:8:void com.getcapacitor.BridgeActivity.onConfigurationChanged(android.content.res.Configuration):212:212 -> onConfigurationChanged
     9:10:void com.getcapacitor.Bridge.onConfigurationChanged(android.content.res.Configuration):1315:1315 -> onConfigurationChanged
@@ -59471,44 +59475,44 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
     31:32:void com.getcapacitor.BridgeActivity.onConfigurationChanged(android.content.res.Configuration):216 -> onConfigurationChanged
     33:37:void com.getcapacitor.Bridge.onConfigurationChanged(android.content.res.Configuration):1316:1316 -> onConfigurationChanged
     33:37:void com.getcapacitor.BridgeActivity.onConfigurationChanged(android.content.res.Configuration):216 -> onConfigurationChanged
-    1:4:void onCreate(android.os.Bundle):61:61 -> onCreate
-    5:7:void onCreate(android.os.Bundle):62:62 -> onCreate
-    8:12:void showLaunchOverlay():130:130 -> onCreate
-    8:12:void onCreate(android.os.Bundle):63 -> onCreate
-    13:22:void showLaunchOverlay():131:131 -> onCreate
-    13:22:void onCreate(android.os.Bundle):63 -> onCreate
-    23:25:void showLaunchOverlay():132:132 -> onCreate
-    23:25:void onCreate(android.os.Bundle):63 -> onCreate
-    26:33:void showLaunchOverlay():133:133 -> onCreate
-    26:33:void onCreate(android.os.Bundle):63 -> onCreate
-    34:36:void showLaunchOverlay():134:134 -> onCreate
-    34:36:void onCreate(android.os.Bundle):63 -> onCreate
-    37:41:void showLaunchOverlay():135:135 -> onCreate
-    37:41:void onCreate(android.os.Bundle):63 -> onCreate
-    42:46:void showLaunchOverlay():136:136 -> onCreate
-    42:46:void onCreate(android.os.Bundle):63 -> onCreate
-    47:76:int dp(int):155:155 -> onCreate
-    47:76:void showLaunchOverlay():136 -> onCreate
-    47:76:void onCreate(android.os.Bundle):63 -> onCreate
-    77:81:void showLaunchOverlay():136:136 -> onCreate
-    77:81:void onCreate(android.os.Bundle):63 -> onCreate
-    82:83:void showLaunchOverlay():137:137 -> onCreate
-    82:83:void onCreate(android.os.Bundle):63 -> onCreate
-    84:86:void showLaunchOverlay():138:138 -> onCreate
-    84:86:void onCreate(android.os.Bundle):63 -> onCreate
-    87:95:void showLaunchOverlay():139:139 -> onCreate
-    87:95:void onCreate(android.os.Bundle):63 -> onCreate
-    96:97:void showLaunchOverlay():140:140 -> onCreate
-    96:97:void onCreate(android.os.Bundle):63 -> onCreate
-    98:103:void showLaunchOverlay():141:141 -> onCreate
-    98:103:void onCreate(android.os.Bundle):63 -> onCreate
+    1:4:void onCreate(android.os.Bundle):63:63 -> onCreate
+    5:7:void onCreate(android.os.Bundle):64:64 -> onCreate
+    8:12:void showLaunchOverlay():132:132 -> onCreate
+    8:12:void onCreate(android.os.Bundle):65 -> onCreate
+    13:22:void showLaunchOverlay():133:133 -> onCreate
+    13:22:void onCreate(android.os.Bundle):65 -> onCreate
+    23:25:void showLaunchOverlay():134:134 -> onCreate
+    23:25:void onCreate(android.os.Bundle):65 -> onCreate
+    26:33:void showLaunchOverlay():135:135 -> onCreate
+    26:33:void onCreate(android.os.Bundle):65 -> onCreate
+    34:36:void showLaunchOverlay():136:136 -> onCreate
+    34:36:void onCreate(android.os.Bundle):65 -> onCreate
+    37:41:void showLaunchOverlay():137:137 -> onCreate
+    37:41:void onCreate(android.os.Bundle):65 -> onCreate
+    42:46:void showLaunchOverlay():138:138 -> onCreate
+    42:46:void onCreate(android.os.Bundle):65 -> onCreate
+    47:76:int dp(int):157:157 -> onCreate
+    47:76:void showLaunchOverlay():138 -> onCreate
+    47:76:void onCreate(android.os.Bundle):65 -> onCreate
+    77:81:void showLaunchOverlay():138:138 -> onCreate
+    77:81:void onCreate(android.os.Bundle):65 -> onCreate
+    82:83:void showLaunchOverlay():139:139 -> onCreate
+    82:83:void onCreate(android.os.Bundle):65 -> onCreate
+    84:86:void showLaunchOverlay():140:140 -> onCreate
+    84:86:void onCreate(android.os.Bundle):65 -> onCreate
+    87:95:void showLaunchOverlay():141:141 -> onCreate
+    87:95:void onCreate(android.os.Bundle):65 -> onCreate
+    96:97:void showLaunchOverlay():142:142 -> onCreate
+    96:97:void onCreate(android.os.Bundle):65 -> onCreate
+    98:103:void showLaunchOverlay():143:143 -> onCreate
+    98:103:void onCreate(android.os.Bundle):65 -> onCreate
     104:105:com.getcapacitor.Bridge com.getcapacitor.BridgeActivity.getBridge():63:63 -> onCreate
-    104:105:void onCreate(android.os.Bundle):64 -> onCreate
+    104:105:void onCreate(android.os.Bundle):66 -> onCreate
     106:107:android.webkit.WebView com.getcapacitor.Bridge.getWebView():512:512 -> onCreate
-    106:107:void onCreate(android.os.Bundle):64 -> onCreate
+    106:107:void onCreate(android.os.Bundle):66 -> onCreate
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    108:117:void onCreate(android.os.Bundle):64:64 -> onCreate
-    118:131:void onCreate(android.os.Bundle):65:65 -> onCreate
+    108:117:void onCreate(android.os.Bundle):66:66 -> onCreate
+    118:131:void onCreate(android.os.Bundle):67:67 -> onCreate
     1:3:void com.getcapacitor.BridgeActivity.onDestroy():128:128 -> onDestroy
     4:7:void com.getcapacitor.BridgeActivity.onDestroy():129:129 -> onDestroy
     8:9:void com.getcapacitor.Bridge.onDestroy():1386:1386 -> onDestroy
@@ -59538,9 +59542,9 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
     10:12:void com.getcapacitor.BridgeActivity.onDetachedFromWindow():139 -> onDetachedFromWindow
     13:16:void com.getcapacitor.Bridge.onDetachedFromWindow():1402:1402 -> onDetachedFromWindow
     13:16:void com.getcapacitor.BridgeActivity.onDetachedFromWindow():139 -> onDetachedFromWindow
-    1:3:void onNewIntent(android.content.Intent):73:73 -> onNewIntent
-    4:6:void onNewIntent(android.content.Intent):74:74 -> onNewIntent
-    7:10:void onNewIntent(android.content.Intent):75:75 -> onNewIntent
+    1:3:void onNewIntent(android.content.Intent):75:75 -> onNewIntent
+    4:6:void onNewIntent(android.content.Intent):76:76 -> onNewIntent
+    7:10:void onNewIntent(android.content.Intent):77:77 -> onNewIntent
     1:3:void com.getcapacitor.BridgeActivity.onPause():105:105 -> onPause
     4:7:void com.getcapacitor.BridgeActivity.onPause():106:106 -> onPause
     8:9:void com.getcapacitor.Bridge.onPause():1359:1359 -> onPause
@@ -59564,10 +59568,10 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
     61:65:void com.getcapacitor.Bridge.onPause():1365:1365 -> onPause
     61:65:void com.getcapacitor.BridgeActivity.onPause():107 -> onPause
     66:71:void com.getcapacitor.BridgeActivity.onPause():108:108 -> onPause
-    1:8:void onRequestPermissionsResult(int,java.lang.String[],int[]):92:92 -> onRequestPermissionsResult
-    9:19:void onRequestPermissionsResult(int,java.lang.String[],int[]):94:94 -> onRequestPermissionsResult
-    20:24:void onRequestPermissionsResult(int,java.lang.String[],int[]):95:95 -> onRequestPermissionsResult
-    25:37:void onRequestPermissionsResult(int,java.lang.String[],int[]):96:96 -> onRequestPermissionsResult
+    1:8:void onRequestPermissionsResult(int,java.lang.String[],int[]):94:94 -> onRequestPermissionsResult
+    9:19:void onRequestPermissionsResult(int,java.lang.String[],int[]):96:96 -> onRequestPermissionsResult
+    20:24:void onRequestPermissionsResult(int,java.lang.String[],int[]):97:97 -> onRequestPermissionsResult
+    25:37:void onRequestPermissionsResult(int,java.lang.String[],int[]):98:98 -> onRequestPermissionsResult
     1:3:void com.getcapacitor.BridgeActivity.onRestart():86:86 -> onRestart
     4:7:void com.getcapacitor.BridgeActivity.onRestart():87:87 -> onRestart
     8:9:void com.getcapacitor.Bridge.onRestart():1324:1324 -> onRestart
@@ -59695,110 +59699,118 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
     74:76:void com.getcapacitor.Bridge.onStop():1378:1378 -> onStop
     74:76:void com.getcapacitor.BridgeActivity.onStop():121 -> onStop
     77:82:void com.getcapacitor.BridgeActivity.onStop():122:122 -> onStop
-    1:8:javax.crypto.SecretKey createBiometricKey():306:306 -> s
+    1:8:javax.crypto.SecretKey createBiometricKey():341:341 -> s
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lcom/actionanand/lifeleaf/app/MainActivity;)Ljavax/crypto/SecretKey;"}
-    9:22:javax.crypto.SecretKey createBiometricKey():307:307 -> s
-    23:32:javax.crypto.SecretKey createBiometricKey():310:310 -> s
-    33:37:javax.crypto.SecretKey createBiometricKey():311:311 -> s
-    38:41:javax.crypto.SecretKey createBiometricKey():312:312 -> s
-    42:45:javax.crypto.SecretKey createBiometricKey():313:313 -> s
-    46:51:javax.crypto.SecretKey createBiometricKey():314:314 -> s
-    52:56:javax.crypto.SecretKey createBiometricKey():315:315 -> s
-    57:59:javax.crypto.SecretKey createBiometricKey():317:317 -> s
-    60:66:javax.crypto.SecretKey createBiometricKey():319:319 -> s
-    67:71:javax.crypto.SecretKey createBiometricKey():320:320 -> s
-    1:4:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):324:324 -> t
+    9:22:javax.crypto.SecretKey createBiometricKey():342:342 -> s
+    23:32:javax.crypto.SecretKey createBiometricKey():345:345 -> s
+    33:37:javax.crypto.SecretKey createBiometricKey():346:346 -> s
+    38:41:javax.crypto.SecretKey createBiometricKey():347:347 -> s
+    42:45:javax.crypto.SecretKey createBiometricKey():348:348 -> s
+    46:51:javax.crypto.SecretKey createBiometricKey():349:349 -> s
+    52:56:javax.crypto.SecretKey createBiometricKey():350:350 -> s
+    57:59:javax.crypto.SecretKey createBiometricKey():352:352 -> s
+    60:66:javax.crypto.SecretKey createBiometricKey():354:354 -> s
+    67:71:javax.crypto.SecretKey createBiometricKey():355:355 -> s
+    1:4:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):359:359 -> t
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lcom/actionanand/lifeleaf/app/MainActivity;Ljava/lang/String;Ljavax/crypto/Cipher;Ljava/lang/Runnable;Ljava/lang/String;)V"}
-    5:13:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):324:324 -> t
+    5:13:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):359:359 -> t
     14:19:java.util.concurrent.Executor androidx.core.content.ContextCompat.getMainExecutor(android.content.Context):687:687 -> t
-    14:19:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):325 -> t
+    14:19:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):360 -> t
     20:24:java.util.concurrent.Executor androidx.core.content.ContextCompat.getMainExecutor(android.content.Context):688:688 -> t
-    20:24:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):325 -> t
+    20:24:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):360 -> t
     25:33:java.util.concurrent.Executor androidx.core.content.ContextCompat.getMainExecutor(android.content.Context):690:690 -> t
-    25:33:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):325 -> t
+    25:33:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):360 -> t
     34:40:java.util.concurrent.Executor androidx.core.os.ExecutorCompat.create(android.os.Handler):37:37 -> t
     34:40:java.util.concurrent.Executor androidx.core.content.ContextCompat.getMainExecutor(android.content.Context):690 -> t
-    34:40:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):325 -> t
-    41:52:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):326:326 -> t
-    53:57:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):340:340 -> t
+    34:40:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):360 -> t
+    41:52:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):361:361 -> t
+    53:57:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):375:375 -> t
     58:59:androidx.biometric.BiometricPrompt$PromptInfo$Builder androidx.biometric.BiometricPrompt$PromptInfo$Builder.setTitle(java.lang.CharSequence):421:421 -> t
-    58:59:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):341 -> t
-    60:61:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):341:341 -> t
+    58:59:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):376 -> t
+    60:61:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):376:376 -> t
     62:63:androidx.biometric.BiometricPrompt$PromptInfo$Builder androidx.biometric.BiometricPrompt$PromptInfo$Builder.setSubtitle(java.lang.CharSequence):433:433 -> t
-    62:63:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):342 -> t
-    64:65:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):342:342 -> t
+    62:63:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):377 -> t
+    64:65:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):377:377 -> t
     66:69:androidx.biometric.BiometricPrompt$PromptInfo$Builder androidx.biometric.BiometricPrompt$PromptInfo$Builder.setNegativeButtonText(java.lang.CharSequence):462:462 -> t
-    66:69:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):343 -> t
+    66:69:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):378 -> t
     70:71:androidx.biometric.BiometricPrompt$PromptInfo$Builder androidx.biometric.BiometricPrompt$PromptInfo$Builder.setAllowedAuthenticators(int):555:555 -> t
-    70:71:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):344 -> t
-    72:75:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):345:345 -> t
-    76:85:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):346:346 -> t
+    70:71:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):379 -> t
+    72:75:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):380:380 -> t
+    76:85:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):381:381 -> t
     86:100:int androidx.biometric.BiometricPrompt$PromptInfo.getAllowedAuthenticators():713:713 -> t
     86:100:int androidx.biometric.AuthenticatorUtils.getConsolidatedAuthenticators(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):79 -> t
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     86:100:void androidx.biometric.BiometricPrompt.authenticate(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):944 -> t
-    86:100:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):346 -> t
+    86:100:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):381 -> t
     101:107:void androidx.biometric.BiometricPrompt.authenticate(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):950:950 -> t
-    101:107:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):346 -> t
+    101:107:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):381 -> t
     108:115:void androidx.biometric.BiometricPrompt.authenticate(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):951:951 -> t
-    108:115:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):346 -> t
+    108:115:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):381 -> t
     116:119:void androidx.biometric.BiometricPrompt.authenticate(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):955:955 -> t
-    116:119:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):346 -> t
+    116:119:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):381 -> t
     120:127:void androidx.biometric.BiometricPrompt.authenticate(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):946:946 -> t
-    120:127:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):346 -> t
-    3:11:void applySystemBars(boolean):178:178 -> u
-    12:18:void applySystemBars(boolean):179:179 -> u
-    19:25:void applySystemBars(boolean):180:180 -> u
-    26:36:void applySystemBars(boolean):181:181 -> u
+    120:127:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):381 -> t
+    1:6:void applySystemBars(boolean):180:180 -> u
+    7:15:void applySystemBars(boolean):181:181 -> u
+    16:23:void applySystemBars(boolean):182:182 -> u
+    24:26:void applySystemBars(boolean):183:183 -> u
+    27:29:void applySystemBars(boolean):184:184 -> u
+    30:36:void applySystemBars(boolean):185:185 -> u
     37:38:com.getcapacitor.Bridge com.getcapacitor.BridgeActivity.getBridge():63:63 -> u
-    37:38:void applySystemBars(boolean):182 -> u
+    37:38:void applySystemBars(boolean):186 -> u
     39:40:android.webkit.WebView com.getcapacitor.Bridge.getWebView():512:512 -> u
-    39:40:void applySystemBars(boolean):182 -> u
+    39:40:void applySystemBars(boolean):186 -> u
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    41:43:void applySystemBars(boolean):182:182 -> u
-    44:69:void applySystemBars(boolean):183:183 -> u
-    70:81:void applySystemBars(boolean):186:186 -> u
-    1:14:void dispatchNativeResult(java.lang.String,boolean,java.lang.String,java.lang.String):350:350 -> v
-    1:18:void dispatchSharedIntent(android.content.Intent):100:100 -> w
-    19:32:void dispatchSharedIntent(android.content.Intent):101:101 -> w
-    33:38:void dispatchSharedIntent(android.content.Intent):102:102 -> w
-    39:48:void dispatchSharedIntent(android.content.Intent):103:103 -> w
-    49:56:void dispatchSharedIntent(android.content.Intent):104:104 -> w
-    57:67:void dispatchSharedIntent(android.content.Intent):106:106 -> w
-    68:70:void dispatchSharedIntent(android.content.Intent):107:107 -> w
-    71:94:void dispatchSharedIntent(android.content.Intent):108:108 -> w
-    95:118:void dispatchSharedIntent(android.content.Intent):109:109 -> w
-    119:135:void dispatchSharedIntent(android.content.Intent):110:110 -> w
-    136:137:void dispatchSharedIntent(android.content.Intent):112:112 -> w
-    138:150:void dispatchSharedIntent(android.content.Intent):114:114 -> w
-    151:155:void dispatchSharedIntent(android.content.Intent):115:115 -> w
-    156:166:void dispatchSharedIntent(android.content.Intent):110:110 -> w
-    167:177:void dispatchSharedIntent(android.content.Intent):117:117 -> w
-    178:186:void dispatchSharedIntent(android.content.Intent):110:110 -> w
-    187:193:void dispatchSharedIntent(android.content.Intent):120:120 -> w
-    194:208:void dispatchSharedIntent(android.content.Intent):121:121 -> w
-    209:223:void dispatchSharedIntent(android.content.Intent):122:122 -> w
-    224:243:void dispatchSharedIntent(android.content.Intent):123:123 -> w
+    41:43:void applySystemBars(boolean):186:186 -> u
+    44:49:void applySystemBars(boolean):187:187 -> u
+    50:52:void applySystemBars(boolean):188:188 -> u
+    53:55:void applySystemBars(boolean):189:189 -> u
+    56:63:void applySystemBars(boolean):191:191 -> u
+    64:75:void applySystemBars(boolean):193:193 -> u
+    76:79:void applySystemBars(boolean):197:197 -> u
+    80:103:void applySystemBars(boolean):205:205 -> u
+    104:107:void applySystemBars(boolean):210:210 -> u
+    1:14:void dispatchNativeResult(java.lang.String,boolean,java.lang.String,java.lang.String):385:385 -> v
+    1:18:void dispatchSharedIntent(android.content.Intent):102:102 -> w
+    19:32:void dispatchSharedIntent(android.content.Intent):103:103 -> w
+    33:38:void dispatchSharedIntent(android.content.Intent):104:104 -> w
+    39:48:void dispatchSharedIntent(android.content.Intent):105:105 -> w
+    49:56:void dispatchSharedIntent(android.content.Intent):106:106 -> w
+    57:67:void dispatchSharedIntent(android.content.Intent):108:108 -> w
+    68:70:void dispatchSharedIntent(android.content.Intent):109:109 -> w
+    71:94:void dispatchSharedIntent(android.content.Intent):110:110 -> w
+    95:118:void dispatchSharedIntent(android.content.Intent):111:111 -> w
+    119:135:void dispatchSharedIntent(android.content.Intent):112:112 -> w
+    136:137:void dispatchSharedIntent(android.content.Intent):114:114 -> w
+    138:150:void dispatchSharedIntent(android.content.Intent):116:116 -> w
+    151:155:void dispatchSharedIntent(android.content.Intent):117:117 -> w
+    156:166:void dispatchSharedIntent(android.content.Intent):112:112 -> w
+    167:177:void dispatchSharedIntent(android.content.Intent):119:119 -> w
+    178:186:void dispatchSharedIntent(android.content.Intent):112:112 -> w
+    187:193:void dispatchSharedIntent(android.content.Intent):122:122 -> w
+    194:208:void dispatchSharedIntent(android.content.Intent):123:123 -> w
+    209:223:void dispatchSharedIntent(android.content.Intent):124:124 -> w
+    224:243:void dispatchSharedIntent(android.content.Intent):125:125 -> w
     244:245:com.getcapacitor.Bridge com.getcapacitor.BridgeActivity.getBridge():63:63 -> w
-    244:245:void dispatchSharedIntent(android.content.Intent):125 -> w
+    244:245:void dispatchSharedIntent(android.content.Intent):127 -> w
     246:248:android.webkit.WebView com.getcapacitor.Bridge.getWebView():512:512 -> w
-    246:248:void dispatchSharedIntent(android.content.Intent):125 -> w
+    246:248:void dispatchSharedIntent(android.content.Intent):127 -> w
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    249:251:void dispatchSharedIntent(android.content.Intent):125:125 -> w
-    252:257:void dispatchSharedIntent(android.content.Intent):126:126 -> w
-    1:7:void ensureReminderNotificationChannel():163:163 -> x
-    8:17:void ensureReminderNotificationChannel():164:164 -> x
-    18:24:void ensureReminderNotificationChannel():165:165 -> x
-    25:28:void ensureReminderNotificationChannel():166:166 -> x
-    29:31:void ensureReminderNotificationChannel():171:171 -> x
-    32:34:void ensureReminderNotificationChannel():172:172 -> x
-    35:38:void ensureReminderNotificationChannel():173:173 -> x
-    1:5:void hideLaunchOverlay():145:145 -> y
-    6:25:void hideLaunchOverlay():147:147 -> y
-    26:38:void hideLaunchOverlay():148:148 -> y
-    39:40:void hideLaunchOverlay():149:149 -> y
-    41:65:void hideLaunchOverlay():150:150 -> y
-    66:69:void hideLaunchOverlay():152:152 -> y
+    249:251:void dispatchSharedIntent(android.content.Intent):127:127 -> w
+    252:257:void dispatchSharedIntent(android.content.Intent):128:128 -> w
+    1:7:void ensureReminderNotificationChannel():165:165 -> x
+    8:17:void ensureReminderNotificationChannel():166:166 -> x
+    18:24:void ensureReminderNotificationChannel():167:167 -> x
+    25:28:void ensureReminderNotificationChannel():168:168 -> x
+    29:31:void ensureReminderNotificationChannel():173:173 -> x
+    32:34:void ensureReminderNotificationChannel():174:174 -> x
+    35:38:void ensureReminderNotificationChannel():175:175 -> x
+    1:5:void hideLaunchOverlay():147:147 -> y
+    6:25:void hideLaunchOverlay():149:149 -> y
+    26:38:void hideLaunchOverlay():150:150 -> y
+    39:40:void hideLaunchOverlay():151:151 -> y
+    41:65:void hideLaunchOverlay():152:152 -> y
+    66:69:void hideLaunchOverlay():154:154 -> y
     1:5:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):188:188 -> z
     6:11:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1270:1270 -> z
     6:11:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> z
@@ -59827,10 +59839,44 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
     59:66:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1274:1274 -> z
     59:66:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> z
     67:70:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):193:193 -> z
-com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda6 -> e1.a:
+com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda10 -> e1.a:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
-    int e1.MainActivity$$ExternalSyntheticLambda6.$r8$classId -> b
+    int e1.MainActivity$$ExternalSyntheticLambda10.$r8$classId -> b
+      # {"id":"com.android.tools.r8.synthesized"}
+    com.actionanand.lifeleaf.app.MainActivity com.actionanand.lifeleaf.app.MainActivity$$InternalSyntheticLambda$2$cdb61d64e2b7e8040b7bcdb8fdaf377ec271df99bdc74bf04a28c23baea01ad2$0.f$0 -> c
+      # {"id":"com.android.tools.r8.synthesized"}
+    1:8:void e1.MainActivity$$ExternalSyntheticLambda10.<init>(com.actionanand.lifeleaf.app.MainActivity,int):0:0 -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    10:16:void com.actionanand.lifeleaf.app.MainActivity.lambda$onCreate$0():68:68 -> run
+    10:16:void e1.MainActivity$$ExternalSyntheticLambda10.run():0 -> run
+      # {"id":"com.android.tools.r8.synthesized"}
+    17:20:void com.actionanand.lifeleaf.app.MainActivity.lambda$onCreate$0():69:69 -> run
+    17:20:void e1.MainActivity$$ExternalSyntheticLambda10.run():0 -> run
+    21:26:void e1.MainActivity$$ExternalSyntheticLambda10.run():0:0 -> run
+com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda11 -> e1.b:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
+    int e1.MainActivity$$ExternalSyntheticLambda11.$r8$classId -> b
+      # {"id":"com.android.tools.r8.synthesized"}
+    android.view.View com.actionanand.lifeleaf.app.MainActivity$$InternalSyntheticLambda$2$cdb61d64e2b7e8040b7bcdb8fdaf377ec271df99bdc74bf04a28c23baea01ad2$1.f$0 -> c
+      # {"id":"com.android.tools.r8.synthesized"}
+    1:8:void e1.MainActivity$$ExternalSyntheticLambda11.<init>(android.view.View,int):0:0 -> <init>
+      # {"id":"com.android.tools.r8.synthesized"}
+    8:13:void androidx.core.view.SoftwareKeyboardControllerCompat$Impl20.lambda$show$0(android.view.View):133:133 -> run
+    8:13:void e1.MainActivity$$ExternalSyntheticLambda11.run():0 -> run
+      # {"id":"com.android.tools.r8.synthesized"}
+    14:20:void androidx.core.view.SoftwareKeyboardControllerCompat$Impl20.lambda$show$0(android.view.View):134:134 -> run
+    14:20:void e1.MainActivity$$ExternalSyntheticLambda11.run():0 -> run
+    21:24:void androidx.core.view.SoftwareKeyboardControllerCompat$Impl20.lambda$show$0(android.view.View):135:135 -> run
+    21:24:void e1.MainActivity$$ExternalSyntheticLambda11.run():0 -> run
+    25:26:void e1.MainActivity$$ExternalSyntheticLambda11.run():0:0 -> run
+    27:44:void com.actionanand.lifeleaf.app.MainActivity.lambda$hideLaunchOverlay$1(android.view.View):153:153 -> run
+    27:44:void e1.MainActivity$$ExternalSyntheticLambda11.run():0 -> run
+com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda8 -> e1.c:
+# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
+# {"id":"com.android.tools.r8.synthesized"}
+    int e1.MainActivity$$ExternalSyntheticLambda8.$r8$classId -> b
       # {"id":"com.android.tools.r8.synthesized"}
     boolean com.actionanand.lifeleaf.app.MainActivity$$InternalSyntheticLambda$1$11a7398ba52ac5d74cae70d34a4dc1a6135c63e266eae2e116b30de610835ac2$0.f$2 -> c
       # {"id":"com.android.tools.r8.synthesized"}
@@ -59846,161 +59892,131 @@ com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda6 -> e1.a:
     java.lang.String com.actionanand.lifeleaf.app.MainActivity$$InternalSyntheticLambda$1$11a7398ba52ac5d74cae70d34a4dc1a6135c63e266eae2e116b30de610835ac2$0.f$4 -> g
       # {"id":"com.android.tools.r8.residualsignature","signature":"Ljava/lang/Object;"}
       # {"id":"com.android.tools.r8.synthesized"}
-    1:1:void e1.MainActivity$$ExternalSyntheticLambda6.<init>(com.actionanand.lifeleaf.app.MainActivity,java.lang.String,boolean,java.lang.String,java.lang.String):0:0 -> <init>
+    1:1:void e1.MainActivity$$ExternalSyntheticLambda8.<init>(com.actionanand.lifeleaf.app.MainActivity,java.lang.String,boolean,java.lang.String,java.lang.String):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
-    2:2:void e1.MainActivity$$ExternalSyntheticLambda6.<init>(l1.SplashScreen,h.AppCompatActivity,l1.SplashScreenSettings,boolean,o1.NotificationCenter):0:0 -> <init>
+    2:2:void e1.MainActivity$$ExternalSyntheticLambda8.<init>(l1.SplashScreen,h.AppCompatActivity,l1.SplashScreenSettings,boolean,o1.NotificationCenter):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Ll1/f;Lh/j;Ll1/h;ZLo1/e;)V"}
     25:28:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):189:189 -> run
-    25:28:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    25:28:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
       # {"id":"com.android.tools.r8.synthesized"}
     29:32:boolean com.capacitorjs.plugins.splashscreen.SplashScreenConfig.isImmersive():83:83 -> run
     29:32:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):189 -> run
-    29:32:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    29:32:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     33:43:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):190:190 -> run
-    33:43:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    33:43:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     44:47:boolean com.capacitorjs.plugins.splashscreen.SplashScreenConfig.isFullScreen():91:91 -> run
     44:47:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):191 -> run
-    44:47:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    44:47:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     48:58:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):192:192 -> run
-    48:58:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    48:58:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     59:68:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):194:194 -> run
-    59:68:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    59:68:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     69:73:java.lang.String com.capacitorjs.plugins.splashscreen.SplashScreenConfig.getLayoutName():115:115 -> run
     69:73:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):197 -> run
-    69:73:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    69:73:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     74:77:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):198:198 -> run
-    74:77:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    74:77:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     78:79:java.lang.String com.capacitorjs.plugins.splashscreen.SplashScreenConfig.getLayoutName():115:115 -> run
     78:79:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):198 -> run
-    78:79:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    78:79:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     80:91:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):198:198 -> run
-    80:91:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    80:91:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     92:101:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):200:200 -> run
-    92:101:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    92:101:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     102:107:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):204:204 -> run
-    102:107:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    102:107:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     108:111:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):206:206 -> run
-    108:111:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    108:111:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     112:116:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):207:207 -> run
-    112:116:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    112:116:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     117:126:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):208:208 -> run
-    117:126:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    117:126:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     127:131:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):211:211 -> run
-    127:131:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    127:131:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     132:134:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):213:213 -> run
-    132:134:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    132:134:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     135:139:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):215:215 -> run
-    135:139:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    135:139:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     140:144:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):218:218 -> run
-    140:144:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    140:144:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     145:152:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):219:219 -> run
-    145:152:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    145:152:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     153:157:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):220:220 -> run
-    153:157:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    153:157:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     158:159:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):222:222 -> run
-    158:159:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    158:159:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     160:163:boolean com.capacitorjs.plugins.splashscreen.SplashScreenSettings.isAutoHide():35:35 -> run
     160:163:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):224 -> run
-    160:163:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    160:163:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     164:180:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):225:225 -> run
-    164:180:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    164:180:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     181:182:java.lang.Integer com.capacitorjs.plugins.splashscreen.SplashScreenSettings.getShowDuration():11:11 -> run
     181:182:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):231 -> run
-    181:182:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    181:182:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     183:187:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):231:231 -> run
-    183:187:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    183:187:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     188:193:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):225:225 -> run
-    188:193:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    188:193:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     194:197:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):235:235 -> run
-    194:197:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
-    198:210:void e1.MainActivity$$ExternalSyntheticLambda6.run():0:0 -> run
-    211:217:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):351:351 -> run
-    211:217:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
-    218:239:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):352:352 -> run
-    218:239:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
-    240:259:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):353:353 -> run
-    240:259:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
-    260:275:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):354:354 -> run
-    260:275:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    194:197:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
+    198:210:void e1.MainActivity$$ExternalSyntheticLambda8.run():0:0 -> run
+    211:217:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):386:386 -> run
+    211:217:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
+    218:239:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):387:387 -> run
+    218:239:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
+    240:259:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):388:388 -> run
+    240:259:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
+    260:275:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):389:389 -> run
+    260:275:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     276:277:com.getcapacitor.Bridge com.getcapacitor.BridgeActivity.getBridge():63:63 -> run
-    276:277:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):355 -> run
-    276:277:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
+    276:277:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):390 -> run
+    276:277:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
     278:280:android.webkit.WebView com.getcapacitor.Bridge.getWebView():512:512 -> run
-    278:280:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):355 -> run
+    278:280:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):390 -> run
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    278:280:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
-    281:284:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):355:355 -> run
-    281:284:void e1.MainActivity$$ExternalSyntheticLambda6.run():0 -> run
-com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda7 -> e1.b:
-# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
-# {"id":"com.android.tools.r8.synthesized"}
-    int e1.MainActivity$$ExternalSyntheticLambda7.$r8$classId -> b
-      # {"id":"com.android.tools.r8.synthesized"}
-    com.actionanand.lifeleaf.app.MainActivity com.actionanand.lifeleaf.app.MainActivity$$InternalSyntheticLambda$1$5aa36b5c92542e3d8ed0a2991ff53c0e01df251ddf8218778afbda3397eec996$0.f$0 -> c
-      # {"id":"com.android.tools.r8.synthesized"}
-    1:8:void e1.MainActivity$$ExternalSyntheticLambda7.<init>(com.actionanand.lifeleaf.app.MainActivity,int):0:0 -> <init>
-      # {"id":"com.android.tools.r8.synthesized"}
-    16:22:void com.actionanand.lifeleaf.app.MainActivity.lambda$onCreate$0():66:66 -> run
-    23:26:void com.actionanand.lifeleaf.app.MainActivity.lambda$onCreate$0():67:67 -> run
-com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda9 -> e1.c:
-# {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
-# {"id":"com.android.tools.r8.synthesized"}
-    int e1.MainActivity$$ExternalSyntheticLambda9.$r8$classId -> b
-      # {"id":"com.android.tools.r8.synthesized"}
-    android.view.View com.actionanand.lifeleaf.app.MainActivity$$InternalSyntheticLambda$2$cdb61d64e2b7e8040b7bcdb8fdaf377ec271df99bdc74bf04a28c23baea01ad2$1.f$0 -> c
-      # {"id":"com.android.tools.r8.synthesized"}
-    1:8:void e1.MainActivity$$ExternalSyntheticLambda9.<init>(android.view.View,int):0:0 -> <init>
-      # {"id":"com.android.tools.r8.synthesized"}
-    8:13:void androidx.core.view.SoftwareKeyboardControllerCompat$Impl20.lambda$show$0(android.view.View):133:133 -> run
-    8:13:void e1.MainActivity$$ExternalSyntheticLambda9.run():0 -> run
-      # {"id":"com.android.tools.r8.synthesized"}
-    14:20:void androidx.core.view.SoftwareKeyboardControllerCompat$Impl20.lambda$show$0(android.view.View):134:134 -> run
-    14:20:void e1.MainActivity$$ExternalSyntheticLambda9.run():0 -> run
-    21:24:void androidx.core.view.SoftwareKeyboardControllerCompat$Impl20.lambda$show$0(android.view.View):135:135 -> run
-    21:24:void e1.MainActivity$$ExternalSyntheticLambda9.run():0 -> run
-    25:26:void e1.MainActivity$$ExternalSyntheticLambda9.run():0:0 -> run
-    27:44:void com.actionanand.lifeleaf.app.MainActivity.lambda$hideLaunchOverlay$1(android.view.View):151:151 -> run
-    27:44:void e1.MainActivity$$ExternalSyntheticLambda9.run():0 -> run
+    278:280:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
+    281:284:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$2(java.lang.String,boolean,java.lang.String,java.lang.String):390:390 -> run
+    281:284:void e1.MainActivity$$ExternalSyntheticLambda8.run():0 -> run
 com.actionanand.lifeleaf.app.MainActivity$1 -> e1.d:
 # {"id":"sourceFile","fileName":"MainActivity.java"}
     java.lang.Runnable val$success -> e
     java.lang.String val$action -> f
     com.actionanand.lifeleaf.app.MainActivity this$0 -> g
     1:3:void androidx.biometric.BiometricPrompt$AuthenticationCallback.<init>():365:365 -> <init>
-    1:3:void <init>(com.actionanand.lifeleaf.app.MainActivity,java.lang.Runnable,java.lang.String):326 -> <init>
-    4:10:void <init>(com.actionanand.lifeleaf.app.MainActivity,java.lang.Runnable,java.lang.String):326:326 -> <init>
-    2:5:void onAuthenticationError(int,java.lang.CharSequence):336:336 -> M
+    1:3:void <init>(com.actionanand.lifeleaf.app.MainActivity,java.lang.Runnable,java.lang.String):361 -> <init>
+    4:10:void <init>(com.actionanand.lifeleaf.app.MainActivity,java.lang.Runnable,java.lang.String):361:361 -> <init>
+    2:5:void onAuthenticationError(int,java.lang.CharSequence):371:371 -> M
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Ljava/lang/CharSequence;)V"}
-    6:18:void onAuthenticationError(int,java.lang.CharSequence):337:337 -> M
-    1:5:void onAuthenticationSucceeded(androidx.biometric.BiometricPrompt$AuthenticationResult):330:330 -> O
+    6:18:void onAuthenticationError(int,java.lang.CharSequence):372:372 -> M
+    1:5:void onAuthenticationSucceeded(androidx.biometric.BiometricPrompt$AuthenticationResult):365:365 -> O
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Landroidx/biometric/t;)V"}
-    6:11:void onAuthenticationSucceeded(androidx.biometric.BiometricPrompt$AuthenticationResult):331:331 -> O
+    6:11:void onAuthenticationSucceeded(androidx.biometric.BiometricPrompt$AuthenticationResult):366:366 -> O
 com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge -> e1.g:
 # {"id":"sourceFile","fileName":"MainActivity.java"}
     com.actionanand.lifeleaf.app.MainActivity this$0 -> a
-    1:6:void <init>(com.actionanand.lifeleaf.app.MainActivity):189:189 -> <init>
-    1:17:java.lang.String appVersion():299:299 -> appVersion
-    18:24:java.lang.String appVersion():300:300 -> appVersion
-    1:12:void authenticateBiometric():243:243 -> authenticateBiometric
-    1:22:void disableBiometric():269:269 -> disableBiometric
-    23:29:void disableBiometric():270:270 -> disableBiometric
-    30:32:void disableBiometric():271:271 -> disableBiometric
-    33:42:void disableBiometric():272:272 -> disableBiometric
-    1:12:void enableBiometric(java.lang.String):221:221 -> enableBiometric
-    1:8:void ensureReminderNotificationChannel():211:211 -> ensureReminderNotificationChannel
-    1:16:void exportFile(java.lang.String,java.lang.String,java.lang.String):278:278 -> exportFile
+    1:6:void <init>(com.actionanand.lifeleaf.app.MainActivity):213:213 -> <init>
+    1:17:java.lang.String appVersion():334:334 -> appVersion
+    18:24:java.lang.String appVersion():335:335 -> appVersion
+    1:12:void authenticateBiometric():278:278 -> authenticateBiometric
+    1:22:void disableBiometric():304:304 -> disableBiometric
+    23:29:void disableBiometric():305:305 -> disableBiometric
+    30:32:void disableBiometric():306:306 -> disableBiometric
+    33:42:void disableBiometric():307:307 -> disableBiometric
+    1:12:void enableBiometric(java.lang.String):256:256 -> enableBiometric
+    1:8:void ensureReminderNotificationChannel():246:246 -> ensureReminderNotificationChannel
+    1:16:void exportFile(java.lang.String,java.lang.String,java.lang.String):313:313 -> exportFile
     1:15:androidx.biometric.BiometricManager androidx.biometric.BiometricManager.from(android.content.Context):282:282 -> isBiometricAvailable
-    1:15:boolean isBiometricAvailable():215 -> isBiometricAvailable
-    16:25:boolean isBiometricAvailable():215:215 -> isBiometricAvailable
-    1:2:boolean notificationPermissionGranted():194:194 -> notificationPermissionGranted
-    3:10:boolean com.actionanand.lifeleaf.app.MainActivity.hasNotificationPermission():158:158 -> notificationPermissionGranted
-    3:10:boolean notificationPermissionGranted():194 -> notificationPermissionGranted
-    11:23:boolean com.actionanand.lifeleaf.app.MainActivity.hasNotificationPermission():159:159 -> notificationPermissionGranted
-    11:23:boolean notificationPermissionGranted():194 -> notificationPermissionGranted
-    1:12:void requestNotificationPermission():198:198 -> requestNotificationPermission
-    1:12:void setDarkMode(boolean):191:191 -> setDarkMode
-    1:12:void setScreenshotProtection(boolean):290:290 -> setScreenshotProtection
+    1:15:boolean isBiometricAvailable():250 -> isBiometricAvailable
+    16:25:boolean isBiometricAvailable():250:250 -> isBiometricAvailable
+    1:2:boolean notificationPermissionGranted():218:218 -> notificationPermissionGranted
+    3:10:boolean com.actionanand.lifeleaf.app.MainActivity.hasNotificationPermission():160:160 -> notificationPermissionGranted
+    3:10:boolean notificationPermissionGranted():218 -> notificationPermissionGranted
+    11:23:boolean com.actionanand.lifeleaf.app.MainActivity.hasNotificationPermission():161:161 -> notificationPermissionGranted
+    11:23:boolean notificationPermissionGranted():218 -> notificationPermissionGranted
+    1:12:void requestNotificationPermission():222:222 -> requestNotificationPermission
+    1:12:void setDarkMode(boolean):215:215 -> setDarkMode
+    1:12:void setScreenshotProtection(boolean):325:325 -> setScreenshotProtection
 com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge$$ExternalSyntheticLambda0 -> e1.e:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -60012,25 +60028,28 @@ com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge$$ExternalSyntheti
     1:8:void e1.MainActivity$LifeLeafNativeBridge$$ExternalSyntheticLambda0.<init>(e1.MainActivity$LifeLeafNativeBridge,int):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Le1/g;I)V"}
-    10:27:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():245:245 -> run
-    28:41:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():246:246 -> run
-    42:47:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():248:248 -> run
-    48:50:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():249:249 -> run
-    51:60:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():250:250 -> run
-    61:66:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():252:252 -> run
-    67:81:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():253:253 -> run
-    82:95:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():254:254 -> run
-    96:103:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():251:251 -> run
-    104:111:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():247:247 -> run
-    112:121:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():262:262 -> run
-    122:125:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():199:199 -> run
-    126:131:boolean com.actionanand.lifeleaf.app.MainActivity.hasNotificationPermission():158:158 -> run
-    126:131:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():199 -> run
-    132:142:boolean com.actionanand.lifeleaf.app.MainActivity.hasNotificationPermission():159:159 -> run
-    132:142:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():199 -> run
-    143:152:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():205:205 -> run
-    153:156:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():200:200 -> run
-    157:164:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():201:201 -> run
+    11:27:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():280:280 -> run
+    28:41:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():281:281 -> run
+    42:47:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():283:283 -> run
+    48:50:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():284:284 -> run
+    51:60:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():285:285 -> run
+    61:66:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():287:287 -> run
+    67:81:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():288:288 -> run
+    82:95:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():289:289 -> run
+    96:103:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():286:286 -> run
+    104:111:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():282:282 -> run
+    112:121:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$5():297:297 -> run
+    122:129:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():224:224 -> run
+    130:138:boolean com.actionanand.lifeleaf.app.MainActivity.hasNotificationPermission():160:160 -> run
+    130:138:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():224 -> run
+    139:150:boolean com.actionanand.lifeleaf.app.MainActivity.hasNotificationPermission():161:161 -> run
+    139:150:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():224 -> run
+    151:153:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():225:225 -> run
+    154:163:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():226:226 -> run
+    164:173:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():230:230 -> run
+    174:177:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():232:232 -> run
+    178:188:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():239:239 -> run
+    189:194:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():235:235 -> run
 com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge$$ExternalSyntheticLambda1 -> e1.f:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -60044,10 +60063,10 @@ com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge$$ExternalSyntheti
     1:10:void e1.MainActivity$LifeLeafNativeBridge$$ExternalSyntheticLambda1.<init>(e1.MainActivity$LifeLeafNativeBridge,boolean,int):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Le1/g;ZI)V"}
-    10:23:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setScreenshotProtection$7(boolean):291:291 -> run
+    10:23:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setScreenshotProtection$7(boolean):326:326 -> run
       # {"id":"com.android.tools.r8.residualsignature","signature":"()V"}
-    24:31:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setScreenshotProtection$7(boolean):292:292 -> run
-    32:40:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setDarkMode$0(boolean):191:191 -> run
+    24:31:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setScreenshotProtection$7(boolean):327:327 -> run
+    32:40:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setDarkMode$0(boolean):215:215 -> run
 com.capacitorjs.plugins.app.AppPlugin -> com.capacitorjs.plugins.app.AppPlugin:
 # {"id":"sourceFile","fileName":"AppPlugin.java"}
     androidx.activity.OnBackPressedCallback onBackPressedCallback -> onBackPressedCallback
@@ -68069,17 +68088,17 @@ com.getcapacitor.Bridge$$ExternalSyntheticLambda0 -> com.getcapacitor.b:
     240:245:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$show$7(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,android.animation.Animator$AnimatorListener):432:432 -> run
     240:245:void run():0 -> run
     246:261:void run():0:0 -> run
-    262:277:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):279:279 -> run
+    262:277:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):314:314 -> run
     262:277:void run():0 -> run
-    278:284:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):280:280 -> run
+    278:284:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):315:315 -> run
     278:284:void run():0 -> run
-    285:291:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):281:281 -> run
+    285:291:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):316:316 -> run
     285:291:void run():0 -> run
-    292:304:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):282:282 -> run
+    292:304:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):317:317 -> run
     292:304:void run():0 -> run
-    305:329:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):283:283 -> run
+    305:329:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):318:318 -> run
     305:329:void run():0 -> run
-    330:333:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):284:284 -> run
+    330:333:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$6(java.lang.String,java.lang.String,java.lang.String):319:319 -> run
     330:333:void run():0 -> run
     334:369:void run():0:0 -> run
     370:372:void com.getcapacitor.Bridge.lambda$callPluginMethod$0(com.getcapacitor.PluginHandle,java.lang.String,com.getcapacitor.PluginCall):841:841 -> run

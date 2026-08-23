@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { existsSync } from 'node:fs';
-import { copyFile, mkdir, readFile, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const root = process.cwd();
@@ -25,9 +25,22 @@ const javaPath = path.join(
   'actionanand',
   'lifeleaf',
   'app',
+  'MainActivity.java',
+);
+const staleJavaPath = path.join(
+  androidRoot,
+  'app',
+  'src',
+  'main',
+  'java',
+  'com',
+  'actionanand',
+  'lifeleaf',
+  'app',
   'app',
   'MainActivity.java',
 );
+await rm(staleJavaPath, { force: true });
 await mkdir(path.dirname(javaPath), { recursive: true });
 const drawableDirectory = path.join(androidRoot, 'app', 'src', 'main', 'res', 'drawable-nodpi');
 await mkdir(drawableDirectory, { recursive: true });
