@@ -25,6 +25,7 @@ const javaPath = path.join(
   'actionanand',
   'lifeleaf',
   'app',
+  'app',
   'MainActivity.java',
 );
 await mkdir(path.dirname(javaPath), { recursive: true });
@@ -80,6 +81,15 @@ if (!manifest.includes('LIFE_LEAF_SHARE_TARGET')) {
 await writeFile(manifestPath, manifest, 'utf8');
 
 let gradle = await readFile(gradlePath, 'utf8');
+gradle = gradle
+  .replace(/minifyEnabled\s+false/, 'minifyEnabled true')
+  .replace(
+    /getDefaultProguardFile\(['"]proguard-android\.txt['"]\)/g,
+    "getDefaultProguardFile('proguard-android-optimize.txt')",
+  );
+if (!gradle.includes('shrinkResources true')) {
+  gradle = gradle.replace(/minifyEnabled\s+true/, 'minifyEnabled true\n            shrinkResources true');
+}
 gradle = gradle
   .replace(/minifyEnabled\s+false/, 'minifyEnabled true')
   .replace(
