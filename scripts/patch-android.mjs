@@ -63,6 +63,20 @@ await writeFile(
 `,
   'utf8',
 );
+await writeFile(
+  path.join(drawableXmlDirectory, 'ic_stat_life_leaf.xml'),
+  `<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M17.7,4.3c-3.7,0.4 -7.3,2.1 -9.7,4.6 -2.2,2.3 -3,5.2 -2.2,7.7L3.3,19.1c-0.4,0.4 -0.4,1 0,1.4s1,0.4 1.4,0l2.4,-2.4c1.2,0.7 2.6,1 4.1,0.8 2.8,-0.3 5.3,-2 6.9,-4.7 1.5,-2.5 2.1,-5.7 1.7,-8.8 -0.1,-0.7 -0.7,-1.2 -1.4,-1.1h-0.7zM8.2,15.4c0.6,-2.8 2.9,-5.3 6.7,-7.2 0.5,-0.2 1.1,0 1.3,0.4 0.2,0.5 0,1.1 -0.4,1.3 -3.2,1.6 -5,3.6 -5.6,5.8 2.4,0.3 4.8,-1.1 6,-3.2 0.9,-1.5 1.4,-3.5 1.4,-5.6 -2.9,0.5 -5.7,1.9 -7.8,4 -1.4,1.5 -2,3.1 -1.6,4.5z" />
+</vector>`,
+  'utf8',
+);
 const xmlDirectory = path.join(androidRoot, 'app', 'src', 'main', 'res', 'xml');
 await mkdir(xmlDirectory, { recursive: true });
 await writeFile(
@@ -291,14 +305,33 @@ public class MainActivity extends BridgeActivity {
 
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    if (requestCode == EXPORT_DOCUMENT_REQUEST) {
+      byte[] contents = pendingExport;
+      pendingExport = null;
+      Uri destination = data == null ? null : data.getData();
+      if (resultCode != Activity.RESULT_OK || destination == null || contents == null) {
+        dispatchNativeResult("export-file", false, "", "The export was cancelled.");
+        return;
+      }
+      final byte[] payload = contents;
+      new Thread(() -> {
+        try (OutputStream output = getContentResolver().openOutputStream(destination, "w")) {
+          if (output == null) throw new IllegalStateException("The selected location could not be opened.");
+          output.write(payload);
+          output.flush();
+          dispatchNativeResult("export-file", true, "", "");
+        } catch (Exception error) {
+          dispatchNativeResult(
+            "export-file",
+            false,
+            "",
+            error.getMessage() == null ? "The file could not be saved." : error.getMessage()
+          );
+        }
+      }).start();
+      return;
+    }
     super.onActivityResult(requestCode, resultCode, data);
-    if (requestCode != EXPORT_DOCUMENT_REQUEST) return;
-    byte[] contents = pendingExport;
-    pendingExport = null;
-    if (resultCode != Activity.RESULT_OK || data == null || data.getData() == null || contents == null) return;
-    try (OutputStream output = getContentResolver().openOutputStream(data.getData())) {
-      if (output != null) output.write(contents);
-    } catch (Exception ignored) { }
   }
 
   @Override

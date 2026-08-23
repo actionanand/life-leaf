@@ -101,7 +101,6 @@ jobs:
           mkdir -p android/app/src/main/res/drawable-nodpi releases
           convert src/assets/life-leaf.png -background none -resize 360x360 -gravity center -extent 512x512 android/app/src/main/res/drawable-nodpi/life_leaf_splash_logo.png
           convert src/assets/life-leaf.png -background none -resize 420x420 -gravity center -extent 512x512 releases/playstore-icon.png
-          convert src/assets/life-leaf.png -background none -resize 72x72 -gravity center -extent 96x96 -channel A -threshold 10% +channel -fill white -colorize 100% android/app/src/main/res/drawable/ic_stat_life_leaf.png
 
       - name: Clear previous Android release artifacts
         run: |

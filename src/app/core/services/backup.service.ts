@@ -52,7 +52,7 @@ export class BackupService {
     let backup: LifeLeafBackup = { format: 'life-leaf-backup', version: 1, createdAt, encrypted: false, data };
     if (password) backup = await this.encrypt(data, password, createdAt);
     const filename = `life-leaf-backup-${createdAt.slice(0, 10)}.lifeleaf`;
-    this.download(filename, JSON.stringify(backup));
+    await this.download(filename, JSON.stringify(backup));
   }
 
   async restore(contents: string, password: string | undefined, replace: boolean): Promise<number> {
@@ -146,9 +146,15 @@ export class BackupService {
   private buffer(value: Uint8Array): ArrayBuffer {
     return new Uint8Array(value).buffer;
   }
-  private download(filename: string, contents: string): void {
+  private async download(filename: string, contents: string): Promise<void> {
     if (window.LifeLeafNative?.exportFile) {
-      window.LifeLeafNative.exportFile(filename, 'application/octet-stream', contents);
+      const result = this.nativeResult(
+        'export-file',
+        () => window.LifeLeafNative?.exportFile(filename, 'application/octet-stream', contents),
+        300_000,
+      );
+      const response = await result;
+      if (!response.success) throw new Error(response.message || 'The backup could not be saved.');
       return;
     }
     const url = URL.createObjectURL(new Blob([contents], { type: 'application/json' }));
@@ -157,5 +163,29 @@ export class BackupService {
     anchor.download = filename;
     anchor.click();
     setTimeout(() => URL.revokeObjectURL(url), 1_000);
+  }
+
+  private nativeResult(action: string, start: () => void, timeoutMs: number): Promise<LifeLeafNativeResult> {
+    return new Promise((resolve, reject) => {
+      let timeout: ReturnType<typeof setTimeout> | undefined;
+      const finish = (result?: LifeLeafNativeResult, error?: Error): void => {
+        if (timeout) clearTimeout(timeout);
+        window.removeEventListener('life-leaf-native-result', listener);
+        if (result) resolve(result);
+        else reject(error ?? new Error('The Android request could not be completed.'));
+      };
+      const listener = (event: Event) => {
+        const detail = (event as CustomEvent<LifeLeafNativeResult>).detail;
+        if (detail.action !== action) return;
+        finish(detail);
+      };
+      window.addEventListener('life-leaf-native-result', listener);
+      timeout = setTimeout(() => finish(undefined, new Error('The Android request timed out.')), timeoutMs);
+      try {
+        start();
+      } catch (error) {
+        finish(undefined, error instanceof Error ? error : new Error('The Android request could not be started.'));
+      }
+    });
   }
 }
