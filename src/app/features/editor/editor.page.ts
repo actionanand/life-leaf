@@ -262,7 +262,7 @@ export class EditorPage implements OnDestroy, OnInit {
   }
 
   async back(): Promise<void> {
-    if (await this.canLeaveEditor()) {
+    if (await this.canLeaveEditor(true)) {
       this.location.back();
     }
   }
@@ -319,20 +319,23 @@ export class EditorPage implements OnDestroy, OnInit {
     this.pendingAutosave = this.pendingAutosave.then(() => this.autosave()).catch(() => undefined);
   }
 
-  async canLeaveEditor(): Promise<boolean> {
-    if (!this.form.dirty || this.discarding) return true;
+  async canLeaveEditor(forcePrompt = false): Promise<boolean> {
+    if ((!forcePrompt && !this.form.dirty) || this.discarding) return true;
+    if (!this.loaded()) return true;
     if (this.leavePromptOpen) return false;
     this.leavePromptOpen = true;
     try {
       const discard = await this.confirmations.confirm({
         header: 'Discard changes?',
-        message: 'Your latest edits on this page will be removed.',
+        message: this.form.dirty
+          ? 'Your latest edits on this page will be removed.'
+          : 'Leave this page and return to your diary?',
         confirmText: 'Discard',
         cancelText: 'Keep editing',
         destructive: true,
       });
       if (!discard) return false;
-      await this.discardChanges();
+      if (this.form.dirty) await this.discardChanges();
       return true;
     } finally {
       this.leavePromptOpen = false;
