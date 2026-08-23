@@ -1,0 +1,1 @@
+import {E,I as Ht,a6 as Ea,a7 as ge}from'./main-XN5VZ3RG.js';function w(t){t||(t=E(Ht));let i=new ge(e=>{if(t.destroyed){e.next();return}return t.onDestroy(e.next.bind(e))});return e=>e.pipe(Ea(i))}export{w};
