@@ -8,6 +8,8 @@ import {
   IonContent,
   IonHeader,
   IonIcon,
+  IonInput,
+  IonModal,
   IonSegment,
   IonSegmentButton,
   IonTitle,
@@ -23,6 +25,8 @@ import {
   refreshOutline,
   shieldCheckmarkOutline,
   trashOutline,
+  eyeOffOutline,
+  eyeOutline,
 } from 'ionicons/icons';
 import { DiaryEntry } from '../../core/models/diary.models';
 import { BackupService } from '../../core/services/backup.service';
@@ -46,6 +50,8 @@ type DataView = 'backup' | 'archive' | 'trash';
     IonContent,
     IonHeader,
     IonIcon,
+    IonInput,
+    IonModal,
     IonSegment,
     IonSegmentButton,
     IonTitle,
@@ -65,11 +71,19 @@ export class DataPage implements OnInit {
   readonly trashed = signal<DiaryEntry[]>([]);
   readonly activeViewEntries = computed(() => (this.view() === 'archive' ? this.archived() : this.trashed()));
   readonly busy = signal(false);
+  readonly passwordPrompt = signal<{ mode: 'encrypt' | 'restore'; title: string; message: string } | undefined>(
+    undefined,
+  );
+  readonly passwordValue = signal('');
+  readonly showPassword = signal(false);
+  private passwordResolver?: (value: string | undefined) => void;
 
   constructor() {
     addIcons({
       archiveOutline,
       cloudDownloadOutline,
+      eyeOffOutline,
+      eyeOutline,
       keyOutline,
       leafOutline,
       refreshOutline,
@@ -109,27 +123,15 @@ export class DataPage implements OnInit {
   }
 
   async exportEncrypted(): Promise<void> {
-    const alert = await this.alerts.create({
-      header: 'Encrypt backup',
+    const password = await this.askPassword({
+      mode: 'encrypt',
+      title: 'Encrypt backup',
       message: 'Choose a password you will remember. It is never stored by Life Leaf.',
-      cssClass: 'life-leaf-confirmation',
-      inputs: [
-        {
-          name: 'password',
-          type: 'password',
-          placeholder: 'Backup password',
-          attributes: { minlength: 8, autocomplete: 'new-password' },
-        },
-      ],
-      buttons: [
-        { text: 'Cancel', role: 'cancel' },
-        { text: 'Export', role: 'confirm' },
-      ],
     });
-    await alert.present();
-    const result = await alert.onDidDismiss<{ values?: { password?: string } }>();
-    const password = result.data?.values?.password;
-    if (result.role !== 'confirm' || !password || password.length < 8) return;
+    if (!password || password.length < 8) {
+      if (password) await this.snackbar.show('Use at least 8 characters for the backup password');
+      return;
+    }
     await this.run(() => this.backups.export(password));
   }
 
@@ -142,7 +144,12 @@ export class DataPage implements OnInit {
     const contents = await file.text();
     try {
       const metadata = JSON.parse(contents) as { encrypted?: boolean };
-      if (metadata.encrypted) password = await this.askPassword();
+      if (metadata.encrypted)
+        password = await this.askPassword({
+          mode: 'restore',
+          title: 'Backup password',
+          message: 'Enter the password used when this backup was exported.',
+        });
       if (metadata.encrypted && !password) return;
       const modeAlert = await this.alerts.create({
         header: 'Restore this backup?',
@@ -230,19 +237,31 @@ export class DataPage implements OnInit {
       this.busy.set(false);
     }
   }
-  private async askPassword(): Promise<string | undefined> {
-    const alert = await this.alerts.create({
-      header: 'Backup password',
-      cssClass: 'life-leaf-confirmation',
-      inputs: [{ name: 'password', type: 'password', placeholder: 'Password' }],
-      buttons: [
-        { text: 'Cancel', role: 'cancel' },
-        { text: 'Continue', role: 'confirm' },
-      ],
+  togglePasswordVisibility(): void {
+    this.showPassword.update(value => !value);
+  }
+  passwordChanged(event: Event): void {
+    this.passwordValue.set(String((event as CustomEvent<{ value?: string }>).detail?.value ?? ''));
+  }
+  closePasswordPrompt(value?: string): void {
+    const resolver = this.passwordResolver;
+    this.passwordResolver = undefined;
+    this.passwordPrompt.set(undefined);
+    this.passwordValue.set('');
+    this.showPassword.set(false);
+    resolver?.(value);
+  }
+  private askPassword(prompt: {
+    mode: 'encrypt' | 'restore';
+    title: string;
+    message: string;
+  }): Promise<string | undefined> {
+    this.passwordValue.set('');
+    this.showPassword.set(false);
+    this.passwordPrompt.set(prompt);
+    return new Promise(resolve => {
+      this.passwordResolver = resolve;
     });
-    await alert.present();
-    const result = await alert.onDidDismiss<{ values?: { password?: string } }>();
-    return result.role === 'confirm' ? result.data?.values?.password : undefined;
   }
   private async notice(header: string, message: string): Promise<void> {
     const alert = await this.alerts.create({ header, message, cssClass: 'life-leaf-confirmation', buttons: ['OK'] });

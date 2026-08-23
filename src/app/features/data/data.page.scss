@@ -122,3 +122,49 @@ header > p:last-child {
 .empty-data p {
   color: var(--ll-muted);
 }
+.password-modal {
+  --height: auto;
+  --width: min(92vw, 420px);
+  --border-radius: 22px;
+}
+.password-sheet {
+  padding: 22px;
+  color: var(--ll-text);
+  background: var(--ll-surface);
+}
+.password-sheet h2 {
+  margin: 0 0 8px;
+  font-family: var(--ll-serif);
+  font-size: 1.35rem;
+}
+.password-sheet p {
+  margin: 0 0 16px;
+  color: var(--ll-muted);
+  line-height: 1.45;
+}
+.password-field {
+  display: grid;
+  grid-template-columns: 1fr 44px;
+  align-items: center;
+  border: 1px solid var(--ll-border);
+  border-radius: 14px;
+  background: var(--ll-bg);
+}
+.password-field ion-input {
+  --padding-start: 14px;
+  --padding-end: 8px;
+}
+.password-field ion-button {
+  --color: var(--ll-primary);
+}
+.password-sheet small {
+  display: block;
+  margin-top: 8px;
+  color: var(--ll-muted);
+}
+.password-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 20px;
+}

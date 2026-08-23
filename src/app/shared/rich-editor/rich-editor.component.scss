@@ -102,3 +102,21 @@ mark {
     gap: 8px;
   }
 }
+@media (max-width: 759px) {
+  :host.editor-focused .format-toolbar,
+  :host.selection-active .format-toolbar {
+    position: fixed;
+    right: 10px;
+    bottom: calc(env(safe-area-inset-bottom) + 10px);
+    left: 10px;
+    z-index: 1000;
+    border: 1px solid var(--ll-border);
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgb(15 28 22 / 18%);
+  }
+
+  :host.editor-focused .editor-host,
+  :host.selection-active .editor-host {
+    padding-bottom: 70px;
+  }
+}

@@ -7,7 +7,6 @@ import { App } from '@capacitor/app';
 import { PluginListenerHandle } from '@capacitor/core';
 import { Haptics, NotificationType } from '@capacitor/haptics';
 import {
-  AlertController,
   IonButton,
   IonButtons,
   IonChip,
@@ -78,7 +77,6 @@ export class EditorPage implements OnDestroy, OnInit {
   private readonly attachmentStorage = inject(AttachmentService);
   private readonly router = inject(Router);
   private readonly location = inject(Location);
-  private readonly alerts = inject(AlertController);
   private readonly confirmations = inject(ConfirmationService);
   private readonly snackbar = inject(SnackbarService);
   private readonly modals = inject(ModalController);
@@ -104,6 +102,7 @@ export class EditorPage implements OnDestroy, OnInit {
   private stateListener?: PluginListenerHandle;
   private pendingAutosave = Promise.resolve();
   private discarding = false;
+  private leavePromptOpen = false;
   private attachmentIdsAtOpen = new Set<string>();
   private readonly pendingAttachmentRemovals = new Map<string, AttachmentMeta>();
 
@@ -263,21 +262,9 @@ export class EditorPage implements OnDestroy, OnInit {
   }
 
   async back(): Promise<void> {
-    if (!this.form.dirty) {
+    if (await this.canLeaveEditor()) {
       this.location.back();
-      return;
     }
-    const alert = await this.alerts.create({
-      header: 'Save changes before leaving?',
-      message: 'Your draft is safe on this device.',
-      cssClass: 'life-leaf-confirmation',
-      buttons: [
-        { text: 'Continue editing', role: 'cancel' },
-        { text: 'Discard', role: 'destructive', handler: () => void this.discardAndLeave() },
-        { text: 'Save', handler: () => void this.save() },
-      ],
-    });
-    await alert.present();
   }
 
   async trash(): Promise<void> {
@@ -332,7 +319,27 @@ export class EditorPage implements OnDestroy, OnInit {
     this.pendingAutosave = this.pendingAutosave.then(() => this.autosave()).catch(() => undefined);
   }
 
-  private async discardAndLeave(): Promise<void> {
+  async canLeaveEditor(): Promise<boolean> {
+    if (!this.form.dirty || this.discarding) return true;
+    if (this.leavePromptOpen) return false;
+    this.leavePromptOpen = true;
+    try {
+      const discard = await this.confirmations.confirm({
+        header: 'Discard changes?',
+        message: 'Your latest edits on this page will be removed.',
+        confirmText: 'Discard',
+        cancelText: 'Keep editing',
+        destructive: true,
+      });
+      if (!discard) return false;
+      await this.discardChanges();
+      return true;
+    } finally {
+      this.leavePromptOpen = false;
+    }
+  }
+
+  private async discardChanges(): Promise<void> {
     this.discarding = true;
     await this.pendingAutosave;
     const current = this.entry();
@@ -343,7 +350,6 @@ export class EditorPage implements OnDestroy, OnInit {
       await this.diary.deleteDraft(current.id);
     }
     this.form.markAsPristine();
-    this.location.back();
   }
 
   private buildEntry(): DiaryEntry | undefined {

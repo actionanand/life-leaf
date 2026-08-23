@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import type { EditorPage } from './features/editor/editor.page';
 
 export const routes: Routes = [
   {
@@ -8,6 +9,7 @@ export const routes: Routes = [
   {
     path: 'write/:id',
     loadComponent: () => import('./features/editor/editor.page').then(m => m.EditorPage),
+    canDeactivate: [(component: EditorPage) => component.canLeaveEditor()],
   },
   {
     path: 'search',
