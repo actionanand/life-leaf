@@ -12,6 +12,7 @@ if (!existsSync(androidRoot)) {
 
 const manifestPath = path.join(androidRoot, 'app', 'src', 'main', 'AndroidManifest.xml');
 const gradlePath = path.join(androidRoot, 'app', 'build.gradle');
+const proguardPath = path.join(androidRoot, 'app', 'proguard-rules.pro');
 const javaPath = path.join(
   androidRoot,
   'app',
@@ -21,6 +22,7 @@ const javaPath = path.join(
   'com',
   'actionanand',
   'lifeleaf',
+  'app',
   'MainActivity.java',
 );
 await mkdir(path.dirname(javaPath), { recursive: true });
@@ -76,15 +78,70 @@ if (!manifest.includes('LIFE_LEAF_SHARE_TARGET')) {
 await writeFile(manifestPath, manifest, 'utf8');
 
 let gradle = await readFile(gradlePath, 'utf8');
+gradle = gradle
+  .replace(/minifyEnabled\s+false/, 'minifyEnabled true')
+  .replace(
+    /getDefaultProguardFile\(['"]proguard-android\.txt['"]\)/g,
+    "getDefaultProguardFile('proguard-android-optimize.txt')",
+  );
+if (!gradle.includes('shrinkResources true')) {
+  gradle = gradle.replace(/minifyEnabled\s+true/, 'minifyEnabled true\n            shrinkResources true');
+}
 if (!gradle.includes('androidx.biometric:biometric')) {
   gradle = gradle.replace(
     /dependencies\s*\{/,
     "dependencies {\n    implementation 'androidx.biometric:biometric:1.1.0'",
   );
-  await writeFile(gradlePath, gradle, 'utf8');
+}
+await writeFile(gradlePath, gradle, 'utf8');
+
+if (!/minifyEnabled\s+true/.test(gradle) || !gradle.includes('shrinkResources true')) {
+  throw new Error(`Could not enable R8 release optimization in ${gradlePath}.`);
+}
+if (!/getDefaultProguardFile\(['"]proguard-android-optimize\.txt['"]\)/.test(gradle)) {
+  throw new Error(`The optimized default ProGuard configuration is missing from ${gradlePath}.`);
 }
 
-const source = `package com.actionanand.lifeleaf;
+const webViewKeepRules = `
+# Life Leaf exposes these methods to the Angular WebView at runtime.
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+`;
+const tinkAnnotationComment = `
+
+# Google Tink references these JSR-305 and Error Prone annotations as build-time metadata. Android
+# does not ship the annotation classes, and Tink does not require them at runtime.
+`;
+const tinkAnnotationRules = [
+  '-dontwarn javax.annotation.Nullable',
+  '-dontwarn javax.annotation.concurrent.GuardedBy',
+  '-dontwarn com.google.errorprone.annotations.CanIgnoreReturnValue',
+  '-dontwarn com.google.errorprone.annotations.CheckReturnValue',
+  '-dontwarn com.google.errorprone.annotations.Immutable',
+  '-dontwarn com.google.errorprone.annotations.RestrictedApi',
+];
+let proguardRules = existsSync(proguardPath) ? await readFile(proguardPath, 'utf8') : '';
+if (!proguardRules.includes('@android.webkit.JavascriptInterface <methods>')) {
+  proguardRules = `${proguardRules.trimEnd()}${webViewKeepRules}`;
+}
+if (!proguardRules.includes('# Google Tink references these JSR-305 and Error Prone annotations')) {
+  proguardRules = `${proguardRules.trimEnd()}${tinkAnnotationComment}`;
+}
+for (const annotationRule of tinkAnnotationRules) {
+  if (!proguardRules.includes(annotationRule)) {
+    proguardRules = `${proguardRules.trimEnd()}\n${annotationRule}\n`;
+  }
+}
+await writeFile(proguardPath, `${proguardRules.trimEnd()}\n`, 'utf8');
+
+for (const annotationRule of tinkAnnotationRules) {
+  if (!proguardRules.includes(annotationRule)) {
+    throw new Error(`Required R8 rule was not written to ${proguardPath}: ${annotationRule}`);
+  }
+}
+
+const source = `package com.actionanand.lifeleaf.app;
 
 import android.annotation.SuppressLint;
 import android.Manifest;
