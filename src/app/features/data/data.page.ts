@@ -135,13 +135,20 @@ export class DataPage implements OnInit {
     await this.run(() => this.backups.export(password));
   }
 
+  async openRestorePicker(input: HTMLInputElement): Promise<void> {
+    input.click();
+  }
+
   async restoreFile(event: Event): Promise<void> {
     const input = event.target as HTMLInputElement;
     const file = input.files?.[0];
     input.value = '';
     if (!file) return;
+    await this.restoreContents(await file.text());
+  }
+
+  private async restoreContents(contents: string): Promise<void> {
     let password: string | undefined;
-    const contents = await file.text();
     try {
       const metadata = JSON.parse(contents) as { encrypted?: boolean };
       if (metadata.encrypted)
