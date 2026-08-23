@@ -21,6 +21,7 @@ const javaPath = path.join(
   'com',
   'actionanand',
   'lifeleaf',
+  'app',
   'MainActivity.java',
 );
 await mkdir(path.dirname(javaPath), { recursive: true });
@@ -84,7 +85,7 @@ if (!gradle.includes('androidx.biometric:biometric')) {
   await writeFile(gradlePath, gradle, 'utf8');
 }
 
-const source = `package com.actionanand.lifeleaf;
+const source = `package com.actionanand.lifeleaf.app;
 
 import android.annotation.SuppressLint;
 import android.Manifest;
