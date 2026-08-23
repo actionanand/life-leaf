@@ -10,6 +10,8 @@ interface LifeLeafNativeBridge {
   notificationPermissionGranted?(): boolean;
   requestNotificationPermission?(): void;
   ensureReminderNotificationChannel?(): void;
+  scheduleReminder?(hour: number, minute: number, daysCsv: string): void;
+  cancelReminder?(): void;
 }
 
 interface LifeLeafShareDetail {
