@@ -35,12 +35,18 @@ import { EMPTY_DOC } from '../../core/models/diary.models';
   templateUrl: './rich-editor.component.html',
   styleUrls: ['./rich-editor.component.scss'],
   imports: [IonButton, IonIcon],
+  host: {
+    '[class.editor-focused]': 'editorFocused()',
+    '[class.selection-active]': 'selectionActive()',
+  },
 })
 export class RichEditorComponent implements AfterViewInit, OnDestroy {
   readonly initialContent = input(EMPTY_DOC);
   readonly contentChanged = output<{ json: string; text: string }>();
   readonly editorHost = viewChild.required<ElementRef<HTMLElement>>('editorHost');
   private readonly editorRevision = signal(0);
+  readonly editorFocused = signal(false);
+  readonly selectionActive = signal(false);
   editor?: Editor;
 
   constructor() {
@@ -85,6 +91,18 @@ export class RichEditorComponent implements AfterViewInit, OnDestroy {
       content,
       editorProps: { attributes: { class: 'life-leaf-editor', 'aria-label': 'Diary content', spellcheck: 'true' } },
       onTransaction: () => this.editorRevision.update(value => value + 1),
+      onFocus: () => this.editorFocused.set(true),
+      onBlur: () => {
+        window.setTimeout(() => {
+          if (this.editor?.isFocused) return;
+          this.editorFocused.set(false);
+          this.selectionActive.set(false);
+        }, 120);
+      },
+      onSelectionUpdate: ({ editor }: { editor: Editor }) => {
+        const { from, to } = editor.state.selection;
+        this.selectionActive.set(editor.isFocused && from !== to);
+      },
       onUpdate: ({ editor }: { editor: Editor }) =>
         this.contentChanged.emit({ json: JSON.stringify(editor.getJSON()), text: editor.getText() }),
     });

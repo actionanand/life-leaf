@@ -148,7 +148,7 @@ export class BackupService {
   }
   private download(filename: string, contents: string): void {
     if (window.LifeLeafNative?.exportFile) {
-      window.LifeLeafNative.exportFile(filename, 'application/json', contents);
+      window.LifeLeafNative.exportFile(filename, 'application/octet-stream', contents);
       return;
     }
     const url = URL.createObjectURL(new Blob([contents], { type: 'application/json' }));

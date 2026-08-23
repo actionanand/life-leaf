@@ -12,6 +12,9 @@ if (!existsSync(androidRoot)) {
 
 const manifestPath = path.join(androidRoot, 'app', 'src', 'main', 'AndroidManifest.xml');
 const gradlePath = path.join(androidRoot, 'app', 'build.gradle');
+const proguardPath = path.join(androidRoot, 'app', 'proguard-rules.pro');
+const stylesPath = path.join(androidRoot, 'app', 'src', 'main', 'res', 'values', 'styles.xml');
+const nightStylesPath = path.join(androidRoot, 'app', 'src', 'main', 'res', 'values-night', 'styles.xml');
 const javaPath = path.join(
   androidRoot,
   'app',
@@ -21,6 +24,7 @@ const javaPath = path.join(
   'com',
   'actionanand',
   'lifeleaf',
+  'app',
   'MainActivity.java',
 );
 await mkdir(path.dirname(javaPath), { recursive: true });
@@ -76,15 +80,99 @@ if (!manifest.includes('LIFE_LEAF_SHARE_TARGET')) {
 await writeFile(manifestPath, manifest, 'utf8');
 
 let gradle = await readFile(gradlePath, 'utf8');
+gradle = gradle
+  .replace(/minifyEnabled\s+false/, 'minifyEnabled true')
+  .replace(
+    /getDefaultProguardFile\(['"]proguard-android\.txt['"]\)/g,
+    "getDefaultProguardFile('proguard-android-optimize.txt')",
+  );
+if (!gradle.includes('shrinkResources true')) {
+  gradle = gradle.replace(/minifyEnabled\s+true/, 'minifyEnabled true\n            shrinkResources true');
+}
 if (!gradle.includes('androidx.biometric:biometric')) {
   gradle = gradle.replace(
     /dependencies\s*\{/,
     "dependencies {\n    implementation 'androidx.biometric:biometric:1.1.0'",
   );
-  await writeFile(gradlePath, gradle, 'utf8');
+}
+await writeFile(gradlePath, gradle, 'utf8');
+
+if (!/minifyEnabled\s+true/.test(gradle) || !gradle.includes('shrinkResources true')) {
+  throw new Error(`Could not enable R8 release optimization in ${gradlePath}.`);
+}
+if (!/getDefaultProguardFile\(['"]proguard-android-optimize\.txt['"]\)/.test(gradle)) {
+  throw new Error(`The optimized default ProGuard configuration is missing from ${gradlePath}.`);
 }
 
-const source = `package com.actionanand.lifeleaf;
+const webViewKeepRules = `
+# Life Leaf exposes these methods to the Angular WebView at runtime.
+-keepclassmembers class * {
+    @android.webkit.JavascriptInterface <methods>;
+}
+`;
+const tinkAnnotationComment = `
+
+# Google Tink references these JSR-305 and Error Prone annotations as build-time metadata. Android
+# does not ship the annotation classes, and Tink does not require them at runtime.
+`;
+const tinkAnnotationRules = [
+  '-dontwarn javax.annotation.Nullable',
+  '-dontwarn javax.annotation.concurrent.GuardedBy',
+  '-dontwarn com.google.errorprone.annotations.CanIgnoreReturnValue',
+  '-dontwarn com.google.errorprone.annotations.CheckReturnValue',
+  '-dontwarn com.google.errorprone.annotations.Immutable',
+  '-dontwarn com.google.errorprone.annotations.RestrictedApi',
+];
+let proguardRules = existsSync(proguardPath) ? await readFile(proguardPath, 'utf8') : '';
+if (!proguardRules.includes('@android.webkit.JavascriptInterface <methods>')) {
+  proguardRules = `${proguardRules.trimEnd()}${webViewKeepRules}`;
+}
+if (!proguardRules.includes('# Google Tink references these JSR-305 and Error Prone annotations')) {
+  proguardRules = `${proguardRules.trimEnd()}${tinkAnnotationComment}`;
+}
+for (const annotationRule of tinkAnnotationRules) {
+  if (!proguardRules.includes(annotationRule)) {
+    proguardRules = `${proguardRules.trimEnd()}\n${annotationRule}\n`;
+  }
+}
+await writeFile(proguardPath, `${proguardRules.trimEnd()}\n`, 'utf8');
+
+for (const annotationRule of tinkAnnotationRules) {
+  if (!proguardRules.includes(annotationRule)) {
+    throw new Error(`Required R8 rule was not written to ${proguardPath}: ${annotationRule}`);
+  }
+}
+
+const ensureThemes = async (filePath, dark) => {
+  await mkdir(path.dirname(filePath), { recursive: true });
+  let styles = existsSync(filePath)
+    ? await readFile(filePath, 'utf8')
+    : '<?xml version="1.0" encoding="utf-8"?>\n<resources>\n</resources>\n';
+  const body = `    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:statusBarColor">${dark ? '#0F1C16' : '#F4F6F0'}</item>
+        <item name="android:navigationBarColor">${dark ? '#0F1C16' : '#F4F6F0'}</item>
+        <item name="android:windowLightStatusBar">${dark ? 'false' : 'true'}</item>
+        <item name="android:windowLightNavigationBar">${dark ? 'false' : 'true'}</item>
+    </style>
+    <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#F4F6F0</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/life_leaf_splash_logo</item>
+        <item name="windowSplashScreenIconBackgroundColor">@android:color/transparent</item>
+        <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
+        <item name="android:statusBarColor">#F4F6F0</item>
+        <item name="android:navigationBarColor">#F4F6F0</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>`;
+  styles = styles.replace(/\s*<style name="AppTheme\.NoActionBar"[\s\S]*?<\/style>/g, '');
+  styles = styles.replace(/\s*<style name="AppTheme\.NoActionBarLaunch"[\s\S]*?<\/style>/g, '');
+  styles = styles.replace('</resources>', `${body}\n</resources>`);
+  await writeFile(filePath, styles, 'utf8');
+};
+await ensureThemes(stylesPath, false);
+await ensureThemes(nightStylesPath, true);
+
+const source = `package com.actionanand.lifeleaf.app;
 
 import android.annotation.SuppressLint;
 import android.Manifest;
@@ -107,6 +195,8 @@ import android.util.Base64;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowInsetsController;
 import android.webkit.JavascriptInterface;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -261,15 +351,37 @@ public class MainActivity extends BridgeActivity {
 
   @SuppressWarnings("deprecation")
   private void applySystemBars(boolean dark) {
+    Window window = getWindow();
     int background = Color.parseColor(dark ? "#0F1C16" : "#F4F6F0");
-    getWindow().setStatusBarColor(background);
-    getWindow().setNavigationBarColor(background);
-    getWindow().getDecorView().setBackgroundColor(background);
+    window.setBackgroundDrawable(new android.graphics.drawable.ColorDrawable(background));
+    window.setStatusBarColor(background);
+    window.setNavigationBarColor(background);
+    window.getDecorView().setBackgroundColor(background);
     getBridge().getWebView().setBackgroundColor(background);
-    int flags = getWindow().getDecorView().getSystemUiVisibility();
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+      window.setStatusBarContrastEnforced(false);
+      window.setNavigationBarContrastEnforced(false);
+    }
+    View decor = window.getDecorView();
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+      WindowInsetsController controller = decor.getWindowInsetsController();
+      if (controller != null) {
+        int appearance = dark ? 0 : WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+          | WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS;
+        controller.setSystemBarsAppearance(
+          appearance,
+          WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS
+            | WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
+        );
+      }
+      return;
+    }
+    int flags = decor.getSystemUiVisibility();
     flags = dark ? flags & ~View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR : flags | View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR;
-    flags = dark ? flags & ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR : flags | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
-    getWindow().getDecorView().setSystemUiVisibility(flags);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+      flags = dark ? flags & ~View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR : flags | View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR;
+    }
+    decor.setSystemUiVisibility(flags);
   }
 
   private class LifeLeafNativeBridge {
@@ -282,13 +394,24 @@ public class MainActivity extends BridgeActivity {
     @JavascriptInterface
     public void requestNotificationPermission() {
       runOnUiThread(() -> {
-        if (hasNotificationPermission()) {
-          MainActivity.this.ensureReminderNotificationChannel();
-          dispatchNativeResult("notification-permission", true, "granted", "");
-          return;
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-          requestPermissions(new String[] { Manifest.permission.POST_NOTIFICATIONS }, NOTIFICATION_PERMISSION_REQUEST);
+        try {
+          if (hasNotificationPermission()) {
+            MainActivity.this.ensureReminderNotificationChannel();
+            dispatchNativeResult("notification-permission", true, "granted", "");
+            return;
+          }
+          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requestPermissions(new String[] { Manifest.permission.POST_NOTIFICATIONS }, NOTIFICATION_PERMISSION_REQUEST);
+          } else {
+            dispatchNativeResult("notification-permission", false, "", "Notification permission could not be requested.");
+          }
+        } catch (Exception error) {
+          dispatchNativeResult(
+            "notification-permission",
+            false,
+            "",
+            error.getMessage() == null ? "Notification permission could not be requested." : error.getMessage()
+          );
         }
       });
     }

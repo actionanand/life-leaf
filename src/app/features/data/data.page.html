@@ -74,3 +74,45 @@
     } }
   </main></ion-content
 >
+<ion-modal
+  [isOpen]="!!passwordPrompt()"
+  (didDismiss)="closePasswordPrompt()"
+  class="password-modal"
+  aria-labelledby="backup-password-title">
+  <ng-template>
+    @if (passwordPrompt(); as prompt) {
+    <section class="password-sheet">
+      <h2 id="backup-password-title">{{ prompt.title }}</h2>
+      <p>{{ prompt.message }}</p>
+      <div class="password-field">
+        <ion-input
+          [type]="showPassword() ? 'text' : 'password'"
+          [value]="passwordValue()"
+          (ionInput)="passwordChanged($event)"
+          autocomplete="current-password"
+          placeholder="Passphrase"
+          aria-label="Backup passphrase"></ion-input>
+        <ion-button
+          fill="clear"
+          type="button"
+          (click)="togglePasswordVisibility()"
+          [attr.aria-label]="showPassword() ? 'Hide passphrase' : 'Show passphrase'">
+          <ion-icon slot="icon-only" [name]="showPassword() ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+        </ion-button>
+      </div>
+      @if (prompt.mode === 'encrypt') {
+      <small>Use at least 8 characters.</small>
+      }
+      <div class="password-actions">
+        <ion-button fill="clear" type="button" (click)="closePasswordPrompt()">Cancel</ion-button>
+        <ion-button
+          type="button"
+          [disabled]="prompt.mode === 'encrypt' && passwordValue().length < 8"
+          (click)="closePasswordPrompt(passwordValue())">
+          {{ prompt.mode === 'encrypt' ? 'Export' : 'Continue' }}
+        </ion-button>
+      </div>
+    </section>
+    }
+  </ng-template>
+</ion-modal>

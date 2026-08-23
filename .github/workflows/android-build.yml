@@ -82,7 +82,6 @@ jobs:
         run: |
           sed -i 's/versionCode [0-9]*/versionCode project.hasProperty("versionCode") ? project.versionCode.toInteger() : 1/' build.gradle
           sed -i 's/versionName "[^"]*"/versionName project.hasProperty("versionName") ? project.versionName : "0.1.0"/' build.gradle
-          sed -i 's/minifyEnabled false/minifyEnabled true\n            shrinkResources true/' build.gradle
           sed -i "s/minSdkVersion = .*/minSdkVersion = $MIN_SDK_VERSION/" ../variables.gradle
           sed -i "s/targetSdkVersion = .*/targetSdkVersion = $TARGET_SDK_VERSION/" ../variables.gradle
 
