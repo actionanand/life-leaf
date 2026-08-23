@@ -86,11 +86,12 @@ header > p:last-child {
 .file-action {
   cursor: pointer;
 }
-.file-action input {
+.restore-input {
   position: absolute;
   width: 1px;
   height: 1px;
   opacity: 0;
+  pointer-events: none;
 }
 .delete-all {
   display: block;
