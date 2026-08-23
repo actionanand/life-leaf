@@ -27,6 +27,18 @@ const javaPath = path.join(
   'app',
   'MainActivity.java',
 );
+const receiverPath = path.join(
+  androidRoot,
+  'app',
+  'src',
+  'main',
+  'java',
+  'com',
+  'actionanand',
+  'lifeleaf',
+  'app',
+  'LifeLeafReminderReceiver.java',
+);
 const staleJavaPath = path.join(
   androidRoot,
   'app',
@@ -119,6 +131,12 @@ if (!manifest.includes('LIFE_LEAF_SHARE_TARGET')) {
                 <data android:mimeType="image/*" />
             </intent-filter>`;
   manifest = manifest.replace(/(\s*<\/activity>)/, `${shareTargets}$1`);
+}
+if (!manifest.includes('LifeLeafReminderReceiver')) {
+  manifest = manifest.replace(
+    '</application>',
+    '        <receiver android:name=".LifeLeafReminderReceiver" android:exported="false" />\n    </application>',
+  );
 }
 await writeFile(manifestPath, manifest, 'utf8');
 
@@ -229,9 +247,12 @@ const source = `package com.actionanand.lifeleaf.app;
 import android.annotation.SuppressLint;
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlarmManager;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -257,6 +278,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.KeyStore;
+import java.util.Calendar;
 import java.util.concurrent.Executor;
 
 import javax.crypto.Cipher;
@@ -276,6 +298,8 @@ public class MainActivity extends BridgeActivity {
   private static final int EXPORT_DOCUMENT_REQUEST = 7301;
   private static final int NOTIFICATION_PERMISSION_REQUEST = 7302;
   private static final String REMINDER_CHANNEL_ID = "life-leaf-reminders";
+  private static final String REMINDER_ALARM_ACTION = "com.actionanand.lifeleaf.app.REMINDER_ALARM";
+  private static final int REMINDER_ALARM_ID_BASE = 9040;
   private static final String BIOMETRIC_KEY_ALIAS = "life_leaf_biometric_key";
   private static final String SECURITY_PREFERENCES = "life_leaf_security";
   private final Handler mainHandler = new Handler(Looper.getMainLooper());
@@ -422,6 +446,49 @@ public class MainActivity extends BridgeActivity {
     manager.createNotificationChannel(channel);
   }
 
+  private void scheduleWeeklyReminders(int hour, int minute, String daysCsv) {
+    cancelReminderAlarms();
+    ensureReminderNotificationChannel();
+    AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+    if (alarmManager == null) throw new IllegalStateException("Android reminders are unavailable.");
+    String[] parts = daysCsv == null ? new String[0] : daysCsv.split(",");
+    for (String rawDay : parts) {
+      if (rawDay == null || rawDay.trim().isEmpty()) continue;
+      int day = Integer.parseInt(rawDay.trim());
+      if (day < Calendar.SUNDAY || day > Calendar.SATURDAY) continue;
+      Calendar calendar = Calendar.getInstance();
+      calendar.set(Calendar.DAY_OF_WEEK, day);
+      calendar.set(Calendar.HOUR_OF_DAY, hour);
+      calendar.set(Calendar.MINUTE, minute);
+      calendar.set(Calendar.SECOND, 0);
+      calendar.set(Calendar.MILLISECOND, 0);
+      if (calendar.getTimeInMillis() <= System.currentTimeMillis()) calendar.add(Calendar.WEEK_OF_YEAR, 1);
+      alarmManager.setInexactRepeating(
+        AlarmManager.RTC_WAKEUP,
+        calendar.getTimeInMillis(),
+        AlarmManager.INTERVAL_DAY * 7,
+        reminderPendingIntent(day)
+      );
+    }
+  }
+
+  private void cancelReminderAlarms() {
+    AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+    if (alarmManager == null) return;
+    for (int day = Calendar.SUNDAY; day <= Calendar.SATURDAY; day++) {
+      alarmManager.cancel(reminderPendingIntent(day));
+    }
+  }
+
+  private PendingIntent reminderPendingIntent(int day) {
+    Intent intent = new Intent(this, LifeLeafReminderReceiver.class);
+    intent.setAction(REMINDER_ALARM_ACTION);
+    intent.putExtra("notification_id", REMINDER_ALARM_ID_BASE + day);
+    int flags = PendingIntent.FLAG_UPDATE_CURRENT;
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) flags |= PendingIntent.FLAG_IMMUTABLE;
+    return PendingIntent.getBroadcast(this, REMINDER_ALARM_ID_BASE + day, intent, flags);
+  }
+
   @SuppressWarnings("deprecation")
   private void applySystemBars(boolean dark) {
     Window window = getWindow();
@@ -491,6 +558,44 @@ public class MainActivity extends BridgeActivity {
 
     @JavascriptInterface
     public void ensureReminderNotificationChannel() { MainActivity.this.ensureReminderNotificationChannel(); }
+
+    @JavascriptInterface
+    public void scheduleReminder(int hour, int minute, String daysCsv) {
+      runOnUiThread(() -> {
+        try {
+          if (!hasNotificationPermission()) {
+            dispatchNativeResult("reminder-schedule", false, "", "Notification permission was not granted.");
+            return;
+          }
+          MainActivity.this.scheduleWeeklyReminders(hour, minute, daysCsv);
+          dispatchNativeResult("reminder-schedule", true, "", "");
+        } catch (Exception error) {
+          dispatchNativeResult(
+            "reminder-schedule",
+            false,
+            "",
+            error.getMessage() == null ? "Reminder could not be scheduled." : error.getMessage()
+          );
+        }
+      });
+    }
+
+    @JavascriptInterface
+    public void cancelReminder() {
+      runOnUiThread(() -> {
+        try {
+          MainActivity.this.cancelReminderAlarms();
+          dispatchNativeResult("reminder-cancel", true, "", "");
+        } catch (Exception error) {
+          dispatchNativeResult(
+            "reminder-cancel",
+            false,
+            "",
+            error.getMessage() == null ? "Reminder could not be cancelled." : error.getMessage()
+          );
+        }
+      });
+    }
 
     @JavascriptInterface
     public boolean isBiometricAvailable() {
@@ -641,6 +746,68 @@ public class MainActivity extends BridgeActivity {
 `;
 
 await writeFile(javaPath, source, 'utf8');
+await writeFile(
+  receiverPath,
+  `package com.actionanand.lifeleaf.app;
+
+import android.Manifest;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.os.Build;
+
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.core.content.ContextCompat;
+
+public class LifeLeafReminderReceiver extends BroadcastReceiver {
+  private static final String CHANNEL_ID = "life-leaf-reminders";
+
+  @Override
+  public void onReceive(Context context, Intent intent) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+      && ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+      return;
+    }
+    ensureChannel(context);
+    Intent launch = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
+    if (launch == null) launch = new Intent(context, MainActivity.class);
+    launch.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+    int flags = PendingIntent.FLAG_UPDATE_CURRENT;
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) flags |= PendingIntent.FLAG_IMMUTABLE;
+    PendingIntent contentIntent = PendingIntent.getActivity(context, 9101, launch, flags);
+    NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
+      .setSmallIcon(R.drawable.ic_stat_life_leaf)
+      .setColor(Color.parseColor("#2F855A"))
+      .setContentTitle("A moment for today")
+      .setContentText("Write down something you'd like to remember.")
+      .setStyle(new NotificationCompat.BigTextStyle().bigText("Write down something you'd like to remember."))
+      .setContentIntent(contentIntent)
+      .setAutoCancel(true)
+      .setVisibility(NotificationCompat.VISIBILITY_PRIVATE)
+      .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+    int id = intent == null ? 9041 : intent.getIntExtra("notification_id", 9041);
+    NotificationManagerCompat.from(context).notify(id, builder.build());
+  }
+
+  private void ensureChannel(Context context) {
+    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return;
+    NotificationManager manager = context.getSystemService(NotificationManager.class);
+    if (manager == null || manager.getNotificationChannel(CHANNEL_ID) != null) return;
+    NotificationChannel channel = new NotificationChannel(CHANNEL_ID, "Diary reminders", NotificationManager.IMPORTANCE_DEFAULT);
+    channel.setDescription("Private reminders to write in Life Leaf");
+    channel.setLockscreenVisibility(NotificationCompat.VISIBILITY_PRIVATE);
+    manager.createNotificationChannel(channel);
+  }
+}
+`,
+  'utf8',
+);
 console.log(
   'Applied Life Leaf Android splash (168dp), notification, share-target, biometric, screenshot and system-bar patches.',
 );
