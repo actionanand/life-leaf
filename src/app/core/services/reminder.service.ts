@@ -10,14 +10,30 @@ export class ReminderService {
       window.LifeLeafNative.ensureReminderNotificationChannel?.();
       return true;
     }
-    const current = await LocalNotifications.checkPermissions();
-    if (current.display === 'granted') {
-      window.LifeLeafNative?.ensureReminderNotificationChannel?.();
-      return true;
+    if (window.LifeLeafNative?.requestNotificationPermission) {
+      try {
+        const response = await this.nativeResult('notification-permission', () =>
+          window.LifeLeafNative?.requestNotificationPermission?.(),
+        );
+        const granted = response.success && response.data === 'granted';
+        if (granted) window.LifeLeafNative?.ensureReminderNotificationChannel?.();
+        return granted;
+      } catch {
+        return false;
+      }
     }
-    const granted = (await LocalNotifications.requestPermissions()).display === 'granted';
-    if (granted) window.LifeLeafNative?.ensureReminderNotificationChannel?.();
-    return granted;
+    try {
+      const current = await LocalNotifications.checkPermissions();
+      if (current.display === 'granted') {
+        window.LifeLeafNative?.ensureReminderNotificationChannel?.();
+        return true;
+      }
+      const granted = (await LocalNotifications.requestPermissions()).display === 'granted';
+      if (granted) window.LifeLeafNative?.ensureReminderNotificationChannel?.();
+      return granted;
+    } catch {
+      return false;
+    }
   }
 
   async schedule(enabled: boolean, time: string, days: number[]): Promise<boolean> {
@@ -45,5 +61,29 @@ export class ReminderService {
     } catch {
       return false;
     }
+  }
+
+  private nativeResult(action: string, start: () => void, timeoutMs = 60_000): Promise<LifeLeafNativeResult> {
+    return new Promise((resolve, reject) => {
+      let timeout: ReturnType<typeof setTimeout> | undefined;
+      const finish = (result?: LifeLeafNativeResult, error?: Error): void => {
+        if (timeout) clearTimeout(timeout);
+        window.removeEventListener('life-leaf-native-result', listener);
+        if (result) resolve(result);
+        else reject(error ?? new Error('The Android request could not be completed.'));
+      };
+      const listener = (event: Event) => {
+        const detail = (event as CustomEvent<LifeLeafNativeResult>).detail;
+        if (detail.action !== action) return;
+        finish(detail);
+      };
+      window.addEventListener('life-leaf-native-result', listener);
+      timeout = setTimeout(() => finish(undefined, new Error('The Android request timed out.')), timeoutMs);
+      try {
+        start();
+      } catch (error) {
+        finish(undefined, error instanceof Error ? error : new Error('The Android request could not be started.'));
+      }
+    });
   }
 }

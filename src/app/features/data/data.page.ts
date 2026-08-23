@@ -233,6 +233,11 @@ export class DataPage implements OnInit {
     this.busy.set(true);
     try {
       await action();
+    } catch (error) {
+      await this.notice(
+        'Something went wrong',
+        error instanceof Error ? error.message : 'The action could not be completed.',
+      );
     } finally {
       this.busy.set(false);
     }
