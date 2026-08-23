@@ -4,32 +4,22 @@ import { LocalNotifications } from '@capacitor/local-notifications';
 
 @Injectable({ providedIn: 'root' })
 export class ReminderService {
+  private readonly channelId = 'life-leaf-reminders';
+
   async requestPermission(): Promise<boolean> {
     if (!Capacitor.isNativePlatform()) return false;
     if (window.LifeLeafNative?.notificationPermissionGranted?.()) {
-      window.LifeLeafNative.ensureReminderNotificationChannel?.();
+      await this.ensureChannel();
       return true;
-    }
-    if (window.LifeLeafNative?.requestNotificationPermission) {
-      try {
-        const response = await this.nativeResult('notification-permission', () =>
-          window.LifeLeafNative?.requestNotificationPermission?.(),
-        );
-        const granted = response.success && response.data === 'granted';
-        if (granted) window.LifeLeafNative?.ensureReminderNotificationChannel?.();
-        return granted;
-      } catch {
-        return false;
-      }
     }
     try {
       const current = await LocalNotifications.checkPermissions();
       if (current.display === 'granted') {
-        window.LifeLeafNative?.ensureReminderNotificationChannel?.();
+        await this.ensureChannel();
         return true;
       }
       const granted = (await LocalNotifications.requestPermissions()).display === 'granted';
-      if (granted) window.LifeLeafNative?.ensureReminderNotificationChannel?.();
+      if (granted) await this.ensureChannel();
       return granted;
     } catch {
       return false;
@@ -43,7 +33,7 @@ export class ReminderService {
       if (!enabled) return true;
       const permission = await LocalNotifications.checkPermissions();
       if (permission.display !== 'granted' && !window.LifeLeafNative?.notificationPermissionGranted?.()) return false;
-      window.LifeLeafNative?.ensureReminderNotificationChannel?.();
+      await this.ensureChannel();
       const [hour, minute] = time.split(':').map(Number);
       await LocalNotifications.schedule({
         notifications: days.map(weekday => ({
@@ -53,7 +43,9 @@ export class ReminderService {
           schedule: { on: { weekday, hour, minute }, repeats: true, allowWhileIdle: true },
           smallIcon: 'ic_stat_life_leaf',
           iconColor: '#2f855a',
-          channelId: 'life-leaf-reminders',
+          channelId: this.channelId,
+          isExactNotification: false,
+          autoCancel: true,
           extra: { route: '/write/new' },
         })),
       });
@@ -63,27 +55,17 @@ export class ReminderService {
     }
   }
 
-  private nativeResult(action: string, start: () => void, timeoutMs = 60_000): Promise<LifeLeafNativeResult> {
-    return new Promise((resolve, reject) => {
-      let timeout: ReturnType<typeof setTimeout> | undefined;
-      const finish = (result?: LifeLeafNativeResult, error?: Error): void => {
-        if (timeout) clearTimeout(timeout);
-        window.removeEventListener('life-leaf-native-result', listener);
-        if (result) resolve(result);
-        else reject(error ?? new Error('The Android request could not be completed.'));
-      };
-      const listener = (event: Event) => {
-        const detail = (event as CustomEvent<LifeLeafNativeResult>).detail;
-        if (detail.action !== action) return;
-        finish(detail);
-      };
-      window.addEventListener('life-leaf-native-result', listener);
-      timeout = setTimeout(() => finish(undefined, new Error('The Android request timed out.')), timeoutMs);
-      try {
-        start();
-      } catch (error) {
-        finish(undefined, error instanceof Error ? error : new Error('The Android request could not be started.'));
-      }
+  private async ensureChannel(): Promise<void> {
+    if (!Capacitor.isNativePlatform() || Capacitor.getPlatform() !== 'android') return;
+    await LocalNotifications.createChannel({
+      id: this.channelId,
+      name: 'Diary reminders',
+      description: 'Private reminders to write in Life Leaf',
+      importance: 3,
+      visibility: 0,
+      lights: true,
+      lightColor: '#2f855a',
+      vibration: true,
     });
   }
 }
