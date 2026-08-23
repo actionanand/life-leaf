@@ -153,6 +153,9 @@ header > p:last-child {
 .password-field ion-input {
   --padding-start: 14px;
   --padding-end: 8px;
+  --highlight-color-focused: transparent;
+  --highlight-color-valid: transparent;
+  --highlight-color-invalid: transparent;
 }
 .password-field ion-button {
   --color: var(--ll-primary);

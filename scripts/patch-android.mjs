@@ -48,6 +48,21 @@ await copyFile(
   path.join(root, 'src', 'assets', 'life-leaf.png'),
   path.join(drawableDirectory, 'life_leaf_splash_logo.png'),
 );
+const drawableXmlDirectory = path.join(androidRoot, 'app', 'src', 'main', 'res', 'drawable');
+await mkdir(drawableXmlDirectory, { recursive: true });
+await writeFile(
+  path.join(drawableXmlDirectory, 'life_leaf_splash_icon.xml'),
+  `<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="168dp"
+        android:height="168dp"
+        android:gravity="center"
+        android:drawable="@drawable/life_leaf_splash_logo" />
+</layer-list>
+`,
+  'utf8',
+);
 const xmlDirectory = path.join(androidRoot, 'app', 'src', 'main', 'res', 'xml');
 await mkdir(xmlDirectory, { recursive: true });
 await writeFile(
@@ -179,7 +194,7 @@ const ensureThemes = async (filePath, dark) => {
     </style>
     <style name="AppTheme.NoActionBarLaunch" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">#F4F6F0</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/life_leaf_splash_logo</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/life_leaf_splash_icon</item>
         <item name="windowSplashScreenIconBackgroundColor">@android:color/transparent</item>
         <item name="postSplashScreenTheme">@style/AppTheme.NoActionBar</item>
         <item name="android:statusBarColor">#F4F6F0</item>
@@ -288,11 +303,13 @@ public class MainActivity extends BridgeActivity {
 
   @Override
   public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+    if (requestCode == NOTIFICATION_PERMISSION_REQUEST) {
+      boolean granted = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
+      if (granted) ensureReminderNotificationChannel();
+      dispatchNativeResult("notification-permission", true, granted ? "granted" : "denied", "");
+      return;
+    }
     super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-    if (requestCode != NOTIFICATION_PERMISSION_REQUEST) return;
-    boolean granted = grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED;
-    if (granted) ensureReminderNotificationChannel();
-    dispatchNativeResult("notification-permission", granted, granted ? "granted" : "denied", "");
   }
 
   private void dispatchSharedIntent(Intent intent) {
