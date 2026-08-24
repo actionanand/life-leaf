@@ -46,15 +46,15 @@ npx gitpick github_proj_url -b branch-name
 5. Cloning this project with skeleton
 
 ```bash
-git clone https://github.com/actionanand/life-leaf.git --branch 1-skeleton new-proj-name
+git clone https://github.com/actionanand/life-leaf.git --branch 2-skeleton new-proj-name
 ```
 
 ```bash
-npx degit github:actionanand/life-leaf#1-skeleton new-proj-name
+npx degit github:actionanand/life-leaf#2-skeleton new-proj-name
 ```
 
 ```bash
-npx gitpick https://github.com/actionanand/life-leaf -b 1-skeleton
+npx gitpick https://github.com/actionanand/life-leaf -b 2-skeleton
 ```
 
 ## Automate using `Prettier`, `Es Lint` and `Husky`
