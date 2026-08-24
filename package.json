@@ -79,7 +79,7 @@
     "typescript-eslint": "8.60.1",
     "vitest": "^4.0.8"
   },
-  "description": "An Ionic project",
+  "description": "A private diary to capture your thoughts, memories, moods, and everyday moments.",
   "engines": {
     "node": ">=22.22.3 || >=24.15.0 || >=26.0.0"
   }
