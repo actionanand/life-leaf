@@ -3,8 +3,8 @@
 # min_api: 24
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.2"}
-# pg_map_id: 5f3f42d43f3ac163ce00b6e078ebb04dfc78df0e7c9338b967635575b2c8417f
-# pg_map_hash: SHA-256 5f3f42d43f3ac163ce00b6e078ebb04dfc78df0e7c9338b967635575b2c8417f
+# pg_map_id: 59276c8e8e5224bb50710631491e13b1b93c4c74fa018e682035cb4baf7a2959
+# pg_map_hash: SHA-256 59276c8e8e5224bb50710631491e13b1b93c4c74fa018e682035cb4baf7a2959
 _COROUTINE.ArtificialStackFrames -> R8$$REMOVED$$CLASS$$0:
 # {"id":"sourceFile","fileName":"CoroutineDebugging.kt"}
 _COROUTINE.CoroutineDebuggingKt -> R8$$REMOVED$$CLASS$$1:
@@ -1497,15 +1497,15 @@ androidx.activity.ComponentActivity$$ExternalSyntheticLambda9 -> androidx.activi
     165:172:void com.capacitorjs.plugins.filesystem.LegacyFilesystemImplementation.downloadFile$lambda$0$0(com.capacitorjs.plugins.filesystem.LegacyFilesystemImplementation$FilesystemDownloadCallback,com.getcapacitor.JSObject):35 -> run
     165:172:void run():0 -> run
     173:176:void run():0:0 -> run
-    177:186:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$5(java.lang.String):366:366 -> run
+    177:186:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$5(java.lang.String):383:383 -> run
     177:186:void run():0 -> run
-    187:192:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$5(java.lang.String):367:367 -> run
+    187:192:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$5(java.lang.String):384:384 -> run
     187:192:void run():0 -> run
-    193:200:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$5(java.lang.String):368:368 -> run
+    193:200:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$5(java.lang.String):385:385 -> run
     193:200:void run():0 -> run
-    201:213:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$5(java.lang.String):369:369 -> run
+    201:213:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$5(java.lang.String):386:386 -> run
     201:213:void run():0 -> run
-    214:225:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$5(java.lang.String):380:380 -> run
+    214:225:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$5(java.lang.String):397:397 -> run
     214:225:void run():0 -> run
     226:229:void run():0:0 -> run
     230:233:android.view.View androidx.core.splashscreen.SplashScreenViewProvider.getView():59:59 -> run
@@ -45070,51 +45070,51 @@ androidx.emoji2.text.EmojiCompatInitializer$BackgroundDefaultLoader$$ExternalSyn
     152:161:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showWithAndroid12API$2(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings):156:156 -> run
     152:161:void run():0 -> run
     162:173:void run():0:0 -> run
-    174:183:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):371:371 -> run
+    174:183:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):388:388 -> run
     174:183:void run():0 -> run
-    184:196:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):372:372 -> run
+    184:196:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):389:389 -> run
     184:196:void run():0 -> run
-    197:206:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):373:373 -> run
+    197:206:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):390:390 -> run
     197:206:void run():0 -> run
-    207:218:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):374:374 -> run
+    207:218:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):391:391 -> run
     207:218:void run():0 -> run
-    219:221:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):375:375 -> run
+    219:221:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):392:392 -> run
     219:221:void run():0 -> run
-    222:224:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):376:376 -> run
+    222:224:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):393:393 -> run
     222:224:void run():0 -> run
-    225:231:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):377:377 -> run
+    225:231:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):394:394 -> run
     225:231:void run():0 -> run
-    232:241:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):378:378 -> run
+    232:241:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$enableBiometric$4(javax.crypto.Cipher,byte[]):395:395 -> run
     232:241:void run():0 -> run
     242:253:void run():0:0 -> run
-    254:267:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$6(javax.crypto.Cipher,java.lang.String):399:399 -> run
+    254:267:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$6(javax.crypto.Cipher,java.lang.String):416:416 -> run
     254:267:void run():0 -> run
-    268:274:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$6(javax.crypto.Cipher,java.lang.String):400:400 -> run
+    268:274:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$6(javax.crypto.Cipher,java.lang.String):417:417 -> run
     268:274:void run():0 -> run
-    275:277:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$6(javax.crypto.Cipher,java.lang.String):401:401 -> run
+    275:277:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$6(javax.crypto.Cipher,java.lang.String):418:418 -> run
     275:277:void run():0 -> run
-    278:284:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$6(javax.crypto.Cipher,java.lang.String):402:402 -> run
+    278:284:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$6(javax.crypto.Cipher,java.lang.String):419:419 -> run
     278:284:void run():0 -> run
-    285:294:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$6(javax.crypto.Cipher,java.lang.String):403:403 -> run
+    285:294:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$6(javax.crypto.Cipher,java.lang.String):420:420 -> run
     285:294:void run():0 -> run
     295:311:void run():0:0 -> run
-    312:327:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):98:98 -> run
+    312:327:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):100:100 -> run
     312:327:void run():0 -> run
-    328:330:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):100:100 -> run
+    328:330:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):102:102 -> run
     328:330:void run():0 -> run
-    331:333:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):101:101 -> run
+    331:333:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):103:103 -> run
     331:333:void run():0 -> run
-    334:336:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):102:102 -> run
+    334:336:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):104:104 -> run
     334:336:void run():0 -> run
-    337:344:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):103:103 -> run
+    337:344:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):105:105 -> run
     337:344:void run():0 -> run
-    345:354:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):99:99 -> run
+    345:354:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):101:101 -> run
     345:354:void run():0 -> run
-    355:363:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):98:98 -> run
+    355:363:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):100:100 -> run
     355:363:void run():0 -> run
-    364:376:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):108:108 -> run
+    364:376:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):110:110 -> run
     364:376:void run():0 -> run
-    377:380:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):104:104 -> run
+    377:380:void com.actionanand.lifeleaf.app.MainActivity.lambda$onActivityResult$1(android.net.Uri,byte[]):106:106 -> run
     377:380:void run():0 -> run
     381:392:void run():0:0 -> run
     393:398:void com.getcapacitor.Bridge.lambda$eval$1(java.lang.String,android.webkit.ValueCallback):870:870 -> run
@@ -59395,53 +59395,92 @@ androidx.webkit.internal.WebViewProviderFactory -> d1.p:
     org.chromium.support_lib_boundary.StaticsBoundaryInterface getStatics() -> getStatics
 com.actionanand.lifeleaf.app.LifeLeafReminderReceiver -> com.actionanand.lifeleaf.app.LifeLeafReminderReceiver:
 # {"id":"sourceFile","fileName":"LifeLeafReminderReceiver.java"}
-    1:4:void <init>():18:18 -> <init>
-    1:8:void onReceive(android.content.Context,android.content.Intent):23:23 -> onReceive
-    9:20:void onReceive(android.content.Context,android.content.Intent):24:24 -> onReceive
-    21:30:void ensureChannel(android.content.Context):50:50 -> onReceive
-    21:30:void onReceive(android.content.Context,android.content.Intent):27 -> onReceive
-    31:37:void ensureChannel(android.content.Context):51:51 -> onReceive
-    31:37:void onReceive(android.content.Context,android.content.Intent):27 -> onReceive
-    38:41:void ensureChannel(android.content.Context):52:52 -> onReceive
-    38:41:void onReceive(android.content.Context,android.content.Intent):27 -> onReceive
-    42:44:void ensureChannel(android.content.Context):53:53 -> onReceive
-    42:44:void onReceive(android.content.Context,android.content.Intent):27 -> onReceive
-    45:47:void ensureChannel(android.content.Context):54:54 -> onReceive
-    45:47:void onReceive(android.content.Context,android.content.Intent):27 -> onReceive
-    48:50:void ensureChannel(android.content.Context):55:55 -> onReceive
-    48:50:void onReceive(android.content.Context,android.content.Intent):27 -> onReceive
-    51:64:void onReceive(android.content.Context,android.content.Intent):28:28 -> onReceive
-    65:73:void onReceive(android.content.Context,android.content.Intent):29:29 -> onReceive
-    74:80:void onReceive(android.content.Context,android.content.Intent):30:30 -> onReceive
-    81:84:void onReceive(android.content.Context,android.content.Intent):33:33 -> onReceive
-    85:94:void onReceive(android.content.Context,android.content.Intent):34:34 -> onReceive
-    95:98:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setSmallIcon(int):1426:1426 -> onReceive
-    95:98:void onReceive(android.content.Context,android.content.Intent):35 -> onReceive
-    99:100:void onReceive(android.content.Context,android.content.Intent):35:35 -> onReceive
-    101:104:void onReceive(android.content.Context,android.content.Intent):36:36 -> onReceive
-    105:106:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setColor(int):2255:2255 -> onReceive
-    105:106:void onReceive(android.content.Context,android.content.Intent):36 -> onReceive
-    107:108:void onReceive(android.content.Context,android.content.Intent):36:36 -> onReceive
-    109:114:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setContentTitle(java.lang.CharSequence):1472:1472 -> onReceive
-    109:114:void onReceive(android.content.Context,android.content.Intent):37 -> onReceive
-    115:122:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setContentText(java.lang.CharSequence):1480:1480 -> onReceive
-    115:122:void onReceive(android.content.Context,android.content.Intent):38 -> onReceive
-    123:125:void onReceive(android.content.Context,android.content.Intent):38:38 -> onReceive
-    126:128:void androidx.core.app.NotificationCompat$BigTextStyle.<init>():3603:3603 -> onReceive
-    126:128:void onReceive(android.content.Context,android.content.Intent):38 -> onReceive
-    129:134:androidx.core.app.NotificationCompat$BigTextStyle androidx.core.app.NotificationCompat$BigTextStyle.bigText(java.lang.CharSequence):3633:3633 -> onReceive
-    129:134:void onReceive(android.content.Context,android.content.Intent):39 -> onReceive
-    135:137:void onReceive(android.content.Context,android.content.Intent):39:39 -> onReceive
-    138:142:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setContentIntent(android.app.PendingIntent):1625:1625 -> onReceive
-    138:142:void onReceive(android.content.Context,android.content.Intent):40 -> onReceive
-    143:146:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setAutoCancel(boolean):1874:1874 -> onReceive
-    143:146:void onReceive(android.content.Context,android.content.Intent):41 -> onReceive
-    147:153:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setPriority(int):1960:1960 -> onReceive
-    147:153:void onReceive(android.content.Context,android.content.Intent):43 -> onReceive
-    154:159:void onReceive(android.content.Context,android.content.Intent):44:44 -> onReceive
-    160:164:androidx.core.app.NotificationManagerCompat androidx.core.app.NotificationManagerCompat.from(android.content.Context):216:216 -> onReceive
-    160:164:void onReceive(android.content.Context,android.content.Intent):45 -> onReceive
-    165:172:void onReceive(android.content.Context,android.content.Intent):45:45 -> onReceive
+    1:4:void <init>():21:21 -> <init>
+    8:18:void scheduleNextReminder(android.content.Context,int,int,int):85:85 -> a
+    19:22:void scheduleNextReminder(android.content.Context,int,int,int):87:87 -> a
+    23:27:void scheduleNextReminder(android.content.Context,int,int,int):88:88 -> a
+    28:32:void scheduleNextReminder(android.content.Context,int,int,int):89:89 -> a
+    33:38:void scheduleNextReminder(android.content.Context,int,int,int):90:90 -> a
+    39:43:void scheduleNextReminder(android.content.Context,int,int,int):91:91 -> a
+    44:46:void scheduleNextReminder(android.content.Context,int,int,int):92:92 -> a
+    47:62:void scheduleNextReminder(android.content.Context,int,int,int):93:93 -> a
+    63:69:void scheduleNextReminder(android.content.Context,int,int,int):94:94 -> a
+    70:76:void scheduleNextReminder(android.content.Context,int,int,int):95:95 -> a
+    77:81:void scheduleNextReminder(android.content.Context,int,int,int):96:96 -> a
+    82:86:void scheduleNextReminder(android.content.Context,int,int,int):97:97 -> a
+    87:91:void scheduleNextReminder(android.content.Context,int,int,int):98:98 -> a
+    92:98:void scheduleNextReminder(android.content.Context,int,int,int):99:99 -> a
+    99:102:void scheduleNextReminder(android.content.Context,int,int,int):102:102 -> a
+    103:110:void scheduleNextReminder(android.content.Context,int,int,int):109:109 -> a
+    1:10:void onReceive(android.content.Context,android.content.Intent):29:29 -> onReceive
+    11:30:void onReceive(android.content.Context,android.content.Intent):30:30 -> onReceive
+    31:34:void rebuildStoredReminders(android.content.Context):67:67 -> onReceive
+    31:34:void onReceive(android.content.Context,android.content.Intent):31 -> onReceive
+    35:41:void rebuildStoredReminders(android.content.Context):68:68 -> onReceive
+    35:41:void onReceive(android.content.Context,android.content.Intent):31 -> onReceive
+    42:45:void rebuildStoredReminders(android.content.Context):69:69 -> onReceive
+    42:45:void onReceive(android.content.Context,android.content.Intent):31 -> onReceive
+    46:49:void rebuildStoredReminders(android.content.Context):70:70 -> onReceive
+    46:49:void onReceive(android.content.Context,android.content.Intent):31 -> onReceive
+    50:58:void rebuildStoredReminders(android.content.Context):71:71 -> onReceive
+    50:58:void onReceive(android.content.Context,android.content.Intent):31 -> onReceive
+    59:69:void rebuildStoredReminders(android.content.Context):73:73 -> onReceive
+    59:69:void onReceive(android.content.Context,android.content.Intent):31 -> onReceive
+    70:82:void rebuildStoredReminders(android.content.Context):75:75 -> onReceive
+    70:82:void onReceive(android.content.Context,android.content.Intent):31 -> onReceive
+    83:88:void rebuildStoredReminders(android.content.Context):77:77 -> onReceive
+    83:88:void onReceive(android.content.Context,android.content.Intent):31 -> onReceive
+    89:94:void onReceive(android.content.Context,android.content.Intent):34:34 -> onReceive
+    95:98:void onReceive(android.content.Context,android.content.Intent):35:35 -> onReceive
+    99:102:void onReceive(android.content.Context,android.content.Intent):36:36 -> onReceive
+    103:112:void onReceive(android.content.Context,android.content.Intent):37:37 -> onReceive
+    113:115:void onReceive(android.content.Context,android.content.Intent):38:38 -> onReceive
+    116:123:void onReceive(android.content.Context,android.content.Intent):40:40 -> onReceive
+    124:135:void onReceive(android.content.Context,android.content.Intent):41:41 -> onReceive
+    136:145:void ensureChannel(android.content.Context):117:117 -> onReceive
+    136:145:void onReceive(android.content.Context,android.content.Intent):44 -> onReceive
+    146:152:void ensureChannel(android.content.Context):118:118 -> onReceive
+    146:152:void onReceive(android.content.Context,android.content.Intent):44 -> onReceive
+    153:156:void ensureChannel(android.content.Context):119:119 -> onReceive
+    153:156:void onReceive(android.content.Context,android.content.Intent):44 -> onReceive
+    157:159:void ensureChannel(android.content.Context):120:120 -> onReceive
+    157:159:void onReceive(android.content.Context,android.content.Intent):44 -> onReceive
+    160:162:void ensureChannel(android.content.Context):121:121 -> onReceive
+    160:162:void onReceive(android.content.Context,android.content.Intent):44 -> onReceive
+    163:165:void ensureChannel(android.content.Context):122:122 -> onReceive
+    163:165:void onReceive(android.content.Context,android.content.Intent):44 -> onReceive
+    166:179:void onReceive(android.content.Context,android.content.Intent):45:45 -> onReceive
+    180:188:void onReceive(android.content.Context,android.content.Intent):46:46 -> onReceive
+    189:195:void onReceive(android.content.Context,android.content.Intent):47:47 -> onReceive
+    196:199:void onReceive(android.content.Context,android.content.Intent):50:50 -> onReceive
+    200:209:void onReceive(android.content.Context,android.content.Intent):51:51 -> onReceive
+    210:213:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setSmallIcon(int):1426:1426 -> onReceive
+    210:213:void onReceive(android.content.Context,android.content.Intent):52 -> onReceive
+    214:215:void onReceive(android.content.Context,android.content.Intent):52:52 -> onReceive
+    216:219:void onReceive(android.content.Context,android.content.Intent):53:53 -> onReceive
+    220:221:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setColor(int):2255:2255 -> onReceive
+    220:221:void onReceive(android.content.Context,android.content.Intent):53 -> onReceive
+    222:223:void onReceive(android.content.Context,android.content.Intent):53:53 -> onReceive
+    224:229:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setContentTitle(java.lang.CharSequence):1472:1472 -> onReceive
+    224:229:void onReceive(android.content.Context,android.content.Intent):54 -> onReceive
+    230:237:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setContentText(java.lang.CharSequence):1480:1480 -> onReceive
+    230:237:void onReceive(android.content.Context,android.content.Intent):55 -> onReceive
+    238:240:void onReceive(android.content.Context,android.content.Intent):55:55 -> onReceive
+    241:243:void androidx.core.app.NotificationCompat$BigTextStyle.<init>():3603:3603 -> onReceive
+    241:243:void onReceive(android.content.Context,android.content.Intent):55 -> onReceive
+    244:249:androidx.core.app.NotificationCompat$BigTextStyle androidx.core.app.NotificationCompat$BigTextStyle.bigText(java.lang.CharSequence):3633:3633 -> onReceive
+    244:249:void onReceive(android.content.Context,android.content.Intent):56 -> onReceive
+    250:252:void onReceive(android.content.Context,android.content.Intent):56:56 -> onReceive
+    253:256:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setContentIntent(android.app.PendingIntent):1625:1625 -> onReceive
+    253:256:void onReceive(android.content.Context,android.content.Intent):57 -> onReceive
+    257:259:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setAutoCancel(boolean):1874:1874 -> onReceive
+    257:259:void onReceive(android.content.Context,android.content.Intent):58 -> onReceive
+    260:261:androidx.core.app.NotificationCompat$Builder androidx.core.app.NotificationCompat$Builder.setPriority(int):1960:1960 -> onReceive
+    260:261:void onReceive(android.content.Context,android.content.Intent):60 -> onReceive
+    262:269:void onReceive(android.content.Context,android.content.Intent):61:61 -> onReceive
+    270:274:androidx.core.app.NotificationManagerCompat androidx.core.app.NotificationManagerCompat.from(android.content.Context):216:216 -> onReceive
+    270:274:void onReceive(android.content.Context,android.content.Intent):62 -> onReceive
+    275:282:void onReceive(android.content.Context,android.content.Intent):62:62 -> onReceive
 com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainActivity:
 # {"id":"sourceFile","fileName":"MainActivity.java"}
     com.getcapacitor.Bridge com.getcapacitor.BridgeActivity.bridge -> B
@@ -59462,251 +59501,265 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
       # {"id":"com.android.tools.r8.synthesized"}
     1:3:void androidx.appcompat.app.AppCompatActivity.<init>():92:92 -> <init>
     1:3:void com.getcapacitor.BridgeActivity.<init>():11 -> <init>
-    1:3:void <init>():53 -> <init>
+    1:3:void <init>():54 -> <init>
     4:5:androidx.savedstate.SavedStateRegistry androidx.activity.ComponentActivity.getSavedStateRegistry():646:646 -> <init>
     4:5:void androidx.appcompat.app.AppCompatActivity.initDelegate():114 -> <init>
     4:5:void androidx.appcompat.app.AppCompatActivity.<init>():93 -> <init>
     4:5:void com.getcapacitor.BridgeActivity.<init>():11 -> <init>
-    4:5:void <init>():53 -> <init>
+    4:5:void <init>():54 -> <init>
     6:9:androidx.savedstate.SavedStateRegistry androidx.savedstate.SavedStateRegistryController.getSavedStateRegistry():33:33 -> <init>
     6:9:androidx.savedstate.SavedStateRegistry androidx.activity.ComponentActivity.getSavedStateRegistry():646 -> <init>
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     6:9:void androidx.appcompat.app.AppCompatActivity.initDelegate():114 -> <init>
     6:9:void androidx.appcompat.app.AppCompatActivity.<init>():93 -> <init>
     6:9:void com.getcapacitor.BridgeActivity.<init>():11 -> <init>
-    6:9:void <init>():53 -> <init>
+    6:9:void <init>():54 -> <init>
     10:19:void androidx.appcompat.app.AppCompatActivity.initDelegate():114:114 -> <init>
     10:19:void androidx.appcompat.app.AppCompatActivity.<init>():93 -> <init>
     10:19:void com.getcapacitor.BridgeActivity.<init>():11 -> <init>
-    10:19:void <init>():53 -> <init>
+    10:19:void <init>():54 -> <init>
     20:28:void androidx.appcompat.app.AppCompatActivity.initDelegate():124:124 -> <init>
     20:28:void androidx.appcompat.app.AppCompatActivity.<init>():93 -> <init>
     20:28:void com.getcapacitor.BridgeActivity.<init>():11 -> <init>
-    20:28:void <init>():53 -> <init>
+    20:28:void <init>():54 -> <init>
     29:30:void com.getcapacitor.BridgeActivity.<init>():17:17 -> <init>
-    29:30:void <init>():53 -> <init>
+    29:30:void <init>():54 -> <init>
     31:37:void com.getcapacitor.BridgeActivity.<init>():18:18 -> <init>
-    31:37:void <init>():53 -> <init>
+    31:37:void <init>():54 -> <init>
     38:44:void com.getcapacitor.BridgeActivity.<init>():19:19 -> <init>
-    38:44:void <init>():53 -> <init>
-    45:56:void <init>():61:61 -> <init>
-    1:5:void hideLaunchOverlay():174:174 -> A
-    6:25:void hideLaunchOverlay():176:176 -> A
-    26:38:void hideLaunchOverlay():177:177 -> A
-    39:40:void hideLaunchOverlay():178:178 -> A
-    41:65:void hideLaunchOverlay():179:179 -> A
-    66:69:void hideLaunchOverlay():181:181 -> A
-    1:5:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):188:188 -> B
-    6:11:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1270:1270 -> B
-    6:11:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> B
+    38:44:void <init>():54 -> <init>
+    45:56:void <init>():63:63 -> <init>
+    1:7:void ensureReminderNotificationChannel():194:194 -> A
+    8:17:void ensureReminderNotificationChannel():195:195 -> A
+    18:24:void ensureReminderNotificationChannel():196:196 -> A
+    25:28:void ensureReminderNotificationChannel():197:197 -> A
+    29:31:void ensureReminderNotificationChannel():202:202 -> A
+    32:34:void ensureReminderNotificationChannel():203:203 -> A
+    35:38:void ensureReminderNotificationChannel():204:204 -> A
+    1:5:void hideLaunchOverlay():176:176 -> B
+    6:25:void hideLaunchOverlay():178:178 -> B
+    26:38:void hideLaunchOverlay():179:179 -> B
+    39:40:void hideLaunchOverlay():180:180 -> B
+    41:65:void hideLaunchOverlay():181:181 -> B
+    66:69:void hideLaunchOverlay():183:183 -> B
+    1:5:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):188:188 -> C
+    6:11:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1270:1270 -> C
+    6:11:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> C
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    12:16:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> B
-    12:16:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1272 -> B
-    12:16:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> B
-    17:22:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1278:1278 -> B
-    17:22:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> B
-    23:26:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1284:1284 -> B
-    23:26:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> B
-    27:28:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> B
-    27:28:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1285 -> B
-    27:28:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> B
-    29:31:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1285:1285 -> B
-    29:31:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> B
-    32:33:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> B
-    32:33:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1288 -> B
-    32:33:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> B
-    34:37:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1288:1288 -> B
-    34:37:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> B
-    38:41:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1291:1291 -> B
-    38:41:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> B
-    42:58:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1273:1273 -> B
-    42:58:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> B
-    59:66:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1274:1274 -> B
-    59:66:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> B
-    67:70:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):193:193 -> B
-    1:3:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):23:23 -> C
-    4:9:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.setInstanceState(android.os.Bundle):1519:1519 -> C
-    4:9:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):24 -> C
+    12:16:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> C
+    12:16:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1272 -> C
+    12:16:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> C
+    17:22:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1278:1278 -> C
+    17:22:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> C
+    23:26:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1284:1284 -> C
+    23:26:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> C
+    27:28:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> C
+    27:28:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1285 -> C
+    27:28:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> C
+    29:31:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1285:1285 -> C
+    29:31:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> C
+    32:33:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> C
+    32:33:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1288 -> C
+    32:33:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> C
+    34:37:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1288:1288 -> C
+    34:37:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> C
+    38:41:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1291:1291 -> C
+    38:41:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> C
+    42:58:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1273:1273 -> C
+    42:58:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> C
+    59:66:boolean com.getcapacitor.Bridge.onActivityResult(int,int,android.content.Intent):1274:1274 -> C
+    59:66:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):192 -> C
+    67:70:void com.getcapacitor.BridgeActivity.onActivityResult(int,int,android.content.Intent):193:193 -> C
+    1:3:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):23:23 -> D
+    4:9:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.setInstanceState(android.os.Bundle):1519:1519 -> D
+    4:9:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):24 -> D
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    10:19:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):25:25 -> C
-    20:25:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):26:26 -> C
-    26:28:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):28:28 -> C
-    29:39:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):34:34 -> C
-    40:43:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):37:37 -> C
-    44:58:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugins(java.util.List):1539:1539 -> C
-    44:58:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):37 -> C
-    59:64:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugin(java.lang.Class):1534:1534 -> C
-    59:64:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugins(java.util.List):1540 -> C
-    59:64:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):37 -> C
-    65:69:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):39:39 -> C
-    70:74:void com.getcapacitor.BridgeActivity.load():46:46 -> C
-    70:74:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    75:90:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugins(java.util.List):1539:1539 -> C
-    75:90:void com.getcapacitor.BridgeActivity.load():48 -> C
-    75:90:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    91:94:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugin(java.lang.Class):1534:1534 -> C
-    91:94:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugins(java.util.List):1540 -> C
-    91:94:void com.getcapacitor.BridgeActivity.load():48 -> C
-    91:94:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    95:99:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1581:1581 -> C
-    95:99:void com.getcapacitor.BridgeActivity.load():48 -> C
-    95:99:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    100:108:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1582:1582 -> C
-    100:108:void com.getcapacitor.BridgeActivity.load():48 -> C
-    100:108:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    109:113:org.apache.cordova.CordovaPreferences org.apache.cordova.ConfigXmlParser.getPreferences():45:45 -> C
-    109:113:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1583 -> C
-    109:113:void com.getcapacitor.BridgeActivity.load():48 -> C
-    109:113:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    114:123:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1584:1584 -> C
-    114:123:void com.getcapacitor.BridgeActivity.load():48 -> C
-    114:123:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    124:128:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1587:1587 -> C
-    124:128:void com.getcapacitor.BridgeActivity.load():48 -> C
-    124:128:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    129:132:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1588:1588 -> C
-    129:132:void com.getcapacitor.BridgeActivity.load():48 -> C
-    129:132:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    133:138:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1589:1589 -> C
-    133:138:void com.getcapacitor.BridgeActivity.load():48 -> C
-    133:138:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    139:145:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1592:1592 -> C
-    139:145:void com.getcapacitor.BridgeActivity.load():48 -> C
-    139:145:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    146:154:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1593:1593 -> C
-    146:154:void com.getcapacitor.BridgeActivity.load():48 -> C
-    146:154:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    155:159:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1594:1594 -> C
-    155:159:void com.getcapacitor.BridgeActivity.load():48 -> C
-    155:159:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    160:163:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1595:1595 -> C
-    160:163:void com.getcapacitor.BridgeActivity.load():48 -> C
-    160:163:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    164:166:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1596:1596 -> C
-    164:166:void com.getcapacitor.BridgeActivity.load():48 -> C
-    164:166:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    167:175:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1599:1599 -> C
-    167:175:void com.getcapacitor.BridgeActivity.load():48 -> C
-    167:175:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    176:181:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1612:1612 -> C
-    176:181:void com.getcapacitor.BridgeActivity.load():48 -> C
-    176:181:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    182:184:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1613:1613 -> C
-    182:184:void com.getcapacitor.BridgeActivity.load():48 -> C
-    182:184:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    185:186:void com.getcapacitor.Bridge.setCordovaWebView(org.apache.cordova.CordovaWebView):478:478 -> C
-    185:186:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1616 -> C
-    185:186:void com.getcapacitor.BridgeActivity.load():48 -> C
-    185:186:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    187:188:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1617:1617 -> C
-    187:188:void com.getcapacitor.BridgeActivity.load():48 -> C
-    187:188:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    189:190:void com.getcapacitor.Bridge.setWebViewListeners(java.util.List):1466:1466 -> C
-    189:190:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1617 -> C
-    189:190:void com.getcapacitor.BridgeActivity.load():48 -> C
-    189:190:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    191:194:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1620:1620 -> C
-    191:194:void com.getcapacitor.BridgeActivity.load():48 -> C
-    191:194:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    195:200:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1053:1053 -> C
-    195:200:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    195:200:void com.getcapacitor.BridgeActivity.load():48 -> C
-    195:200:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    201:206:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1054:1054 -> C
-    201:206:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    201:206:void com.getcapacitor.BridgeActivity.load():48 -> C
-    201:206:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    207:216:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1055:1055 -> C
-    207:216:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    207:216:void com.getcapacitor.BridgeActivity.load():48 -> C
-    207:216:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    217:218:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1061:1061 -> C
-    217:218:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    217:218:void com.getcapacitor.BridgeActivity.load():48 -> C
-    217:218:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    219:221:void com.getcapacitor.JSObject.<init>(java.lang.String):22:22 -> C
-    219:221:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1061 -> C
-    219:221:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    219:221:void com.getcapacitor.BridgeActivity.load():48 -> C
-    219:221:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    222:234:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1063:1063 -> C
-    222:234:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    222:234:void com.getcapacitor.BridgeActivity.load():48 -> C
-    222:234:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    235:239:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1071:1071 -> C
-    235:239:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    235:239:void com.getcapacitor.BridgeActivity.load():48 -> C
-    235:239:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    240:245:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1076:1076 -> C
-    240:245:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    240:245:void com.getcapacitor.BridgeActivity.load():48 -> C
-    240:245:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    246:257:com.getcapacitor.PluginHandle com.getcapacitor.Bridge.getPlugin(java.lang.String):763:763 -> C
-    246:257:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1077 -> C
-    246:257:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    246:257:void com.getcapacitor.BridgeActivity.load():48 -> C
-    246:257:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    258:259:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> C
-    258:259:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1079 -> C
-    258:259:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    258:259:void com.getcapacitor.BridgeActivity.load():48 -> C
-    258:259:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    260:263:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1079:1079 -> C
-    260:263:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    260:263:void com.getcapacitor.BridgeActivity.load():48 -> C
-    260:263:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    264:268:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1081:1081 -> C
-    264:268:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> C
-    264:268:void com.getcapacitor.BridgeActivity.load():48 -> C
-    264:268:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    269:270:void com.getcapacitor.BridgeActivity.load():48:48 -> C
-    269:270:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    271:278:boolean com.getcapacitor.Bridge.shouldKeepRunning():458:458 -> C
-    271:278:void com.getcapacitor.BridgeActivity.load():50 -> C
-    271:278:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    279:289:void com.getcapacitor.BridgeActivity.load():51:51 -> C
-    279:289:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> C
-    290:293:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):30:30 -> C
-    1:3:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):199:199 -> D
-    4:7:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):201:201 -> D
-    8:9:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1301:1301 -> D
-    8:9:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> D
+    10:19:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):25:25 -> D
+    20:25:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):26:26 -> D
+    26:28:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):28:28 -> D
+    29:39:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):34:34 -> D
+    40:43:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):37:37 -> D
+    44:58:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugins(java.util.List):1539:1539 -> D
+    44:58:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):37 -> D
+    59:64:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugin(java.lang.Class):1534:1534 -> D
+    59:64:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugins(java.util.List):1540 -> D
+    59:64:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):37 -> D
+    65:69:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):39:39 -> D
+    70:74:void com.getcapacitor.BridgeActivity.load():46:46 -> D
+    70:74:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    75:90:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugins(java.util.List):1539:1539 -> D
+    75:90:void com.getcapacitor.BridgeActivity.load():48 -> D
+    75:90:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    91:94:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugin(java.lang.Class):1534:1534 -> D
+    91:94:com.getcapacitor.Bridge$Builder com.getcapacitor.Bridge$Builder.addPlugins(java.util.List):1540 -> D
+    91:94:void com.getcapacitor.BridgeActivity.load():48 -> D
+    91:94:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    95:99:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1581:1581 -> D
+    95:99:void com.getcapacitor.BridgeActivity.load():48 -> D
+    95:99:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    100:108:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1582:1582 -> D
+    100:108:void com.getcapacitor.BridgeActivity.load():48 -> D
+    100:108:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    109:113:org.apache.cordova.CordovaPreferences org.apache.cordova.ConfigXmlParser.getPreferences():45:45 -> D
+    109:113:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1583 -> D
+    109:113:void com.getcapacitor.BridgeActivity.load():48 -> D
+    109:113:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    114:123:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1584:1584 -> D
+    114:123:void com.getcapacitor.BridgeActivity.load():48 -> D
+    114:123:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    124:128:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1587:1587 -> D
+    124:128:void com.getcapacitor.BridgeActivity.load():48 -> D
+    124:128:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    129:132:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1588:1588 -> D
+    129:132:void com.getcapacitor.BridgeActivity.load():48 -> D
+    129:132:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    133:138:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1589:1589 -> D
+    133:138:void com.getcapacitor.BridgeActivity.load():48 -> D
+    133:138:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    139:145:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1592:1592 -> D
+    139:145:void com.getcapacitor.BridgeActivity.load():48 -> D
+    139:145:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    146:154:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1593:1593 -> D
+    146:154:void com.getcapacitor.BridgeActivity.load():48 -> D
+    146:154:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    155:159:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1594:1594 -> D
+    155:159:void com.getcapacitor.BridgeActivity.load():48 -> D
+    155:159:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    160:163:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1595:1595 -> D
+    160:163:void com.getcapacitor.BridgeActivity.load():48 -> D
+    160:163:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    164:166:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1596:1596 -> D
+    164:166:void com.getcapacitor.BridgeActivity.load():48 -> D
+    164:166:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    167:175:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1599:1599 -> D
+    167:175:void com.getcapacitor.BridgeActivity.load():48 -> D
+    167:175:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    176:181:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1612:1612 -> D
+    176:181:void com.getcapacitor.BridgeActivity.load():48 -> D
+    176:181:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    182:184:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1613:1613 -> D
+    182:184:void com.getcapacitor.BridgeActivity.load():48 -> D
+    182:184:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    185:186:void com.getcapacitor.Bridge.setCordovaWebView(org.apache.cordova.CordovaWebView):478:478 -> D
+    185:186:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1616 -> D
+    185:186:void com.getcapacitor.BridgeActivity.load():48 -> D
+    185:186:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    187:188:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1617:1617 -> D
+    187:188:void com.getcapacitor.BridgeActivity.load():48 -> D
+    187:188:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    189:190:void com.getcapacitor.Bridge.setWebViewListeners(java.util.List):1466:1466 -> D
+    189:190:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1617 -> D
+    189:190:void com.getcapacitor.BridgeActivity.load():48 -> D
+    189:190:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    191:194:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1620:1620 -> D
+    191:194:void com.getcapacitor.BridgeActivity.load():48 -> D
+    191:194:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    195:200:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1053:1053 -> D
+    195:200:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    195:200:void com.getcapacitor.BridgeActivity.load():48 -> D
+    195:200:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    201:206:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1054:1054 -> D
+    201:206:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    201:206:void com.getcapacitor.BridgeActivity.load():48 -> D
+    201:206:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    207:216:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1055:1055 -> D
+    207:216:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    207:216:void com.getcapacitor.BridgeActivity.load():48 -> D
+    207:216:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    217:218:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1061:1061 -> D
+    217:218:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    217:218:void com.getcapacitor.BridgeActivity.load():48 -> D
+    217:218:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    219:221:void com.getcapacitor.JSObject.<init>(java.lang.String):22:22 -> D
+    219:221:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1061 -> D
+    219:221:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    219:221:void com.getcapacitor.BridgeActivity.load():48 -> D
+    219:221:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    222:234:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1063:1063 -> D
+    222:234:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    222:234:void com.getcapacitor.BridgeActivity.load():48 -> D
+    222:234:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    235:239:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1071:1071 -> D
+    235:239:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    235:239:void com.getcapacitor.BridgeActivity.load():48 -> D
+    235:239:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    240:245:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1076:1076 -> D
+    240:245:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    240:245:void com.getcapacitor.BridgeActivity.load():48 -> D
+    240:245:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    246:257:com.getcapacitor.PluginHandle com.getcapacitor.Bridge.getPlugin(java.lang.String):763:763 -> D
+    246:257:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1077 -> D
+    246:257:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    246:257:void com.getcapacitor.BridgeActivity.load():48 -> D
+    246:257:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    258:259:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> D
+    258:259:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1079 -> D
+    258:259:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    258:259:void com.getcapacitor.BridgeActivity.load():48 -> D
+    258:259:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    260:263:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1079:1079 -> D
+    260:263:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    260:263:void com.getcapacitor.BridgeActivity.load():48 -> D
+    260:263:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    264:268:void com.getcapacitor.Bridge.restoreInstanceState(android.os.Bundle):1081:1081 -> D
+    264:268:com.getcapacitor.Bridge com.getcapacitor.Bridge$Builder.create():1621 -> D
+    264:268:void com.getcapacitor.BridgeActivity.load():48 -> D
+    264:268:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    269:270:void com.getcapacitor.BridgeActivity.load():48:48 -> D
+    269:270:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    271:278:boolean com.getcapacitor.Bridge.shouldKeepRunning():458:458 -> D
+    271:278:void com.getcapacitor.BridgeActivity.load():50 -> D
+    271:278:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    279:289:void com.getcapacitor.BridgeActivity.load():51:51 -> D
+    279:289:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):42 -> D
+    290:293:void com.getcapacitor.BridgeActivity.onCreate(android.os.Bundle):30:30 -> D
+    1:3:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):199:199 -> E
+    4:7:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):201:201 -> E
+    8:9:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1301:1301 -> E
+    8:9:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> E
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    10:29:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1301:1301 -> D
-    10:29:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> D
-    30:31:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> D
-    30:31:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1302 -> D
+    10:29:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1301:1301 -> E
+    10:29:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> E
+    30:31:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> E
+    30:31:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1302 -> E
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    30:31:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> D
-    32:35:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1302:1302 -> D
-    32:35:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> D
-    36:39:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1305:1305 -> D
-    36:39:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> D
-    40:43:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1306:1306 -> D
-    40:43:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> D
-    1:5:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):161:161 -> E
-    6:11:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1130:1130 -> E
-    6:11:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> E
+    30:31:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> E
+    32:35:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1302:1302 -> E
+    32:35:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> E
+    36:39:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1305:1305 -> E
+    36:39:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> E
+    40:43:void com.getcapacitor.Bridge.onNewIntent(android.content.Intent):1306:1306 -> E
+    40:43:void com.getcapacitor.BridgeActivity.onNewIntent(android.content.Intent):205 -> E
+    1:5:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):161:161 -> F
+    6:11:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1130:1130 -> F
+    6:11:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> F
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    12:28:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1134:1134 -> E
-    12:28:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> E
-    29:36:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1136:1136 -> E
-    29:36:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> E
-    37:59:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1138:1138 -> E
-    37:59:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> E
-    60:61:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> E
-    60:61:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1145 -> E
-    60:61:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> E
-    62:67:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1145:1145 -> E
-    62:67:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> E
-    68:71:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):166:166 -> E
-    5:7:void onActivityResult(int,int,android.content.Intent):89:89 -> onActivityResult
-    8:12:void onActivityResult(int,int,android.content.Intent):90:90 -> onActivityResult
-    13:24:void onActivityResult(int,int,android.content.Intent):91:91 -> onActivityResult
-    25:35:void onActivityResult(int,int,android.content.Intent):97:97 -> onActivityResult
-    36:39:void onActivityResult(int,int,android.content.Intent):111:111 -> onActivityResult
-    40:50:void onActivityResult(int,int,android.content.Intent):93:93 -> onActivityResult
-    51:54:void onActivityResult(int,int,android.content.Intent):114:114 -> onActivityResult
+    12:28:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1134:1134 -> F
+    12:28:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> F
+    29:36:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1136:1136 -> F
+    29:36:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> F
+    37:59:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1138:1138 -> F
+    37:59:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> F
+    60:61:com.getcapacitor.Plugin com.getcapacitor.PluginHandle.getInstance():91:91 -> F
+    60:61:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1145 -> F
+    60:61:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> F
+    62:67:boolean com.getcapacitor.Bridge.onRequestPermissionsResult(int,java.lang.String[],int[]):1145:1145 -> F
+    62:67:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):165 -> F
+    68:71:void com.getcapacitor.BridgeActivity.onRequestPermissionsResult(int,java.lang.String[],int[]):166:166 -> F
+    1:7:android.app.PendingIntent reminderPendingIntent(int,int,int):254:254 -> G
+    8:14:android.app.PendingIntent reminderPendingIntent(int,int,int):255:255 -> G
+    15:19:android.app.PendingIntent reminderPendingIntent(int,int,int):256:256 -> G
+    20:24:android.app.PendingIntent reminderPendingIntent(int,int,int):257:257 -> G
+    25:29:android.app.PendingIntent reminderPendingIntent(int,int,int):258:258 -> G
+    30:36:android.app.PendingIntent reminderPendingIntent(int,int,int):259:259 -> G
+    37:41:android.app.PendingIntent reminderPendingIntent(int,int,int):262:262 -> G
+    5:7:void onActivityResult(int,int,android.content.Intent):91:91 -> onActivityResult
+    8:12:void onActivityResult(int,int,android.content.Intent):92:92 -> onActivityResult
+    13:24:void onActivityResult(int,int,android.content.Intent):93:93 -> onActivityResult
+    25:35:void onActivityResult(int,int,android.content.Intent):99:99 -> onActivityResult
+    36:39:void onActivityResult(int,int,android.content.Intent):113:113 -> onActivityResult
+    40:50:void onActivityResult(int,int,android.content.Intent):95:95 -> onActivityResult
+    51:54:void onActivityResult(int,int,android.content.Intent):116:116 -> onActivityResult
     1:3:void com.getcapacitor.BridgeActivity.onConfigurationChanged(android.content.res.Configuration):210:210 -> onConfigurationChanged
     4:8:void com.getcapacitor.BridgeActivity.onConfigurationChanged(android.content.res.Configuration):212:212 -> onConfigurationChanged
     9:10:void com.getcapacitor.Bridge.onConfigurationChanged(android.content.res.Configuration):1315:1315 -> onConfigurationChanged
@@ -59720,44 +59773,44 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
     31:32:void com.getcapacitor.BridgeActivity.onConfigurationChanged(android.content.res.Configuration):216 -> onConfigurationChanged
     33:37:void com.getcapacitor.Bridge.onConfigurationChanged(android.content.res.Configuration):1316:1316 -> onConfigurationChanged
     33:37:void com.getcapacitor.BridgeActivity.onConfigurationChanged(android.content.res.Configuration):216 -> onConfigurationChanged
-    1:4:void onCreate(android.os.Bundle):69:69 -> onCreate
-    5:7:void onCreate(android.os.Bundle):70:70 -> onCreate
-    8:12:void showLaunchOverlay():159:159 -> onCreate
-    8:12:void onCreate(android.os.Bundle):71 -> onCreate
-    13:22:void showLaunchOverlay():160:160 -> onCreate
-    13:22:void onCreate(android.os.Bundle):71 -> onCreate
-    23:25:void showLaunchOverlay():161:161 -> onCreate
-    23:25:void onCreate(android.os.Bundle):71 -> onCreate
-    26:33:void showLaunchOverlay():162:162 -> onCreate
-    26:33:void onCreate(android.os.Bundle):71 -> onCreate
-    34:36:void showLaunchOverlay():163:163 -> onCreate
-    34:36:void onCreate(android.os.Bundle):71 -> onCreate
-    37:41:void showLaunchOverlay():164:164 -> onCreate
-    37:41:void onCreate(android.os.Bundle):71 -> onCreate
-    42:46:void showLaunchOverlay():165:165 -> onCreate
-    42:46:void onCreate(android.os.Bundle):71 -> onCreate
-    47:76:int dp(int):184:184 -> onCreate
-    47:76:void showLaunchOverlay():165 -> onCreate
-    47:76:void onCreate(android.os.Bundle):71 -> onCreate
-    77:81:void showLaunchOverlay():165:165 -> onCreate
-    77:81:void onCreate(android.os.Bundle):71 -> onCreate
-    82:83:void showLaunchOverlay():166:166 -> onCreate
-    82:83:void onCreate(android.os.Bundle):71 -> onCreate
-    84:86:void showLaunchOverlay():167:167 -> onCreate
-    84:86:void onCreate(android.os.Bundle):71 -> onCreate
-    87:95:void showLaunchOverlay():168:168 -> onCreate
-    87:95:void onCreate(android.os.Bundle):71 -> onCreate
-    96:97:void showLaunchOverlay():169:169 -> onCreate
-    96:97:void onCreate(android.os.Bundle):71 -> onCreate
-    98:103:void showLaunchOverlay():170:170 -> onCreate
-    98:103:void onCreate(android.os.Bundle):71 -> onCreate
+    1:4:void onCreate(android.os.Bundle):71:71 -> onCreate
+    5:7:void onCreate(android.os.Bundle):72:72 -> onCreate
+    8:12:void showLaunchOverlay():161:161 -> onCreate
+    8:12:void onCreate(android.os.Bundle):73 -> onCreate
+    13:22:void showLaunchOverlay():162:162 -> onCreate
+    13:22:void onCreate(android.os.Bundle):73 -> onCreate
+    23:25:void showLaunchOverlay():163:163 -> onCreate
+    23:25:void onCreate(android.os.Bundle):73 -> onCreate
+    26:33:void showLaunchOverlay():164:164 -> onCreate
+    26:33:void onCreate(android.os.Bundle):73 -> onCreate
+    34:36:void showLaunchOverlay():165:165 -> onCreate
+    34:36:void onCreate(android.os.Bundle):73 -> onCreate
+    37:41:void showLaunchOverlay():166:166 -> onCreate
+    37:41:void onCreate(android.os.Bundle):73 -> onCreate
+    42:46:void showLaunchOverlay():167:167 -> onCreate
+    42:46:void onCreate(android.os.Bundle):73 -> onCreate
+    47:76:int dp(int):186:186 -> onCreate
+    47:76:void showLaunchOverlay():167 -> onCreate
+    47:76:void onCreate(android.os.Bundle):73 -> onCreate
+    77:81:void showLaunchOverlay():167:167 -> onCreate
+    77:81:void onCreate(android.os.Bundle):73 -> onCreate
+    82:83:void showLaunchOverlay():168:168 -> onCreate
+    82:83:void onCreate(android.os.Bundle):73 -> onCreate
+    84:86:void showLaunchOverlay():169:169 -> onCreate
+    84:86:void onCreate(android.os.Bundle):73 -> onCreate
+    87:95:void showLaunchOverlay():170:170 -> onCreate
+    87:95:void onCreate(android.os.Bundle):73 -> onCreate
+    96:97:void showLaunchOverlay():171:171 -> onCreate
+    96:97:void onCreate(android.os.Bundle):73 -> onCreate
+    98:103:void showLaunchOverlay():172:172 -> onCreate
+    98:103:void onCreate(android.os.Bundle):73 -> onCreate
     104:105:com.getcapacitor.Bridge com.getcapacitor.BridgeActivity.getBridge():63:63 -> onCreate
-    104:105:void onCreate(android.os.Bundle):72 -> onCreate
+    104:105:void onCreate(android.os.Bundle):74 -> onCreate
     106:107:android.webkit.WebView com.getcapacitor.Bridge.getWebView():512:512 -> onCreate
-    106:107:void onCreate(android.os.Bundle):72 -> onCreate
+    106:107:void onCreate(android.os.Bundle):74 -> onCreate
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    108:117:void onCreate(android.os.Bundle):72:72 -> onCreate
-    118:131:void onCreate(android.os.Bundle):73:73 -> onCreate
+    108:117:void onCreate(android.os.Bundle):74:74 -> onCreate
+    118:131:void onCreate(android.os.Bundle):75:75 -> onCreate
     1:3:void com.getcapacitor.BridgeActivity.onDestroy():128:128 -> onDestroy
     4:7:void com.getcapacitor.BridgeActivity.onDestroy():129:129 -> onDestroy
     8:9:void com.getcapacitor.Bridge.onDestroy():1386:1386 -> onDestroy
@@ -59787,9 +59840,9 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
     10:12:void com.getcapacitor.BridgeActivity.onDetachedFromWindow():139 -> onDetachedFromWindow
     13:16:void com.getcapacitor.Bridge.onDetachedFromWindow():1402:1402 -> onDetachedFromWindow
     13:16:void com.getcapacitor.BridgeActivity.onDetachedFromWindow():139 -> onDetachedFromWindow
-    1:3:void onNewIntent(android.content.Intent):81:81 -> onNewIntent
-    4:6:void onNewIntent(android.content.Intent):82:82 -> onNewIntent
-    7:10:void onNewIntent(android.content.Intent):83:83 -> onNewIntent
+    1:3:void onNewIntent(android.content.Intent):83:83 -> onNewIntent
+    4:6:void onNewIntent(android.content.Intent):84:84 -> onNewIntent
+    7:10:void onNewIntent(android.content.Intent):85:85 -> onNewIntent
     1:3:void com.getcapacitor.BridgeActivity.onPause():105:105 -> onPause
     4:7:void com.getcapacitor.BridgeActivity.onPause():106:106 -> onPause
     8:9:void com.getcapacitor.Bridge.onPause():1359:1359 -> onPause
@@ -59813,10 +59866,10 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
     61:65:void com.getcapacitor.Bridge.onPause():1365:1365 -> onPause
     61:65:void com.getcapacitor.BridgeActivity.onPause():107 -> onPause
     66:71:void com.getcapacitor.BridgeActivity.onPause():108:108 -> onPause
-    5:16:void onRequestPermissionsResult(int,java.lang.String[],int[]):120:120 -> onRequestPermissionsResult
-    17:21:void onRequestPermissionsResult(int,java.lang.String[],int[]):121:121 -> onRequestPermissionsResult
-    22:34:void onRequestPermissionsResult(int,java.lang.String[],int[]):122:122 -> onRequestPermissionsResult
-    35:38:void onRequestPermissionsResult(int,java.lang.String[],int[]):125:125 -> onRequestPermissionsResult
+    5:16:void onRequestPermissionsResult(int,java.lang.String[],int[]):122:122 -> onRequestPermissionsResult
+    17:21:void onRequestPermissionsResult(int,java.lang.String[],int[]):123:123 -> onRequestPermissionsResult
+    22:34:void onRequestPermissionsResult(int,java.lang.String[],int[]):124:124 -> onRequestPermissionsResult
+    35:38:void onRequestPermissionsResult(int,java.lang.String[],int[]):127:127 -> onRequestPermissionsResult
     1:3:void com.getcapacitor.BridgeActivity.onRestart():86:86 -> onRestart
     4:7:void com.getcapacitor.BridgeActivity.onRestart():87:87 -> onRestart
     8:9:void com.getcapacitor.Bridge.onRestart():1324:1324 -> onRestart
@@ -59944,158 +59997,145 @@ com.actionanand.lifeleaf.app.MainActivity -> com.actionanand.lifeleaf.app.MainAc
     74:76:void com.getcapacitor.Bridge.onStop():1378:1378 -> onStop
     74:76:void com.getcapacitor.BridgeActivity.onStop():121 -> onStop
     77:82:void com.getcapacitor.BridgeActivity.onStop():122:122 -> onStop
-    1:8:javax.crypto.SecretKey createBiometricKey():449:449 -> s
+    1:8:javax.crypto.SecretKey createBiometricKey():466:466 -> s
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lcom/actionanand/lifeleaf/app/MainActivity;)Ljavax/crypto/SecretKey;"}
-    9:22:javax.crypto.SecretKey createBiometricKey():450:450 -> s
-    23:32:javax.crypto.SecretKey createBiometricKey():453:453 -> s
-    33:37:javax.crypto.SecretKey createBiometricKey():454:454 -> s
-    38:41:javax.crypto.SecretKey createBiometricKey():455:455 -> s
-    42:45:javax.crypto.SecretKey createBiometricKey():456:456 -> s
-    46:51:javax.crypto.SecretKey createBiometricKey():457:457 -> s
-    52:56:javax.crypto.SecretKey createBiometricKey():458:458 -> s
-    57:59:javax.crypto.SecretKey createBiometricKey():460:460 -> s
-    60:66:javax.crypto.SecretKey createBiometricKey():462:462 -> s
-    67:71:javax.crypto.SecretKey createBiometricKey():463:463 -> s
-    1:8:boolean hasNotificationPermission():187:187 -> t
+    9:22:javax.crypto.SecretKey createBiometricKey():467:467 -> s
+    23:32:javax.crypto.SecretKey createBiometricKey():470:470 -> s
+    33:37:javax.crypto.SecretKey createBiometricKey():471:471 -> s
+    38:41:javax.crypto.SecretKey createBiometricKey():472:472 -> s
+    42:45:javax.crypto.SecretKey createBiometricKey():473:473 -> s
+    46:51:javax.crypto.SecretKey createBiometricKey():474:474 -> s
+    52:56:javax.crypto.SecretKey createBiometricKey():475:475 -> s
+    57:59:javax.crypto.SecretKey createBiometricKey():477:477 -> s
+    60:66:javax.crypto.SecretKey createBiometricKey():479:479 -> s
+    67:71:javax.crypto.SecretKey createBiometricKey():480:480 -> s
+    1:8:boolean hasNotificationPermission():189:189 -> t
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lcom/actionanand/lifeleaf/app/MainActivity;)Z"}
-    9:19:boolean hasNotificationPermission():188:188 -> t
-    5:14:void cancelReminderAlarms():232:232 -> u
-    5:14:void scheduleWeeklyReminders(int,int,java.lang.String):206 -> u
+    9:19:boolean hasNotificationPermission():190:190 -> t
+    1:3:void scheduleWeeklyReminders(int,int,java.lang.String):208:208 -> u
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lcom/actionanand/lifeleaf/app/MainActivity;IILjava/lang/String;)V"}
-    15:28:void cancelReminderAlarms():233:233 -> u
-    15:28:void scheduleWeeklyReminders(int,int,java.lang.String):206 -> u
-    29:33:android.app.PendingIntent reminderPendingIntent(int):240:240 -> u
-    29:33:void cancelReminderAlarms():235 -> u
-    29:33:void scheduleWeeklyReminders(int,int,java.lang.String):206 -> u
-    34:38:android.app.PendingIntent reminderPendingIntent(int):241:241 -> u
-    34:38:void cancelReminderAlarms():235 -> u
-    34:38:void scheduleWeeklyReminders(int,int,java.lang.String):206 -> u
-    39:41:android.app.PendingIntent reminderPendingIntent(int):242:242 -> u
-    39:41:void cancelReminderAlarms():235 -> u
-    39:41:void scheduleWeeklyReminders(int,int,java.lang.String):206 -> u
-    42:45:android.app.PendingIntent reminderPendingIntent(int):245:245 -> u
-    42:45:void cancelReminderAlarms():235 -> u
-    42:45:void scheduleWeeklyReminders(int,int,java.lang.String):206 -> u
-    46:51:void cancelReminderAlarms():235:235 -> u
-    46:51:void scheduleWeeklyReminders(int,int,java.lang.String):206 -> u
-    52:54:void scheduleWeeklyReminders(int,int,java.lang.String):207:207 -> u
-    55:66:void scheduleWeeklyReminders(int,int,java.lang.String):208:208 -> u
-    67:75:void scheduleWeeklyReminders(int,int,java.lang.String):210:210 -> u
-    76:83:void scheduleWeeklyReminders(int,int,java.lang.String):211:211 -> u
-    84:97:void scheduleWeeklyReminders(int,int,java.lang.String):212:212 -> u
-    98:110:void scheduleWeeklyReminders(int,int,java.lang.String):213:213 -> u
-    111:114:void scheduleWeeklyReminders(int,int,java.lang.String):215:215 -> u
-    115:121:void scheduleWeeklyReminders(int,int,java.lang.String):216:216 -> u
-    122:128:void scheduleWeeklyReminders(int,int,java.lang.String):217:217 -> u
-    129:133:void scheduleWeeklyReminders(int,int,java.lang.String):218:218 -> u
-    134:138:void scheduleWeeklyReminders(int,int,java.lang.String):219:219 -> u
-    139:141:void scheduleWeeklyReminders(int,int,java.lang.String):220:220 -> u
-    142:157:void scheduleWeeklyReminders(int,int,java.lang.String):221:221 -> u
-    158:161:void scheduleWeeklyReminders(int,int,java.lang.String):224:224 -> u
-    162:166:android.app.PendingIntent reminderPendingIntent(int):240:240 -> u
-    162:166:void scheduleWeeklyReminders(int,int,java.lang.String):226 -> u
-    167:171:android.app.PendingIntent reminderPendingIntent(int):241:241 -> u
-    167:171:void scheduleWeeklyReminders(int,int,java.lang.String):226 -> u
-    172:174:android.app.PendingIntent reminderPendingIntent(int):242:242 -> u
-    172:174:void scheduleWeeklyReminders(int,int,java.lang.String):226 -> u
-    175:184:android.app.PendingIntent reminderPendingIntent(int):245:245 -> u
-    175:184:void scheduleWeeklyReminders(int,int,java.lang.String):226 -> u
-    185:193:void scheduleWeeklyReminders(int,int,java.lang.String):222:222 -> u
-    194:201:void scheduleWeeklyReminders(int,int,java.lang.String):209:209 -> u
-    1:4:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):467:467 -> v
+    4:6:void scheduleWeeklyReminders(int,int,java.lang.String):209:209 -> u
+    7:16:void scheduleWeeklyReminders(int,int,java.lang.String):210:210 -> u
+    17:23:void scheduleWeeklyReminders(int,int,java.lang.String):212:212 -> u
+    24:30:void scheduleWeeklyReminders(int,int,java.lang.String):213:213 -> u
+    31:36:void scheduleWeeklyReminders(int,int,java.lang.String):214:214 -> u
+    37:42:void scheduleWeeklyReminders(int,int,java.lang.String):215:215 -> u
+    43:48:void scheduleWeeklyReminders(int,int,java.lang.String):216:216 -> u
+    49:58:void scheduleWeeklyReminders(int,int,java.lang.String):217:217 -> u
+    59:63:void scheduleWeeklyReminders(int,int,java.lang.String):218:218 -> u
+    64:72:void scheduleWeeklyReminders(int,int,java.lang.String):219:219 -> u
+    73:80:void scheduleWeeklyReminders(int,int,java.lang.String):220:220 -> u
+    81:91:void scheduleWeeklyReminders(int,int,java.lang.String):221:221 -> u
+    92:105:void scheduleWeeklyReminders(int,int,java.lang.String):222:222 -> u
+    106:109:void scheduleNextReminder(android.app.AlarmManager,int,int,int):229:229 -> u
+    106:109:void scheduleWeeklyReminders(int,int,java.lang.String):224 -> u
+    110:114:void scheduleNextReminder(android.app.AlarmManager,int,int,int):230:230 -> u
+    110:114:void scheduleWeeklyReminders(int,int,java.lang.String):224 -> u
+    115:119:void scheduleNextReminder(android.app.AlarmManager,int,int,int):231:231 -> u
+    115:119:void scheduleWeeklyReminders(int,int,java.lang.String):224 -> u
+    120:124:void scheduleNextReminder(android.app.AlarmManager,int,int,int):232:232 -> u
+    120:124:void scheduleWeeklyReminders(int,int,java.lang.String):224 -> u
+    125:129:void scheduleNextReminder(android.app.AlarmManager,int,int,int):233:233 -> u
+    125:129:void scheduleWeeklyReminders(int,int,java.lang.String):224 -> u
+    130:132:void scheduleNextReminder(android.app.AlarmManager,int,int,int):234:234 -> u
+    130:132:void scheduleWeeklyReminders(int,int,java.lang.String):224 -> u
+    133:148:void scheduleNextReminder(android.app.AlarmManager,int,int,int):235:235 -> u
+    133:148:void scheduleWeeklyReminders(int,int,java.lang.String):224 -> u
+    149:152:void scheduleNextReminder(android.app.AlarmManager,int,int,int):236:236 -> u
+    149:152:void scheduleWeeklyReminders(int,int,java.lang.String):224 -> u
+    153:163:void scheduleNextReminder(android.app.AlarmManager,int,int,int):238:238 -> u
+    153:163:void scheduleWeeklyReminders(int,int,java.lang.String):224 -> u
+    164:171:void scheduleWeeklyReminders(int,int,java.lang.String):211:211 -> u
+    1:4:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):484:484 -> v
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Lcom/actionanand/lifeleaf/app/MainActivity;Ljava/lang/String;Ljavax/crypto/Cipher;Ljava/lang/Runnable;Ljava/lang/String;)V"}
-    5:13:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):467:467 -> v
+    5:13:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):484:484 -> v
     14:19:java.util.concurrent.Executor androidx.core.content.ContextCompat.getMainExecutor(android.content.Context):687:687 -> v
-    14:19:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):468 -> v
+    14:19:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):485 -> v
     20:24:java.util.concurrent.Executor androidx.core.content.ContextCompat.getMainExecutor(android.content.Context):688:688 -> v
-    20:24:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):468 -> v
+    20:24:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):485 -> v
     25:33:java.util.concurrent.Executor androidx.core.content.ContextCompat.getMainExecutor(android.content.Context):690:690 -> v
-    25:33:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):468 -> v
+    25:33:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):485 -> v
     34:40:java.util.concurrent.Executor androidx.core.os.ExecutorCompat.create(android.os.Handler):37:37 -> v
     34:40:java.util.concurrent.Executor androidx.core.content.ContextCompat.getMainExecutor(android.content.Context):690 -> v
-    34:40:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):468 -> v
-    41:52:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):469:469 -> v
-    53:57:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):483:483 -> v
+    34:40:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):485 -> v
+    41:52:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):486:486 -> v
+    53:57:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):500:500 -> v
     58:59:androidx.biometric.BiometricPrompt$PromptInfo$Builder androidx.biometric.BiometricPrompt$PromptInfo$Builder.setTitle(java.lang.CharSequence):421:421 -> v
-    58:59:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):484 -> v
-    60:61:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):484:484 -> v
+    58:59:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):501 -> v
+    60:61:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):501:501 -> v
     62:63:androidx.biometric.BiometricPrompt$PromptInfo$Builder androidx.biometric.BiometricPrompt$PromptInfo$Builder.setSubtitle(java.lang.CharSequence):433:433 -> v
-    62:63:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):485 -> v
-    64:65:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):485:485 -> v
+    62:63:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):502 -> v
+    64:65:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):502:502 -> v
     66:69:androidx.biometric.BiometricPrompt$PromptInfo$Builder androidx.biometric.BiometricPrompt$PromptInfo$Builder.setNegativeButtonText(java.lang.CharSequence):462:462 -> v
-    66:69:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):486 -> v
+    66:69:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):503 -> v
     70:71:androidx.biometric.BiometricPrompt$PromptInfo$Builder androidx.biometric.BiometricPrompt$PromptInfo$Builder.setAllowedAuthenticators(int):555:555 -> v
-    70:71:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):487 -> v
-    72:75:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):488:488 -> v
-    76:85:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):489:489 -> v
+    70:71:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):504 -> v
+    72:75:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):505:505 -> v
+    76:85:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):506:506 -> v
     86:100:int androidx.biometric.BiometricPrompt$PromptInfo.getAllowedAuthenticators():713:713 -> v
     86:100:int androidx.biometric.AuthenticatorUtils.getConsolidatedAuthenticators(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):79 -> v
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     86:100:void androidx.biometric.BiometricPrompt.authenticate(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):944 -> v
-    86:100:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):489 -> v
+    86:100:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):506 -> v
     101:107:void androidx.biometric.BiometricPrompt.authenticate(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):950:950 -> v
-    101:107:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):489 -> v
+    101:107:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):506 -> v
     108:115:void androidx.biometric.BiometricPrompt.authenticate(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):951:951 -> v
-    108:115:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):489 -> v
+    108:115:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):506 -> v
     116:119:void androidx.biometric.BiometricPrompt.authenticate(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):955:955 -> v
-    116:119:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):489 -> v
+    116:119:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):506 -> v
     120:127:void androidx.biometric.BiometricPrompt.authenticate(androidx.biometric.BiometricPrompt$PromptInfo,androidx.biometric.BiometricPrompt$CryptoObject):946:946 -> v
-    120:127:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):489 -> v
-    1:6:void applySystemBars(boolean):250:250 -> w
-    7:15:void applySystemBars(boolean):251:251 -> w
-    16:23:void applySystemBars(boolean):252:252 -> w
-    24:26:void applySystemBars(boolean):253:253 -> w
-    27:29:void applySystemBars(boolean):254:254 -> w
-    30:36:void applySystemBars(boolean):255:255 -> w
+    120:127:void showBiometricPrompt(java.lang.String,javax.crypto.Cipher,java.lang.Runnable,java.lang.String):506 -> v
+    1:6:void applySystemBars(boolean):267:267 -> w
+    7:15:void applySystemBars(boolean):268:268 -> w
+    16:23:void applySystemBars(boolean):269:269 -> w
+    24:26:void applySystemBars(boolean):270:270 -> w
+    27:29:void applySystemBars(boolean):271:271 -> w
+    30:36:void applySystemBars(boolean):272:272 -> w
     37:38:com.getcapacitor.Bridge com.getcapacitor.BridgeActivity.getBridge():63:63 -> w
-    37:38:void applySystemBars(boolean):256 -> w
+    37:38:void applySystemBars(boolean):273 -> w
     39:40:android.webkit.WebView com.getcapacitor.Bridge.getWebView():512:512 -> w
-    39:40:void applySystemBars(boolean):256 -> w
+    39:40:void applySystemBars(boolean):273 -> w
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    41:43:void applySystemBars(boolean):256:256 -> w
-    44:49:void applySystemBars(boolean):257:257 -> w
-    50:52:void applySystemBars(boolean):258:258 -> w
-    53:55:void applySystemBars(boolean):259:259 -> w
-    56:63:void applySystemBars(boolean):261:261 -> w
-    64:75:void applySystemBars(boolean):263:263 -> w
-    76:79:void applySystemBars(boolean):267:267 -> w
-    80:103:void applySystemBars(boolean):275:275 -> w
-    104:107:void applySystemBars(boolean):280:280 -> w
-    1:14:void dispatchNativeResult(java.lang.String,boolean,java.lang.String,java.lang.String):493:493 -> x
-    1:18:void dispatchSharedIntent(android.content.Intent):129:129 -> y
-    19:32:void dispatchSharedIntent(android.content.Intent):130:130 -> y
-    33:38:void dispatchSharedIntent(android.content.Intent):131:131 -> y
-    39:48:void dispatchSharedIntent(android.content.Intent):132:132 -> y
-    49:56:void dispatchSharedIntent(android.content.Intent):133:133 -> y
-    57:67:void dispatchSharedIntent(android.content.Intent):135:135 -> y
-    68:70:void dispatchSharedIntent(android.content.Intent):136:136 -> y
-    71:94:void dispatchSharedIntent(android.content.Intent):137:137 -> y
-    95:118:void dispatchSharedIntent(android.content.Intent):138:138 -> y
-    119:135:void dispatchSharedIntent(android.content.Intent):139:139 -> y
-    136:137:void dispatchSharedIntent(android.content.Intent):141:141 -> y
-    138:150:void dispatchSharedIntent(android.content.Intent):143:143 -> y
-    151:155:void dispatchSharedIntent(android.content.Intent):144:144 -> y
-    156:166:void dispatchSharedIntent(android.content.Intent):139:139 -> y
-    167:177:void dispatchSharedIntent(android.content.Intent):146:146 -> y
-    178:186:void dispatchSharedIntent(android.content.Intent):139:139 -> y
-    187:193:void dispatchSharedIntent(android.content.Intent):149:149 -> y
-    194:208:void dispatchSharedIntent(android.content.Intent):150:150 -> y
-    209:223:void dispatchSharedIntent(android.content.Intent):151:151 -> y
-    224:243:void dispatchSharedIntent(android.content.Intent):152:152 -> y
-    244:245:com.getcapacitor.Bridge com.getcapacitor.BridgeActivity.getBridge():63:63 -> y
-    244:245:void dispatchSharedIntent(android.content.Intent):154 -> y
-    246:248:android.webkit.WebView com.getcapacitor.Bridge.getWebView():512:512 -> y
-    246:248:void dispatchSharedIntent(android.content.Intent):154 -> y
+    41:43:void applySystemBars(boolean):273:273 -> w
+    44:49:void applySystemBars(boolean):274:274 -> w
+    50:52:void applySystemBars(boolean):275:275 -> w
+    53:55:void applySystemBars(boolean):276:276 -> w
+    56:63:void applySystemBars(boolean):278:278 -> w
+    64:75:void applySystemBars(boolean):280:280 -> w
+    76:79:void applySystemBars(boolean):284:284 -> w
+    80:103:void applySystemBars(boolean):292:292 -> w
+    104:107:void applySystemBars(boolean):297:297 -> w
+    1:16:void cancelReminderAlarms():245:245 -> x
+    17:26:void cancelReminderAlarms():248:248 -> x
+    27:46:void cancelReminderAlarms():250:250 -> x
+    1:14:void dispatchNativeResult(java.lang.String,boolean,java.lang.String,java.lang.String):510:510 -> y
+    1:18:void dispatchSharedIntent(android.content.Intent):131:131 -> z
+    19:32:void dispatchSharedIntent(android.content.Intent):132:132 -> z
+    33:38:void dispatchSharedIntent(android.content.Intent):133:133 -> z
+    39:48:void dispatchSharedIntent(android.content.Intent):134:134 -> z
+    49:56:void dispatchSharedIntent(android.content.Intent):135:135 -> z
+    57:67:void dispatchSharedIntent(android.content.Intent):137:137 -> z
+    68:70:void dispatchSharedIntent(android.content.Intent):138:138 -> z
+    71:94:void dispatchSharedIntent(android.content.Intent):139:139 -> z
+    95:118:void dispatchSharedIntent(android.content.Intent):140:140 -> z
+    119:135:void dispatchSharedIntent(android.content.Intent):141:141 -> z
+    136:137:void dispatchSharedIntent(android.content.Intent):143:143 -> z
+    138:150:void dispatchSharedIntent(android.content.Intent):145:145 -> z
+    151:155:void dispatchSharedIntent(android.content.Intent):146:146 -> z
+    156:166:void dispatchSharedIntent(android.content.Intent):141:141 -> z
+    167:177:void dispatchSharedIntent(android.content.Intent):148:148 -> z
+    178:186:void dispatchSharedIntent(android.content.Intent):141:141 -> z
+    187:193:void dispatchSharedIntent(android.content.Intent):151:151 -> z
+    194:208:void dispatchSharedIntent(android.content.Intent):152:152 -> z
+    209:223:void dispatchSharedIntent(android.content.Intent):153:153 -> z
+    224:243:void dispatchSharedIntent(android.content.Intent):154:154 -> z
+    244:245:com.getcapacitor.Bridge com.getcapacitor.BridgeActivity.getBridge():63:63 -> z
+    244:245:void dispatchSharedIntent(android.content.Intent):156 -> z
+    246:248:android.webkit.WebView com.getcapacitor.Bridge.getWebView():512:512 -> z
+    246:248:void dispatchSharedIntent(android.content.Intent):156 -> z
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
-    249:251:void dispatchSharedIntent(android.content.Intent):154:154 -> y
-    252:257:void dispatchSharedIntent(android.content.Intent):155:155 -> y
-    1:7:void ensureReminderNotificationChannel():192:192 -> z
-    8:17:void ensureReminderNotificationChannel():193:193 -> z
-    18:24:void ensureReminderNotificationChannel():194:194 -> z
-    25:28:void ensureReminderNotificationChannel():195:195 -> z
-    29:31:void ensureReminderNotificationChannel():200:200 -> z
-    32:34:void ensureReminderNotificationChannel():201:201 -> z
-    35:38:void ensureReminderNotificationChannel():202:202 -> z
+    249:251:void dispatchSharedIntent(android.content.Intent):156:156 -> z
+    252:257:void dispatchSharedIntent(android.content.Intent):157:157 -> z
 com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda3 -> e1.a:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -60184,22 +60224,22 @@ com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda3 -> e1.a:
     194:197:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$showDialog$4(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,boolean,com.capacitorjs.plugins.splashscreen.SplashListener):235:235 -> run
     194:197:void e1.MainActivity$$ExternalSyntheticLambda3.run():0 -> run
     198:207:void e1.MainActivity$$ExternalSyntheticLambda3.run():0:0 -> run
-    208:214:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):494:494 -> run
+    208:214:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):511:511 -> run
     208:214:void e1.MainActivity$$ExternalSyntheticLambda3.run():0 -> run
-    215:236:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):495:495 -> run
+    215:236:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):512:512 -> run
     215:236:void e1.MainActivity$$ExternalSyntheticLambda3.run():0 -> run
-    237:250:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):496:496 -> run
+    237:250:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):513:513 -> run
     237:250:void e1.MainActivity$$ExternalSyntheticLambda3.run():0 -> run
-    251:268:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):497:497 -> run
+    251:268:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):514:514 -> run
     251:268:void e1.MainActivity$$ExternalSyntheticLambda3.run():0 -> run
     269:270:com.getcapacitor.Bridge com.getcapacitor.BridgeActivity.getBridge():63:63 -> run
-    269:270:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):498 -> run
+    269:270:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):515 -> run
     269:270:void e1.MainActivity$$ExternalSyntheticLambda3.run():0 -> run
     271:273:android.webkit.WebView com.getcapacitor.Bridge.getWebView():512:512 -> run
-    271:273:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):498 -> run
+    271:273:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):515 -> run
       # {"id":"com.android.tools.r8.rewriteFrame","conditions":["throws(Ljava/lang/NullPointerException;)"],"actions":["removeInnerFrames(1)"]}
     271:273:void e1.MainActivity$$ExternalSyntheticLambda3.run():0 -> run
-    274:278:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):498:498 -> run
+    274:278:void com.actionanand.lifeleaf.app.MainActivity.lambda$dispatchNativeResult$3(java.lang.String,boolean,java.lang.String,java.lang.String):515:515 -> run
     274:278:void e1.MainActivity$$ExternalSyntheticLambda3.run():0 -> run
 com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda4 -> e1.b:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
@@ -60210,8 +60250,8 @@ com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda4 -> e1.b:
       # {"id":"com.android.tools.r8.synthesized"}
     1:8:void e1.MainActivity$$ExternalSyntheticLambda4.<init>(com.actionanand.lifeleaf.app.MainActivity,int):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
-    16:22:void com.actionanand.lifeleaf.app.MainActivity.lambda$onCreate$0():74:74 -> run
-    23:26:void com.actionanand.lifeleaf.app.MainActivity.lambda$onCreate$0():75:75 -> run
+    16:22:void com.actionanand.lifeleaf.app.MainActivity.lambda$onCreate$0():76:76 -> run
+    23:26:void com.actionanand.lifeleaf.app.MainActivity.lambda$onCreate$0():77:77 -> run
 com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda7 -> e1.c:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -60229,7 +60269,7 @@ com.actionanand.lifeleaf.app.MainActivity$$ExternalSyntheticLambda7 -> e1.c:
     21:24:void androidx.core.view.SoftwareKeyboardControllerCompat$Impl20.lambda$show$0(android.view.View):135:135 -> run
     21:24:void e1.MainActivity$$ExternalSyntheticLambda7.run():0 -> run
     25:26:void e1.MainActivity$$ExternalSyntheticLambda7.run():0:0 -> run
-    27:44:void com.actionanand.lifeleaf.app.MainActivity.lambda$hideLaunchOverlay$2(android.view.View):180:180 -> run
+    27:44:void com.actionanand.lifeleaf.app.MainActivity.lambda$hideLaunchOverlay$2(android.view.View):182:182 -> run
     27:44:void e1.MainActivity$$ExternalSyntheticLambda7.run():0 -> run
 com.actionanand.lifeleaf.app.MainActivity$1 -> e1.d:
 # {"id":"sourceFile","fileName":"MainActivity.java"}
@@ -60237,37 +60277,37 @@ com.actionanand.lifeleaf.app.MainActivity$1 -> e1.d:
     java.lang.String val$action -> f
     com.actionanand.lifeleaf.app.MainActivity this$0 -> g
     1:3:void androidx.biometric.BiometricPrompt$AuthenticationCallback.<init>():365:365 -> <init>
-    1:3:void <init>(com.actionanand.lifeleaf.app.MainActivity,java.lang.Runnable,java.lang.String):469 -> <init>
-    4:10:void <init>(com.actionanand.lifeleaf.app.MainActivity,java.lang.Runnable,java.lang.String):469:469 -> <init>
-    2:5:void onAuthenticationError(int,java.lang.CharSequence):479:479 -> M
+    1:3:void <init>(com.actionanand.lifeleaf.app.MainActivity,java.lang.Runnable,java.lang.String):486 -> <init>
+    4:10:void <init>(com.actionanand.lifeleaf.app.MainActivity,java.lang.Runnable,java.lang.String):486:486 -> <init>
+    2:5:void onAuthenticationError(int,java.lang.CharSequence):496:496 -> M
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Ljava/lang/CharSequence;)V"}
-    6:18:void onAuthenticationError(int,java.lang.CharSequence):480:480 -> M
-    1:5:void onAuthenticationSucceeded(androidx.biometric.BiometricPrompt$AuthenticationResult):473:473 -> O
+    6:18:void onAuthenticationError(int,java.lang.CharSequence):497:497 -> M
+    1:5:void onAuthenticationSucceeded(androidx.biometric.BiometricPrompt$AuthenticationResult):490:490 -> O
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Landroidx/biometric/t;)V"}
-    6:11:void onAuthenticationSucceeded(androidx.biometric.BiometricPrompt$AuthenticationResult):474:474 -> O
+    6:11:void onAuthenticationSucceeded(androidx.biometric.BiometricPrompt$AuthenticationResult):491:491 -> O
 com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge -> e1.h:
 # {"id":"sourceFile","fileName":"MainActivity.java"}
     com.actionanand.lifeleaf.app.MainActivity this$0 -> a
-    1:6:void <init>(com.actionanand.lifeleaf.app.MainActivity):283:283 -> <init>
-    1:17:java.lang.String appVersion():442:442 -> appVersion
-    18:24:java.lang.String appVersion():443:443 -> appVersion
-    1:12:void authenticateBiometric():386:386 -> authenticateBiometric
-    1:12:void cancelReminder():341:341 -> cancelReminder
-    1:22:void disableBiometric():412:412 -> disableBiometric
-    23:29:void disableBiometric():413:413 -> disableBiometric
-    30:32:void disableBiometric():414:414 -> disableBiometric
-    33:42:void disableBiometric():415:415 -> disableBiometric
-    1:12:void enableBiometric(java.lang.String):364:364 -> enableBiometric
-    1:8:void ensureReminderNotificationChannel():316:316 -> ensureReminderNotificationChannel
-    1:16:void exportFile(java.lang.String,java.lang.String,java.lang.String):421:421 -> exportFile
+    1:6:void <init>(com.actionanand.lifeleaf.app.MainActivity):300:300 -> <init>
+    1:17:java.lang.String appVersion():459:459 -> appVersion
+    18:24:java.lang.String appVersion():460:460 -> appVersion
+    1:12:void authenticateBiometric():403:403 -> authenticateBiometric
+    1:12:void cancelReminder():358:358 -> cancelReminder
+    1:22:void disableBiometric():429:429 -> disableBiometric
+    23:29:void disableBiometric():430:430 -> disableBiometric
+    30:32:void disableBiometric():431:431 -> disableBiometric
+    33:42:void disableBiometric():432:432 -> disableBiometric
+    1:12:void enableBiometric(java.lang.String):381:381 -> enableBiometric
+    1:8:void ensureReminderNotificationChannel():333:333 -> ensureReminderNotificationChannel
+    1:16:void exportFile(java.lang.String,java.lang.String,java.lang.String):438:438 -> exportFile
     1:15:androidx.biometric.BiometricManager androidx.biometric.BiometricManager.from(android.content.Context):282:282 -> isBiometricAvailable
-    1:15:boolean isBiometricAvailable():358 -> isBiometricAvailable
-    16:25:boolean isBiometricAvailable():358:358 -> isBiometricAvailable
-    1:7:boolean notificationPermissionGranted():288:288 -> notificationPermissionGranted
-    1:12:void requestNotificationPermission():292:292 -> requestNotificationPermission
-    1:11:void scheduleReminder(int,int,java.lang.String):320:320 -> scheduleReminder
-    1:12:void setDarkMode(boolean):285:285 -> setDarkMode
-    1:12:void setScreenshotProtection(boolean):433:433 -> setScreenshotProtection
+    1:15:boolean isBiometricAvailable():375 -> isBiometricAvailable
+    16:25:boolean isBiometricAvailable():375:375 -> isBiometricAvailable
+    1:7:boolean notificationPermissionGranted():305:305 -> notificationPermissionGranted
+    1:12:void requestNotificationPermission():309:309 -> requestNotificationPermission
+    1:11:void scheduleReminder(int,int,java.lang.String):337:337 -> scheduleReminder
+    1:12:void setDarkMode(boolean):302:302 -> setDarkMode
+    1:12:void setScreenshotProtection(boolean):450:450 -> setScreenshotProtection
 com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge$$ExternalSyntheticLambda0 -> e1.e:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -60279,45 +60319,29 @@ com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge$$ExternalSyntheti
     1:8:void e1.MainActivity$LifeLeafNativeBridge$$ExternalSyntheticLambda0.<init>(e1.MainActivity$LifeLeafNativeBridge,int):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Le1/h;I)V"}
-    12:28:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():388:388 -> run
-    29:42:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():389:389 -> run
-    43:48:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():391:391 -> run
-    49:51:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():392:392 -> run
-    52:61:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():393:393 -> run
-    62:67:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():395:395 -> run
-    68:82:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():396:396 -> run
-    83:96:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():397:397 -> run
-    97:104:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():394:394 -> run
-    105:112:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():390:390 -> run
-    113:122:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():405:405 -> run
-    123:134:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():294:294 -> run
-    135:137:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():295:295 -> run
-    138:145:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():296:296 -> run
-    146:151:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():299:299 -> run
-    152:163:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():300:300 -> run
-    164:167:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():302:302 -> run
-    168:178:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():309:309 -> run
-    179:184:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():305:305 -> run
-    185:190:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():343:343 -> run
-    191:205:void com.actionanand.lifeleaf.app.MainActivity.cancelReminderAlarms():232:232 -> run
-    191:205:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():343 -> run
-    206:212:android.app.PendingIntent com.actionanand.lifeleaf.app.MainActivity.reminderPendingIntent(int):240:240 -> run
-    206:212:void com.actionanand.lifeleaf.app.MainActivity.cancelReminderAlarms():235 -> run
-    206:212:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():343 -> run
-    213:217:android.app.PendingIntent com.actionanand.lifeleaf.app.MainActivity.reminderPendingIntent(int):241:241 -> run
-    213:217:void com.actionanand.lifeleaf.app.MainActivity.cancelReminderAlarms():235 -> run
-    213:217:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():343 -> run
-    218:226:android.app.PendingIntent com.actionanand.lifeleaf.app.MainActivity.reminderPendingIntent(int):242:242 -> run
-    218:226:void com.actionanand.lifeleaf.app.MainActivity.cancelReminderAlarms():235 -> run
-    218:226:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():343 -> run
-    227:230:android.app.PendingIntent com.actionanand.lifeleaf.app.MainActivity.reminderPendingIntent(int):245:245 -> run
-    227:230:void com.actionanand.lifeleaf.app.MainActivity.cancelReminderAlarms():235 -> run
-    227:230:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():343 -> run
-    231:236:void com.actionanand.lifeleaf.app.MainActivity.cancelReminderAlarms():235:235 -> run
-    231:236:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():343 -> run
-    237:241:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():344:344 -> run
-    242:254:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():350:350 -> run
-    255:260:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():346:346 -> run
+    12:28:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():405:405 -> run
+    29:42:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():406:406 -> run
+    43:48:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():408:408 -> run
+    49:51:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():409:409 -> run
+    52:61:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():410:410 -> run
+    62:67:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():412:412 -> run
+    68:82:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():413:413 -> run
+    83:96:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():414:414 -> run
+    97:104:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():411:411 -> run
+    105:112:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():407:407 -> run
+    113:122:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$authenticateBiometric$7():422:422 -> run
+    123:134:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():311:311 -> run
+    135:137:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():312:312 -> run
+    138:145:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():313:313 -> run
+    146:151:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():316:316 -> run
+    152:163:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():317:317 -> run
+    164:167:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():319:319 -> run
+    168:178:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():326:326 -> run
+    179:184:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$requestNotificationPermission$1():322:322 -> run
+    185:193:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():360:360 -> run
+    194:198:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():361:361 -> run
+    199:211:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():367:367 -> run
+    212:218:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$cancelReminder$3():363:363 -> run
 com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge$$ExternalSyntheticLambda2 -> e1.f:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -60331,10 +60355,10 @@ com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge$$ExternalSyntheti
     1:10:void e1.MainActivity$LifeLeafNativeBridge$$ExternalSyntheticLambda2.<init>(e1.MainActivity$LifeLeafNativeBridge,boolean,int):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Le1/h;ZI)V"}
-    10:23:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setScreenshotProtection$9(boolean):434:434 -> run
+    10:23:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setScreenshotProtection$9(boolean):451:451 -> run
       # {"id":"com.android.tools.r8.residualsignature","signature":"()V"}
-    24:31:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setScreenshotProtection$9(boolean):435:435 -> run
-    32:40:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setDarkMode$0(boolean):285:285 -> run
+    24:31:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setScreenshotProtection$9(boolean):452:452 -> run
+    32:40:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$setDarkMode$0(boolean):302:302 -> run
 com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge$$ExternalSyntheticLambda6 -> e1.g:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}
@@ -60350,13 +60374,13 @@ com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge$$ExternalSyntheti
     1:12:void e1.MainActivity$LifeLeafNativeBridge$$ExternalSyntheticLambda6.<init>(e1.MainActivity$LifeLeafNativeBridge,int,int,java.lang.String):0:0 -> <init>
       # {"id":"com.android.tools.r8.synthesized"}
       # {"id":"com.android.tools.r8.residualsignature","signature":"(Le1/h;IILjava/lang/String;)V"}
-    7:21:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):322:322 -> run
+    7:21:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):339:339 -> run
       # {"id":"com.android.tools.r8.residualsignature","signature":"()V"}
-    22:29:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):323:323 -> run
-    30:33:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):326:326 -> run
-    34:37:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):327:327 -> run
-    38:50:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):333:333 -> run
-    51:56:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):329:329 -> run
+    22:29:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):340:340 -> run
+    30:33:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):343:343 -> run
+    34:37:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):344:344 -> run
+    38:50:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):350:350 -> run
+    51:56:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$scheduleReminder$2(int,int,java.lang.String):346:346 -> run
 com.capacitorjs.plugins.app.AppPlugin -> com.capacitorjs.plugins.app.AppPlugin:
 # {"id":"sourceFile","fileName":"AppPlugin.java"}
     androidx.activity.OnBackPressedCallback onBackPressedCallback -> onBackPressedCallback
@@ -68343,17 +68367,17 @@ com.getcapacitor.Bridge$$ExternalSyntheticLambda0 -> com.getcapacitor.b:
     240:245:void com.capacitorjs.plugins.splashscreen.SplashScreen.lambda$show$7(androidx.appcompat.app.AppCompatActivity,com.capacitorjs.plugins.splashscreen.SplashScreenSettings,android.animation.Animator$AnimatorListener):432:432 -> run
     240:245:void run():0 -> run
     246:261:void run():0:0 -> run
-    262:277:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):422:422 -> run
+    262:277:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):439:439 -> run
     262:277:void run():0 -> run
-    278:284:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):423:423 -> run
+    278:284:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):440:440 -> run
     278:284:void run():0 -> run
-    285:291:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):424:424 -> run
+    285:291:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):441:441 -> run
     285:291:void run():0 -> run
-    292:304:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):425:425 -> run
+    292:304:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):442:442 -> run
     292:304:void run():0 -> run
-    305:329:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):426:426 -> run
+    305:329:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):443:443 -> run
     305:329:void run():0 -> run
-    330:333:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):427:427 -> run
+    330:333:void com.actionanand.lifeleaf.app.MainActivity$LifeLeafNativeBridge.lambda$exportFile$8(java.lang.String,java.lang.String,java.lang.String):444:444 -> run
     330:333:void run():0 -> run
     334:369:void run():0:0 -> run
     370:372:void com.getcapacitor.Bridge.lambda$callPluginMethod$0(com.getcapacitor.PluginHandle,java.lang.String,com.getcapacitor.PluginCall):841:841 -> run
