@@ -4,15 +4,16 @@ Life Leaf uses Capacitor 8 and GitHub Actions to package the Angular/Ionic appli
 
 ## Build files
 
-| File                                  | Purpose                                                                                                                 |
-| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| `capacitor.config.ts`                 | App ID/name, Angular output, notification icon and splash behavior                                                      |
-| `android-version.json`                | Monotonic Android `versionCode` and public `versionName`                                                                |
-| `scripts/bump-android-version.js`     | Increments the code and optionally semantic version                                                                     |
-| `scripts/patch-android.mjs`           | Adds the 168dp launch overlay, notification permission/channel, share target, screenshot control and system-bar styling |
-| `scripts/generate-keystore.mjs`       | Creates a long-lived PKCS12 release keystore                                                                            |
-| `.github/workflows/android-build.yml` | Checks, generates, builds, signs, verifies, uploads and releases APK/AAB files                                          |
-| `src/assets/life-leaf.png`            | Canonical launcher, splash, notification and Play Store artwork source                                                  |
+| File                                            | Purpose                                                                                                       |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `capacitor.config.ts`                           | App ID/name, Angular output, notification icon and splash behavior                                            |
+| `android-version.json`                          | Monotonic Android `versionCode` and public `versionName`                                                      |
+| `scripts/bump-android-version.js`               | Increments the code and optionally semantic version                                                           |
+| `scripts/patch-android.mjs`                     | Adds the launch overlay, resilient weekday reminders, share target, screenshot control and system-bar styling |
+| `scripts/generate-notification-demo-backup.mjs` | Creates a date-relative encrypted reminder/On this day test backup                                            |
+| `scripts/generate-keystore.mjs`                 | Creates a long-lived PKCS12 release keystore                                                                  |
+| `.github/workflows/android-build.yml`           | Checks, generates, builds, signs, verifies, uploads and releases APK/AAB files                                |
+| `src/assets/life-leaf.png`                      | Canonical launcher, splash, notification and Play Store artwork source                                        |
 
 ## Required packages
 
@@ -115,7 +116,9 @@ Screenshot protection is off by default. Enabling it calls the native bridge to 
 
 The app lock stores only a PBKDF2-SHA-256 salted PIN verifier in private IndexedDB. On Android, optional biometric unlock wraps the PIN with AES-GCM using a non-exportable, authentication-bound Android Keystore key. A biometric enrollment change invalidates that key; the PIN remains the fallback and disabling/changing the PIN removes the wrapped biometric secret.
 
-Daily reminders use local notifications with generic text and never reveal diary content. When a user enables reminders, Life Leaf first explains the permission, then shows Android's system prompt. The setting is enabled only after permission is granted and the schedule succeeds.
+Daily reminders use generic text and never reveal diary content. When a user enables reminders, Life Leaf first explains the permission, then shows Android's system prompt. The setting is enabled only after permission is granted and the schedule succeeds.
+
+Android receives one idle-safe alarm for the next occurrence of each selected weekday. After delivery, the receiver schedules that weekday's next occurrence. Saved reminders are rebuilt when the app starts, after backup restoration, after an app update, after reboot, and when the device time or timezone changes. Android may defer an alarm slightly under battery restrictions. Generate the encrypted notification test backup with `npm run demo:notification-backup`; its password is `12345678`.
 
 ## Troubleshooting
 

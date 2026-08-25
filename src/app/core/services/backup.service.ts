@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { DiaryEntry, DiarySettings, DiaryTag, EntryTemplate, Mood } from '../models/diary.models';
 import { AttachmentService, BackupAttachment } from './attachment.service';
 import { DiaryService } from './diary.service';
+import { ReminderService } from './reminder.service';
 
 interface BackupData {
   entries: DiaryEntry[];
@@ -37,6 +38,7 @@ type LifeLeafBackup = PlainBackup | EncryptedBackup;
 export class BackupService {
   private readonly diary = inject(DiaryService);
   private readonly attachmentStorage = inject(AttachmentService);
+  private readonly reminders = inject(ReminderService);
 
   async export(password?: string): Promise<void> {
     const entries = await this.diary.allEntries();
@@ -82,6 +84,8 @@ export class BackupService {
         data.settings ?? this.diary.settings(),
       );
       await this.attachmentStorage.restoreBackups(Array.isArray(data.attachments) ? data.attachments : []);
+      const settings = this.diary.settings();
+      await this.reminders.schedule(settings.reminderEnabled, settings.reminderTime, settings.reminderDays);
     } catch (error) {
       await this.diary.replaceEntries(safetySnapshot, true);
       await this.attachmentStorage.restoreBackups(safetyAttachments);
