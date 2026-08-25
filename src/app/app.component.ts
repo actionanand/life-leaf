@@ -10,6 +10,7 @@ import { DiaryService } from './core/services/diary.service';
 import { createBlankEntry } from './core/models/diary.models';
 import { AttachmentService } from './core/services/attachment.service';
 import { SecurityService } from './core/services/security.service';
+import { ReminderService } from './core/services/reminder.service';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ export class AppComponent implements OnDestroy {
   private readonly router = inject(Router);
   private readonly attachmentStorage = inject(AttachmentService);
   private readonly security = inject(SecurityService);
+  private readonly reminders = inject(ReminderService);
   private stateListener?: PluginListenerHandle;
   private notificationListener?: PluginListenerHandle;
   private readonly navigationSubscription: Subscription;
@@ -28,7 +30,7 @@ export class AppComponent implements OnDestroy {
     void this.acceptShare((event as CustomEvent<LifeLeafShareDetail>).detail);
 
   constructor() {
-    void this.diary.initialize().catch(() => undefined);
+    void this.initializeDiaryAndReminders().catch(() => undefined);
     window.addEventListener('life-leaf-share', this.shareListener);
     this.navigationSubscription = this.router.events
       .pipe(filter((event): event is NavigationStart => event instanceof NavigationStart))
@@ -45,6 +47,14 @@ export class AppComponent implements OnDestroy {
     this.navigationSubscription.unsubscribe();
     void this.stateListener?.remove();
     void this.notificationListener?.remove();
+  }
+
+  private async initializeDiaryAndReminders(): Promise<void> {
+    await this.diary.initialize();
+    const settings = this.diary.settings();
+    if (settings.reminderEnabled) {
+      await this.reminders.schedule(true, settings.reminderTime, settings.reminderDays);
+    }
   }
 
   private async initializeSecurity(): Promise<void> {

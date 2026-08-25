@@ -114,6 +114,12 @@ if (!manifest.includes('POST_NOTIFICATIONS')) {
     '    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />\n\n    <application',
   );
 }
+if (!manifest.includes('RECEIVE_BOOT_COMPLETED')) {
+  manifest = manifest.replace(
+    '<application',
+    '    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />\n\n    <application',
+  );
+}
 manifest = manifest
   .replace(/android:allowBackup="[^"]*"/g, 'android:allowBackup="false"')
   .replace(/android:fullBackupContent="[^"]*"/g, 'android:fullBackupContent="false"');
@@ -132,10 +138,20 @@ if (!manifest.includes('LIFE_LEAF_SHARE_TARGET')) {
             </intent-filter>`;
   manifest = manifest.replace(/(\s*<\/activity>)/, `${shareTargets}$1`);
 }
+const reminderReceiver = `        <receiver android:name=".LifeLeafReminderReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+            </intent-filter>
+        </receiver>`;
 if (!manifest.includes('LifeLeafReminderReceiver')) {
+  manifest = manifest.replace('</application>', `${reminderReceiver}\n    </application>`);
+} else {
   manifest = manifest.replace(
-    '</application>',
-    '        <receiver android:name=".LifeLeafReminderReceiver" android:exported="false" />\n    </application>',
+    /\s*<receiver android:name="\.LifeLeafReminderReceiver"[\s\S]*?<\/receiver>|\s*<receiver android:name="\.LifeLeafReminderReceiver"[^>]*\/>/,
+    `\n${reminderReceiver}`,
   );
 }
 await writeFile(manifestPath, manifest, 'utf8');
@@ -254,6 +270,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -300,6 +317,7 @@ public class MainActivity extends BridgeActivity {
   private static final String REMINDER_CHANNEL_ID = "life-leaf-reminders";
   private static final String REMINDER_ALARM_ACTION = "com.actionanand.lifeleaf.app.REMINDER_ALARM";
   private static final int REMINDER_ALARM_ID_BASE = 9040;
+  private static final String REMINDER_PREFERENCES = "life_leaf_reminders";
   private static final String BIOMETRIC_KEY_ALIAS = "life_leaf_biometric_key";
   private static final String SECURITY_PREFERENCES = "life_leaf_security";
   private final Handler mainHandler = new Handler(Looper.getMainLooper());
@@ -451,24 +469,35 @@ public class MainActivity extends BridgeActivity {
     ensureReminderNotificationChannel();
     AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
     if (alarmManager == null) throw new IllegalStateException("Android reminders are unavailable.");
+    SharedPreferences preferences = getSharedPreferences(REMINDER_PREFERENCES, MODE_PRIVATE);
+    preferences.edit()
+      .putBoolean("enabled", true)
+      .putInt("hour", hour)
+      .putInt("minute", minute)
+      .putString("days", daysCsv == null ? "" : daysCsv)
+      .apply();
     String[] parts = daysCsv == null ? new String[0] : daysCsv.split(",");
     for (String rawDay : parts) {
       if (rawDay == null || rawDay.trim().isEmpty()) continue;
       int day = Integer.parseInt(rawDay.trim());
       if (day < Calendar.SUNDAY || day > Calendar.SATURDAY) continue;
-      Calendar calendar = Calendar.getInstance();
-      calendar.set(Calendar.DAY_OF_WEEK, day);
-      calendar.set(Calendar.HOUR_OF_DAY, hour);
-      calendar.set(Calendar.MINUTE, minute);
-      calendar.set(Calendar.SECOND, 0);
-      calendar.set(Calendar.MILLISECOND, 0);
-      if (calendar.getTimeInMillis() <= System.currentTimeMillis()) calendar.add(Calendar.WEEK_OF_YEAR, 1);
-      alarmManager.setInexactRepeating(
-        AlarmManager.RTC_WAKEUP,
-        calendar.getTimeInMillis(),
-        AlarmManager.INTERVAL_DAY * 7,
-        reminderPendingIntent(day)
-      );
+      scheduleNextReminder(alarmManager, day, hour, minute);
+    }
+  }
+
+  private void scheduleNextReminder(AlarmManager alarmManager, int day, int hour, int minute) {
+    Calendar calendar = Calendar.getInstance();
+    calendar.set(Calendar.DAY_OF_WEEK, day);
+    calendar.set(Calendar.HOUR_OF_DAY, hour);
+    calendar.set(Calendar.MINUTE, minute);
+    calendar.set(Calendar.SECOND, 0);
+    calendar.set(Calendar.MILLISECOND, 0);
+    if (calendar.getTimeInMillis() <= System.currentTimeMillis()) calendar.add(Calendar.WEEK_OF_YEAR, 1);
+    PendingIntent pendingIntent = reminderPendingIntent(day, hour, minute);
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+      alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    } else {
+      alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
     }
   }
 
@@ -476,14 +505,18 @@ public class MainActivity extends BridgeActivity {
     AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
     if (alarmManager == null) return;
     for (int day = Calendar.SUNDAY; day <= Calendar.SATURDAY; day++) {
-      alarmManager.cancel(reminderPendingIntent(day));
+      alarmManager.cancel(reminderPendingIntent(day, 0, 0));
     }
+    getSharedPreferences(REMINDER_PREFERENCES, MODE_PRIVATE).edit().putBoolean("enabled", false).apply();
   }
 
-  private PendingIntent reminderPendingIntent(int day) {
+  private PendingIntent reminderPendingIntent(int day, int hour, int minute) {
     Intent intent = new Intent(this, LifeLeafReminderReceiver.class);
     intent.setAction(REMINDER_ALARM_ACTION);
     intent.putExtra("notification_id", REMINDER_ALARM_ID_BASE + day);
+    intent.putExtra("day", day);
+    intent.putExtra("hour", hour);
+    intent.putExtra("minute", minute);
     int flags = PendingIntent.FLAG_UPDATE_CURRENT;
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) flags |= PendingIntent.FLAG_IMMUTABLE;
     return PendingIntent.getBroadcast(this, REMINDER_ALARM_ID_BASE + day, intent, flags);
@@ -751,6 +784,7 @@ await writeFile(
   `package com.actionanand.lifeleaf.app;
 
 import android.Manifest;
+import android.app.AlarmManager;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -761,15 +795,31 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 
+import java.util.Calendar;
+
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
 public class LifeLeafReminderReceiver extends BroadcastReceiver {
   private static final String CHANNEL_ID = "life-leaf-reminders";
+  private static final String REMINDER_ALARM_ACTION = "com.actionanand.lifeleaf.app.REMINDER_ALARM";
+  private static final String REMINDER_PREFERENCES = "life_leaf_reminders";
+  private static final int REMINDER_ALARM_ID_BASE = 9040;
 
   @Override
   public void onReceive(Context context, Intent intent) {
+    String action = intent == null ? "" : intent.getAction();
+    if (!REMINDER_ALARM_ACTION.equals(action)) {
+      rebuildStoredReminders(context);
+      return;
+    }
+    int day = intent.getIntExtra("day", 0);
+    int hour = intent.getIntExtra("hour", 20);
+    int minute = intent.getIntExtra("minute", 0);
+    if (context.getSharedPreferences(REMINDER_PREFERENCES, Context.MODE_PRIVATE).getBoolean("enabled", false)) {
+      scheduleNextReminder(context, day, hour, minute);
+    }
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
       && ContextCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
       return;
@@ -793,6 +843,56 @@ public class LifeLeafReminderReceiver extends BroadcastReceiver {
       .setPriority(NotificationCompat.PRIORITY_DEFAULT);
     int id = intent == null ? 9041 : intent.getIntExtra("notification_id", 9041);
     NotificationManagerCompat.from(context).notify(id, builder.build());
+  }
+
+  private void rebuildStoredReminders(Context context) {
+    android.content.SharedPreferences preferences =
+      context.getSharedPreferences(REMINDER_PREFERENCES, Context.MODE_PRIVATE);
+    if (!preferences.getBoolean("enabled", false)) return;
+    int hour = preferences.getInt("hour", 20);
+    int minute = preferences.getInt("minute", 0);
+    String days = preferences.getString("days", "");
+    if (days == null) return;
+    for (String rawDay : days.split(",")) {
+      try {
+        int day = Integer.parseInt(rawDay.trim());
+        if (day >= Calendar.SUNDAY && day <= Calendar.SATURDAY) {
+          scheduleNextReminder(context, day, hour, minute);
+        }
+      } catch (NumberFormatException ignored) { }
+    }
+  }
+
+  private void scheduleNextReminder(Context context, int day, int hour, int minute) {
+    if (day < Calendar.SUNDAY || day > Calendar.SATURDAY) return;
+    AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+    if (alarmManager == null) return;
+    Calendar calendar = Calendar.getInstance();
+    calendar.set(Calendar.DAY_OF_WEEK, day);
+    calendar.set(Calendar.HOUR_OF_DAY, hour);
+    calendar.set(Calendar.MINUTE, minute);
+    calendar.set(Calendar.SECOND, 0);
+    calendar.set(Calendar.MILLISECOND, 0);
+    if (calendar.getTimeInMillis() <= System.currentTimeMillis()) calendar.add(Calendar.WEEK_OF_YEAR, 1);
+    Intent reminder = new Intent(context, LifeLeafReminderReceiver.class);
+    reminder.setAction(REMINDER_ALARM_ACTION);
+    reminder.putExtra("notification_id", REMINDER_ALARM_ID_BASE + day);
+    reminder.putExtra("day", day);
+    reminder.putExtra("hour", hour);
+    reminder.putExtra("minute", minute);
+    int flags = PendingIntent.FLAG_UPDATE_CURRENT;
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) flags |= PendingIntent.FLAG_IMMUTABLE;
+    PendingIntent pendingIntent = PendingIntent.getBroadcast(
+      context,
+      REMINDER_ALARM_ID_BASE + day,
+      reminder,
+      flags
+    );
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+      alarmManager.setAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    } else {
+      alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
+    }
   }
 
   private void ensureChannel(Context context) {
